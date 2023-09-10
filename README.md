@@ -5,8 +5,6 @@ Notas de conferencias, ejercicios, y exámenes, de las asignaturas Matemática D
 
 ### Teoría de Números
 
-### Computabilidad
-
-### Lenguajes Formales
+### Computabilidad y Lenguajes
 
 ### Grafos
