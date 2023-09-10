@@ -25,9 +25,13 @@
   - Halting problem
 - Fundamentos de Grafos
   - Definiciones, tipos de grafos
-  - Caminos, problemas relacionados
+  - Caminos
   - Componentes conexas y fuertemente conexas
+  - Árboles
   - Grafos bipartitos
+  - Emparejamientos
   - Grafos hamiltoneanos y eulerianos
   - Grafos planares
   - Torneos
+  - Cliques y conjuntos independientes
+  - Coloreo
