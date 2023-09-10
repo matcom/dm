@@ -13,4 +13,4 @@ Notas de conferencias, ejercicios, y exámenes, de las asignaturas Matemática D
 
 ## Bibliografía
 
-- [Mathematics: A Discrete Introduction](Discrete%20Introduction.pdf)
+- [Mathematics: A Discrete Introduction](https://github.com/matcom/dm/raw/main/Discrete%20Introduction.pdf)
