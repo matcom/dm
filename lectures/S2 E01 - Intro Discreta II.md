@@ -26,7 +26,7 @@
   - Lenguaje universo
   - Halting problem
 
- ### Teoría de grados
+ ### Teoría de grafos
 
 - Definiciones, tipos de grafos
 - Caminos
@@ -39,3 +39,10 @@
 - Cliques y conjuntos independientes
 - Grafos bipartitos
 - Emparejamientos
+
+## Sistema de evaluación
+
+- 2 exámenes parciales + examen final (ambos temas hay que aprobarlos)
+  - computabilidad y lenguajes
+  - teoría de grafos
+- 
