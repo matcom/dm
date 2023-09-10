@@ -10,6 +10,8 @@
 
 ## Resumen de los contenidos del curso
 
+### Autómatas y Computabilidad
+
 - Autómatas
   - Finitos deterministas y no-deterministas
   - De pila
@@ -23,15 +25,17 @@
   - Máquina universal de Turing
   - Lenguaje universo
   - Halting problem
-- Fundamentos de Grafos
-  - Definiciones, tipos de grafos
-  - Caminos
-  - Subgrafos, componentes conexas y fuertemente conexas
-  - Árboles
-  - Grafos hamiltoneanos y eulerianos
-  - Coloreo
-  - Grafos planares
-  - Torneos
-  - Cliques y conjuntos independientes
-  - Grafos bipartitos
-  - Emparejamientos
+
+ ### Teoría de grados
+
+- Definiciones, tipos de grafos
+- Caminos
+- Subgrafos, componentes conexas y fuertemente conexas
+- Árboles
+- Grafos hamiltoneanos y eulerianos
+- Coloreo
+- Grafos planares
+- Torneos
+- Cliques y conjuntos independientes
+- Grafos bipartitos
+- Emparejamientos
