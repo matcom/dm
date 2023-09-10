@@ -26,12 +26,12 @@
 - Fundamentos de Grafos
   - Definiciones, tipos de grafos
   - Caminos
-  - Componentes conexas y fuertemente conexas
+  - Subgrafos, componentes conexas y fuertemente conexas
   - Árboles
-  - Grafos bipartitos
-  - Emparejamientos
   - Grafos hamiltoneanos y eulerianos
+  - Coloreo
   - Grafos planares
   - Torneos
   - Cliques y conjuntos independientes
-  - Coloreo
+  - Grafos bipartitos
+  - Emparejamientos
