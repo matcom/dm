@@ -10,11 +10,11 @@
 
 4. Dq de un conjunto de premisas logicas donde existe una contradiccion se puede deducir cualquier proposicion.
 
-5. Dq, dado $M=\{ x|x \notin x\}$, $M$ no es un conjunto.
+5. Dq, dado que $M$ contiene a todos los conjuntos que no se contienen a si mismos, $M$ no es un conjunto.
 
-6. Dq, dado un árbol $T$, si existe un camino de $u$ a $v$ entonces existe un camino simple de $u$ a $v$.
+6. Dq, dado un grafo $G$, si existe un camino de $u$ a $v$ entonces existe un camino simple de $u$ a $v$.
 
 7. Se quiere dar un vuelto de una cantidad de dinero $x, x > 8$. Dq es posible realizarlo usando sólo denominaciones de billetes de $3$ y $5$ pesos. 
 
-8. Dq, dado un árbol $T$, y un camino $P$ de $a$ a $b$ y un camino $Q$ de $b$ a $a$, con $P \neq Q$, entonces existe un ciclo en $T$.
+8. Dq, dado un grafo $G$, y un camino $P$ de $a$ a $b$ y un camino $Q$ de $a$ a $b$, con $P \neq Q$, entonces existe un ciclo en $T$.
 
