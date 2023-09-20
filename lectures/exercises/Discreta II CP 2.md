@@ -11,36 +11,15 @@
 
 3. Sea Q el conjunto de todas las listas no vacías de enteros positivos y L el conjunto de todas las cadenas sobre el alfabeto {0, 1}. Se define la función $f: Q \rightarrow L$ tal que:
    
-    $f(l) = (1)^{a_1}0(1)^{a_2}0 \ldots 0(1)^{a_k}$ donde $l = \{a_1, a_2, ..., a_k\} \in Q$
+    $f(l) = (1)^{a_1}0(1)^{a_2}0 \ldots 0(1)^{a_k}$ donde $l = \{ a_1, a_2, ..., a_k \} \in Q$
 
-   Por ejemplo, $f(2, 3, 2) = "110111011"$.
+   Por ejemplo, $f(2, 3, 2) = 110111011$.
    
    Construya el autómata que reconoce el lenguaje de las cadenas que pertenecen a la imagen de f.
 
 4. Determine el conjunto de longitudes posibles de las cadenas que reconoce el siguiente automata:
 
-   ```mermaid
-      graph LR
-      ini[*]
-      ini-->q0
-      q0((q0))
-      q1((q1))
-      q2((q2))
-      q3((q3))
-      q4((q4))
-      q5((q5))
-      q6((q6))
-      qf(((q7)))
-      q0-- a -->q1
-      q1-- a -->q0
-      q1-- b -->q2
-      q1-- c -->q3
-      q3-- a -->q5
-      q2-- a,c -->q4
-      q5-- a -->q6
-      q4-- b -->q6
-      q6-- c -->qf
-   ```
+   ![automata](images/automata-cp2-ex4.png)
 
 5. Construya el autómata que reconozca dado un camino, si este representa un ciclo simple en el siguiente grafo:
    
