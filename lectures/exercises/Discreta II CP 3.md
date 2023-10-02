@@ -30,5 +30,15 @@
    4. Todas las direcciones de correo electrónico.
    5. Todos los posibles comentarios en un lenguaje de programación.
    6. Todos los path de un archivo de linux.
+5. La Distancia de Hamming entre dos cadenas de bits $x$ y $y$ (notación: H($x$,$y$)) es el número de lugares en que estas difieren. Por ejemplo, H(011,110) = 2. (Si |$x$| != |$y$|, entonces la distancia de Hamming es infinita.) Si $x$ es una cadena y $A$ es un conjunto de cadenas, la distancia de Hamming entre $x$ y $A$ es la distancia de $x$ a la cadena de $A$ más cercana:
+
+   $H(x,A)\stackrel{def}{=} \min \limits_{v\in A} H(x,y)$
+
+   Para cualquier conjunto $A$ $\subseteq$ {$0,1$}* y $k \geq 0$, se define:
+
+   $ N_k(A) \stackrel{def}{=} \{x | H(x,A) \leq k\} $
+
+   El conjunto de cadenas con distancia de Hamming al menos $k$ de $A$. Por ejemplo $N_0$({000}) = {000}, $N_1$({000}) = {000,001,010,100}, y $N_2$({000}) = $\{0,1\}³$ - {111}.
+   Demuestre que si $A \subseteq$ {0,1}* es regular, entonces también lo es $N_2(A)$.
 
 ¹ https://es.wikipedia.org/wiki/Estrella_de_Kleene
