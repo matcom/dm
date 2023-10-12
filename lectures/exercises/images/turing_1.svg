@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="143pt" height="152pt" viewBox="0.00 0.00 143.39 151.57">
+<g id="graph0" class="graph" transform="translate(4,147.57000732421875) scale(1)" data-name="G">
+
+<polygon fill="white" stroke="none" points="-4,4 -4,-147.57 139.39,-147.57 139.39,4 -4,4" style=""/>
+<!-- S -->
+<g id="node1" class="node" pointer-events="visible" data-name="S">
+
+<ellipse fill="lightblue" stroke="black" cx="20.69" cy="-122.88" rx="20.89" ry="20.89" style=""/>
+<text text-anchor="middle" x="20.69" y="-118.68" font-family="Times,serif" font-size="14.00" style="">q1</text>
+</g>
+<!-- S&#45;&gt;S -->
+<g id="edge1" class="edge" data-name="S-&gt;S">
+
+<path fill="none" stroke="black" d="M40.2,-131.4C50.29,-132.71 59.39,-129.87 59.39,-122.88 59.39,-118.73 56.18,-116.04 51.46,-114.82" style=""/>
+<polygon fill="black" stroke="black" points="51.85,-111.33 41.72,-114.42 51.57,-118.33 51.85,-111.33" style=""/>
+<text text-anchor="middle" x="79.47" y="-118.68" font-family="Times,serif" font-size="14.00" style=""> v:v:+1</text>
+</g>
+<!-- S2 -->
+<g id="node2" class="node" pointer-events="visible" data-name="S2">
+
+<ellipse fill="lightblue" stroke="black" cx="20.69" cy="-24.69" rx="20.89" ry="20.89" style=""/>
+<text text-anchor="middle" x="20.69" y="-20.49" font-family="Times,serif" font-size="14.00" style="">q2</text>
+</g>
+<!-- S&#45;&gt;S2 -->
+<g id="edge2" class="edge" data-name="S-&gt;S2">
+
+<path fill="none" stroke="black" d="M20.69,-101.95C20.69,-89.01 20.69,-71.87 20.69,-57.12" style=""/>
+<polygon fill="black" stroke="black" points="24.19,-57.44 20.69,-47.44 17.19,-57.44 24.19,-57.44" style=""/>
+<text text-anchor="middle" x="39.16" y="-71.59" font-family="Times,serif" font-size="14.00" style=""> *:*:-1</text>
+</g>
+<!-- S3 -->
+<g id="node3" class="node" pointer-events="visible" data-name="S3">
+
+<ellipse fill="lightblue" stroke="black" cx="110.69" cy="-24.69" rx="20.86" ry="20.86" style=""/>
+<ellipse fill="none" stroke="black" cx="110.69" cy="-24.69" rx="24.89" ry="24.89" style=""/>
+<text text-anchor="middle" x="110.69" y="-20.49" font-family="Times,serif" font-size="14.00" style="">q2</text>
+</g>
+<!-- S2&#45;&gt;S3 -->
+<g id="edge3" class="edge" data-name="S2-&gt;S3">
+
+<path fill="none" stroke="black" d="M42.02,-24.69C51.57,-24.69 63.09,-24.69 73.96,-24.69" style=""/>
+<polygon fill="black" stroke="black" points="73.85,-28.19 83.85,-24.69 73.85,-21.19 73.85,-28.19" style=""/>
+<text text-anchor="middle" x="63.69" y="-31.89" font-family="Times,serif" font-size="14.00" style="">a:a:0</text>
+</g>
+</g>
+</svg>
