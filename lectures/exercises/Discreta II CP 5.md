@@ -15,11 +15,16 @@ a)
 **b)
 ![turing_3.svg](./images/turing_3.svg)
 
-3 - Para cada uno de estos lenguajes construya una maquina de turing que los reconozca\\
-a) $0^{n}1^{n}$\\
-*b) $ww^{R}$\\
-c) Cualquier Lenguaje Regular\\
-*d) Lenguaje de las cadenas Palindromas\\
+3 - Para cada uno de estos lenguajes construya una maquina de turing que los reconozca
+
+a) $0^{n}1^{n}$
+
+*b) $ww^{R}$
+
+c) Cualquier Lenguaje Regular
+
+*d) Lenguaje de las cadenas Palindromas
+
 *f) $1^{n}$ con $n$ primo
 
 4 - Construya una maquina de turing cuya funcion sea:
@@ -32,12 +37,16 @@ x = {a,b,c}\*.
 *c) Computar $\left \lfloor \frac{a}{b} \right \rfloor$ en unario
 
 
-5 - Construya una maquina de turing para computar \\
+5 - Construya una maquina de turing para computar 
+
 $g(x_1, x_2, ..., x_n) = min(x_1, x_2, ..., x_n)$. La entrada se codifica como $f(x_1, x_2, ..., x_n)$, ver CP 2.
 
-6 - Demuestre que las siguientes maquinas son equivalentes a una maquina de turing:\\
-a) Maquina de Turing Multipista\\
-b) Maquina de Turing Multicinta\\
-c) Maquina de Turing Bidimensional \\
+6 - Demuestre que las siguientes maquinas son equivalentes a una maquina de turing:
+
+a) Maquina de Turing Multipista
+
+b) Maquina de Turing Multicinta
+
+c) Maquina de Turing Bidimensional 
 
 
