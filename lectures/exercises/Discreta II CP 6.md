@@ -20,7 +20,7 @@
 7. Demuestre que $G$ existe una cadena cerrada de Euler si y sólo si todos sus vértices tienen grado par.
 8. Demuestre que $G$ tiene una cadena de Euler no cerrada si y sólo si tiene exactamente dos vertices de grado impar.
 9. Demuestre que si para todo par de vértices no adyacentes $v,w$ se cumple que $deg(v)+deg(w) >= n-1$, entonces $G$ es conexo.
-10. Demuestre que si $\Delta$(G) + $\delta(g)$ $<= n-1$, entonces $D(G) <= 4$.
+10. Demuestre que si $\Delta$(G) + $\delta(g)$ $<= n-1$, entonces $\Delta(G) <= 4$.
 11. Demuestre que la cantidad de componentes conexas de $G$ es mayor igual que $n - m$.
 12. Demuestre que en todo grafo con al menos 6 vértices, entonces $\alpha >= 3$ o $\omega >= 3$
 13. Demuestre que $\sum_{i \in V(G)} {deg(i)\choose2} >= {n \choose 2}$
