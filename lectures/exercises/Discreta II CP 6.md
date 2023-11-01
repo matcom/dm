@@ -10,7 +10,7 @@
 4. Demuestre que las siguientes definiciones son equivalentes:
     1. $G$ es un grafo acíclico y conexo
     2. $G$ es acíclico y $|E| = n-1$
-    3. $G$ es conexo y $|E| = n-2$
+    3. $G$ es conexo y $|E| = n-1$
     4. $G$ es conexo pero si se suprime una arista cualquiera, deja de serlo
     5. $G$ no tiene ciclos, pero si se añade una lista entre vértices no adyacentes, entonces se crea exactamente uno
     6. Todo par de vértices de G está conectado por exactamente un camino simple.
