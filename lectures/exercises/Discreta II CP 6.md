@@ -15,25 +15,25 @@
     5. $G$ no tiene ciclos, pero si se añade una lista entre vértices no adyacentes, entonces se crea exactamente uno
     6. Todo par de vértices de G está conectado por exactamente un camino simple.
 
-5. Demuestre que si $C$ es un clique e $I$ es un conjunto independiente, la cardinalidad de la intersección de $C$ e $I$ es $<= 1$.
+5. Demuestre que si $C$ es un clique e $I$ es un conjunto independiente, $|C\cap I|\leq 1$.
 6. Demuestre que $G$ es bipartito si y sólo si en $G$ no existen ciclos de longitud impar.
 7. Demuestre que $G$ existe una cadena cerrada de Euler si y sólo si todos sus vértices tienen grado par.
 8. Demuestre que $G$ tiene una cadena de Euler no cerrada si y sólo si tiene exactamente dos vertices de grado impar.
-9. Demuestre que si para todo par de vértices no adyacentes $v,w$ se cumple que $deg(v)+deg(w) >= n-1$, entonces $G$ es conexo.
-10. Demuestre que si $\Delta$(G) + $\delta(G)$ $<= n-1$, entonces $\Delta(G) <= 4$.
+9. Demuestre que si para todo par de vértices no adyacentes $v,w$ se cumple que $deg(v)+deg(w) \geq n-1$, entonces $G$ es conexo.
+10. Demuestre que si $\Delta$(G) + $\delta(g)\leq n-1$, entonces $D(G) \leq 4$.
 11. Demuestre que la cantidad de componentes conexas de $G$ es mayor igual que $n - m$.
-12. Demuestre que en todo grafo con al menos 6 vértices, entonces $\alpha >= 3$ o $\omega >= 3$
-13. Demuestre que $\sum_{i \in V(G)} {deg(i)\choose2} >= {n \choose 2}$
+12. Demuestre que en todo grafo con al menos 6 vértices, entonces $\alpha \geq 3$ o $\omega \geq 3$
+13. Demuestre que si $\sum_{i \in V(G)} {deg(i)\choose2} \geq {n \choose 2}$ G tiene un ciclo de tamaño exactamente 4.
 14. Demuestre que G es conexo o su complemento lo G.
 15. Demuestre que si $v$ es punto de articulación de un grafo G conexo, entonces al quitar $v$, la cantidad de componentes conexas es a lo
 sumo $deg(v) - 1$.
-16. Demuestre que si $\delta(G) <=3$ existe un ciclo de longitud par.
-17. Demuestre que si $n >= 9$, entonces $\alpha(G) >=4$ o $\omega(G) >=3$.
-18. Demuestre que si $m >= \frac{(n-1)*(n-2)}{2} +1$, entonces G es conexo.
+16. Demuestre que si $\delta(G) \geq 3$ existe un ciclo de longitud par.
+17. Demuestre que si $n \geq 9$, entonces $\alpha(G) \geq 4$ o $\omega(G) \geq 3$.
+18. Demuestre que si $m \geq \frac{(n-1)*(n-2)}{2} +1$, entonces G es conexo.
 19. Demuestre que todo arbol con vértices de grado $k$ tiene al menos $k$ vértices de grado 1.
 20. Demuestre que si G es un grafo sin vértices aislados que no tiene subgrafo inducido con exactamente 2 aristas, entonces G es un
 grafo completo.
-21. Demuestre que todo grafo $G$ contiene un subgrafo bipartito $G'$ tal que $|E(G')| >= \frac{|E(G)|}{2}$
+21. Demuestre que todo grafo $G$ contiene un subgrafo bipartito $G'$ tal que $|E(G')| \geq \frac{|E(G)|}{2}$
 
 ## Glosario
 
