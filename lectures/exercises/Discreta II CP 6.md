@@ -4,7 +4,7 @@
 
 1. Demuestre que en un grafo la cantidad de vértices de grado impar es par.
 2. Demuestre que para cualquier número de personas, no es posible que todas conozcan una cantidad distinta de personas.
-3. Demuestre que si $G$ y $H$ son isomorfos por un isomorfismo $F$, entonces el $deg(V(G)) = deg(f(V(H)))$.
+3. Demuestre que si $G$ y $H$ son isomorfos por un isomorfismo $f$, entonces el $deg(v)$ vértice de G es igual al $deg(f(v)$ vértice de H. 
     1. Demuestre que si dos grafos son isomorfos, entonces, tienen la misma cantidad de aristas.
 
 4. Demuestre que las siguientes definiciones son equivalentes:
