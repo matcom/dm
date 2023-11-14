@@ -18,4 +18,4 @@
 14. Pruebe que $K_{n,n+1}$ es no hamiltoniano para todo $n\geq 1$.
 15. Sea $G$ un subgrafo abarcador de $K_{n,n}(n\geq 2)$ cuyas particiones son $V_1$ y $V_2$. Sean $u\in V_1$ y $v\in V_2$ tales que $d(u)+d(u)\gt n$. Pruebe que $G$ es hamiltoniano si solo si $G+uv$ también lo es.
 16. Pruebe que el grafo de Petersen es no hamiltoniano. 
-![Alt text](image.png)
+![grafo de Petersen](image.png)
