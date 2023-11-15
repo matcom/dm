@@ -7,7 +7,7 @@
 3. Pruebe que si una arista es insertada entre 2 vértices no adyacentes de un árbol, el grafo resultante contiene exactamente un ciclo.
 4. Pruebe que todo árbol en un grafo bipartito.
 5. Sea $G$ bipartito y regular de grado $k$, entonces existen $k$ emparejamientos perfectos disjuntos.
-6. Sea $G$ de orden $n$ tal que para todos $v,w$ no adyacentes $d(v)+d(w)\geq n-1$. Pruebe que existe un emparejamiento perfecto en $G$.
+6. Sea $G$ de orden $n$ (par), tal que para todos $v,w$ no adyacentes $d(v)+d(w)\geq n-1$. Pruebe que existe un emparejamiento perfecto en $G$.
 7. Pruebe que un árbol tiene a lo sumo un emparejamiento perfecto.
 8. $G$ tiene una cadena de Euler si y solo si exactamente 2 nodos son de degree impar.
 9. La longana más larga posible en el dominó es de 51 fichas
