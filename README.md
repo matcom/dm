@@ -7,7 +7,7 @@ Notas de conferencias, ejercicios, y exámenes, de las asignaturas Matemática D
 
 ## Cps
 
-1. [Razonamiento básico](lectures/exercises/basics.md)
+1. [cp-0](https://github.com/matcom/dm/blob/main/cps/dm_I/cp1MD1.md)
 
 # MD:II
 
