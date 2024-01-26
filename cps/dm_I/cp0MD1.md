@@ -1,7 +1,7 @@
 # Matemática Discreta I 
 ## Clase Práctica \#0 
 
-- Demuestre que si $n$ tiene divisores, distintos de $1$, entonces tiene al menos un divisor menor que $\sqrt{n}$.
+- Demuestre que si $n$ tiene divisores, distintos de $1$, entonces tiene al menos un divisor menor o iguales que $\sqrt{n}$.
 
 - Demuestre que existen infinitos números primos.
 
