@@ -1,0 +1,190 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem*{pbo}{Principio del Buen Ordenamiento}
+\newtheorem*{pim}{Principio de Inducción Matemática}
+\newtheorem*{psm}{Principio de la Suma}
+\newtheorem*{ppr}{Principio del Producto}
+\newtheorem*{pie}{Principio de Inclusión - Exclusión}
+
+\newtheorem*{teo}{Teorema}
+
+\newtheorem*{cor}{Corolario}
+
+\newtheorem*{dem}{Demostración}
+
+\newtheorem*{dfn}{Definición}
+
+\newtheorem*{lem}{Lema}
+
+\newtheorem*{prp}{Propiedades}
+
+\newtheorem*{pro}{Proposición}
+
+% Title Page
+\title{Conferencia 5 - Combinatoria}
+\author{}
+
+
+
+\begin{document}
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+
+
+\begin{dfn}
+  Sea $N_n$ el conjunto $N_n=\{1,2,\dots,n\}$, se dice que $A$ tiene $n$ elementos o que $|A|=n$ si existe $f:N_n\rightarrow A$ biyectiva. Si $A$ es no vacío o tiene $n$ elementos se dices que es un conjunto finito
+\end{dfn}
+
+\begin{dfn}
+ Dos conjuntos $A$ y $B$ se dice coordinables y se denota $A~B$ si existe $f:A\rightarrow B$ biyectiva
+\end{dfn}
+
+Nota
+
+Si $A$ es  un conjunto no vacío y tiene cardinalidad $n$ entonces  $A$ es coordinable con $N_n$
+
+\begin{teo}
+ Si $A$ es coordinable con $B$ entonces $|A|=|B|$
+\end{teo}
+
+
+\textbf{Demostración}
+
+Si $|A|=n$ 
+
+como $A$ finito entonces existe $f:N_n\rightarrow A$ biyectiva
+
+y como es $A$ es coordinable con $B$ existe $g:A\rightarrow B$ biyectiva
+
+luego si se tiene la compuesta $g\circ f: N_n\rightarrow B$ esta es biyectiva pues $f$ y $g$  son biyectvas por lo que $B$ es coordinable con $N_n$ y tiene cardinalidad $n$ con lo que $|B|=n$
+
+\textbf{Ejemplo}
+ 
+ En un torneo con ganador único donde comienzan $n$ jugadores ¿cuántos partidos se realizan si se descalifica al que pierde un parido?
+ 
+ Se tiene $A$ como el conjunto de los juegos que se efectúan
+ 
+ y se tiene $B$ como el conjunto de los jugadores descalificados
+ 
+ Se tiene  $f:A\rightarrow B$ donde $<x,y>\in f$ si $y$ pierde en el partido $x$
+ 
+ Es fácil ver que $f$ es biyectiva y, por tanto, $A$ es coordinable con $b$:
+ 
+ $f$ es inyectiva porque para dos partidos diferentes son descalificados judadores diferentes
+ 
+ $f$ es sobrectiva porque todos los jugados son descalificados producto de un partido
+ 
+ Como son $n$ jugadores y hay un solo ganador entonces hay $n-1$ jugadores descalificados
+ 
+ Luego $|B|=n-1$ y por tanto como $|A|=|B|$ entonces$|A|=n-1$
+
+ 
+\begin{teo}
+ Sean $A$ y $B$ conjuntos finitos, si $A\cap B = \varnothing$ entonces \\$|A\cup B|=|A|+|B|$
+\end{teo}
+
+\begin{pie}
+Permite calcular la cardinalidad de la unión de varios conjuntos\\
+ $|\bigcup^n_{i=1}A_i|=\sum^n_{k=1}(-1)^{k+1}|\cap A_i|_{i\in I\subseteq\{1,2,\dots,n\},|I|=k}$
+\end{pie}
+
+\textbf{Ejemplo}
+
+De 200 estudiantes 50 toman el curso de matemáticas discretas, 140 el curso de economía y 24 ambos. Como ambos cursos programaron exámenes para el día siguiente, sólo los estudiantes que no esten en ninguno de estos curso podrán ir a la fiesta de la noche. Se quiere ver cuántos estudiantes iran a la fiesta.
+
+Si $A_1$ es el conjunto que estudia discreta y $A_2$ el de los que estudian economía entonces $|A_1\cup A_2|=50+140-24=166$ por lo que irán a la fiesta $200-166=34$
+ 
+
+\begin{psm}
+ Si un suceso $A$ puede ocurrir de $n$ maneras y un suceso $B$ puede ocurrir de $m$ maneras y $A$ y $B$ no pueden ocurrir simultáneamente, entonces el suceso $A\vee B$ sucede de $n + m$ maneras diferentes.
+\end{psm}
+
+\begin{ppr}
+ Si un primer objeto puede escogerse entre $n$ posibles, y después un segundo objeto puede escogerse entre $m$ posibles, entonces simultáneamente ambos objetos pueden escogerse de
+ $nm$ maneras distintas.
+\end{ppr}
+
+
+\textbf{Ejemplo}
+
+\begin{itemize}
+ \item ¿Cuántos elementos tiene el conjunto potencia de $|A|$? \\
+ Cómo hay $|A|$ elementos entonces cada uno de estos puede aparecer o no en cada subconjunto de $A$, que son los elementos de $2^A$, luego la cantidad de subconjuntos sería $2*2*...*2$ donde se múltiplican $|A|$ veces, por tanto $|2^A|=2^{|A|}$
+ 
+ \item ¿Cuántos números de 7 dígitos hay que comienzan con 428 y terminan en 3 o 6?\\
+  Se tiene $428D_4D_3D_2D_1$ y para $D_4$, $D_3$ y $D_2$ hay 10 posibilidades (10 dígitos) mientras que para $D_1$ solo hay 2 posibilidades, luego hay\\ 
+ $10*10*10*2=2000$ números posibles
+ 
+ \item ¿Cuántos divisores tiene $n$?\\
+ $n=p^{e_1}_1 p^{e_2}_2 \dots p{e_k}_k$ luego tiene $(e_1+1)(e_2+1)\dots(e_k+1)$ divisores\\
+ y si fueran divisores propios serían $(e_1+1)(e_2+1)\dots(e_k+1)-2$ 
+ 
+\end{itemize}
+
+
+
+\begin{dfn}
+ Una \textbf{permutación} de $n$ objetos es una ordenación de estos en fila. Se denota por $P(n)$ o por $P_n$  
+\end{dfn}
+
+\begin{teo}
+ Si se tienen $n$ objetos diferentes entonces $P_n = n!$
+\end{teo}
+
+\textbf{Ejemplo}
+ Si se va a formar un comité que involucra presidente, tesorero y secretario, habiendo 3 candidatos a, b, c ; cuando se elige por sorteo los cargos sucesivamente, hay $3!=6$ posibilidades u ordenaciones: abc, acb, bac, bca, cab, cba.
+
+\begin{dfn}
+ Una \textbf{$k$-permutación}~(conocido como variaciones) de un conjunto $S$ es una secuencia de $k$ elementos distintos de $S$. Se denota $P(n,k)$, o por $V^n_k$ 
+\end{dfn}
+
+\begin{teo}
+ $V^n_k=\frac{n!}{(n-k)!}$
+\end{teo}
+
+\textbf{Ejemplo}
+ Si se va a formar un comité que involucra presidente, tesorero y secretario, habiendo 10 candidatos; cuando se elige por sorteo los cargos sucesivamente, hay $\frac{10!}{(10-3)!=\frac{10!}{7!}}=10*9*8=720$ posibilidades u ordenaciones
+
+%\begin{dfn}
+% Una \textbf{permutación con repetición} es una ordenación de $n$ objetos donde pueden haber objetos de $k$ tipos diferentes, con $k\leq n$ y donde $n_i$, $i\leq k \leq k$,  indica la cantidad de objetos de tipo $i$ tal que $\sum^k_{i=1}n_i=n$. Se denota $P^{n_1,n_2,\dots,n_k}_n$
+%\end{dfn}
+
+%\begin{teo}
+% Si se tienen $n$ objetos de $k$ tipos diferentes entonces\\ 
+% $P^{n_1,n_2,\dots,n_k}_n=\frac{n!}{n_1!n_2!\dots n_k!}$
+%\end{teo}
+
+
+\begin{dfn}
+ Sean $n$ objetos, una combinación de $n$ en $k$ es un subconjunto de $k$ objetos tomados de los $n$. Se denota por $C(n,k)$ o $C^n_k$ o ${n}\choose{k}$  
+\end{dfn}
+
+\begin{teo}
+ ${n}\choose{k}$$=\frac{n!}{k!(n-k)!}$  
+\end{teo}
+
+
+\textbf{Ejemplo}
+
+¿Cuántos rectángulos hay en un tablero de $m\times n$?
+
+Son $n+1$ líneas verticales y $m+1$ líneas horizontales
+
+Entonces hay que escojer dos líneas verticales y dos líneas horizontales por cada posible rectángulo. En estos casos no importa el orden, por tanto son combinaciones de 2.
+
+Entonces sería ${n+1}\choose{2}$${m+1}\choose{2}$
+
+
+
+
+
+
+
+\end{document}          
