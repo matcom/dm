@@ -1,0 +1,160 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem*{pbo}{Principio del Buen Ordenamiento}
+\newtheorem*{pim}{Principio de Inducción Matemática}
+\newtheorem*{psm}{Principio de la Suma}
+\newtheorem*{ppr}{Principio del Producto}
+\newtheorem*{pie}{Principio de Inclusión - Exclusión}
+
+\newtheorem*{teo}{Teorema}
+
+\newtheorem*{cor}{Corolario}
+
+\newtheorem*{dem}{Demostración}
+
+\newtheorem*{dfn}{Definición}
+
+\newtheorem*{lem}{Lema}
+
+\newtheorem*{prp}{Propiedades}
+
+\newtheorem*{pro}{Proposición}
+
+% Title Page
+\title{Conferencia 6 - Combinatoria}
+\author{}
+
+
+
+\begin{document}
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+
+\textbf{Binomio de Newton}
+
+
+$(a+b)^n=\sum^n_{k=0}\,$${n}\choose{k}$$\, a^{n-k}b^k$\\
+
+${n}\choose{k}$ se conocen como coeficientes binomiales\\
+
+\textbf{Propiedades de los Coeficientes}
+
+\begin{enumerate}
+ \item ${n}\choose{k}$$=$${n}\choose{n-k}$
+ 
+ \textbf{Demostración}
+ 
+ ${n}\choose{k}$$=\frac{n!}{k!(n-k)!}$  
+ 
+ ${n}\choose{n-k}$$=\frac{n!}{(n-k)!(n-(n-k))!}=\frac{n!}{(n-k)!(n-n+k))!}=\frac{n!}{(n-k)!(k))!}$  
+ 
+ \item ${n}\choose{k}$$=$${n-1}\choose{k}$$+$${n-1}\choose{k-1}$
+ 
+ \textbf{Demostración - 1}
+ 
+ ${n}\choose{k}$ es la cantidad de subconjuntos de tamaño $k$ que pueden obtenerse de un conjunto con cardinalidad $n$.
+ 
+ Esta cantidad es también igual a la cantidad de subconjuntos de tamaño $k$ en la que no aparece un elemento $a_i$ más la cantidad de conjuntos del mismo tamaño en los que sí aparece.
+ 
+ La cantidad de conjuntos en los que no aparece $a_i$ es igual a ${n-1}\choose{k}$
+ 
+ La cantidad de conjuntos en los que sí aparece $a_i$ es igual a ${n-1}\choose{k-1}$
+ 
+ Luego ${n}\choose{k}$$=$${n-1}\choose{k}$$+$${n-1}\choose{k-1}$
+ 
+ \textbf{Demostración - 2}
+ 
+ Desarrollando tanto ${n-1}\choose{k}$ como ${n-1}\choose{k-1}$ y luego se suman y se tiene
+ ${n}\choose{k}$
+ 
+ \item ${n}\choose{k}$$/$${n}\choose{k-1}$$=\frac{n-k+}{k}$ para $1\leq k \leq n$\\
+ 
+ o lo que es lo mismo $k$${n}\choose{k}$$=(n-k+1)$${n}\choose{k-1}$
+ 
+ \textbf{Demostración}
+ 
+ Se desarrolla ${n}\choose{k}$ y se desarrolla ${n}\choose{k-1}$ y se divide el primero entre el segundo y el resultado es $\frac{n-k+1}{k}$
+ 
+ \item ${k}\choose{k}$$+$${k+1}\choose{k}$$+$${k+2}\choose{k}$$+\dots +$${n}\choose{k}$$=$${n+1}\choose{k+1}$\\ 
+ o lo que es lo mismo $\sum^n_{j=k}$${j}\choose{k}$$=$${n+1}\choose{k+1}$\\\\
+ 
+ \textbf{Demostración}
+ 
+ Se desarrolla ${n+1}\choose{k+1}$ como ${n}\choose{k}$$+$${n}\choose{k+1}$
+ 
+ luego se desarrolla ${n}\choose{k+1}$ como ${n-1}\choose{k}$$+$${n-1}\choose{k+1}$
+ 
+ y así sucesivamente hasta llegar al término ${k+2}\choose{k+1}$ que se desarrolla como 
+ 
+ ${k+1}\choose{k}$$+$${k+1}\choose{k+1}$ y ${k+1}\choose{k+1}$ es igual a ${k}\choose{k}$
+ 
+\end{enumerate}
+
+\textbf{Ejemplo}
+
+¿De cuántas formas diferentes se puede escoger un grupo de 5 personas de un total de 10 donde una de las 5 es líder?\\
+
+Vía 1:
+
+Hay ${10}\choose{5}$ personas posibles conjuntos de 5 personas, y como en cada conjunto cada una de las personas puede ser líder, entonces se tiene $5$${10}\choose{5}$\\
+
+Vía 2:
+
+Tomemos todos los subconjuntos posibles en los que no hay líderes aún ${10}\choose{4}$, entonces cada uno de ellos puede ser liderado por una de las personas que no está en el conjunto, que son $10-4$ por lo que se tiene $6$${10}\choose{4}$\\
+
+Noten que si se generaliza el problema a un grupo de tamaño $k$ de un total de $n$ posibles dónde cada uno de los miembros puede liderar, entonces se tiene $k$${n}\choose{k}$$=(n-k+1)$${n}\choose{k-1}$
+
+\begin{dfn}
+ Un multiconjunto es el  par $<A,m>$ donde $A$ es un conjunto y $m$ es una función $m:A\rightarrow \mathbb{N}$. 
+\end{dfn}
+
+Se dice que para cada $a$ de $A$ la multiplicidad de $a$ es el número $m(a)$.\\
+
+Si el conjunto $A$ es finito entonces el tamaño o longitud del multiconjunto $<A,m>$ es la suma de todas las multiplicidades de los elementos de $A$,\\ o sea, $\sum_{a\in A}m(a)$\\
+
+Un submulticonjunto $<B,n>$ del multiconjunto $<A,m>$ cumple que $B\subseteq A$ y $n:B\rightarrow \mathbb{N}$ tal que $n(x)\leq m(x)$ para todo $x\in B$ 
+
+\begin{teo}
+ Sea un multiconjunto $N$ con $n$ objetos donde hay $n_1$ objetos de tipo 1, $n_2$ objetos de tipo 2 y así hasta $n_k$ objetos de tipo $k$ donde $n=\sum^k_{i=1}a_i$\\
+ Entonces el número de permutaciones distintas de $N$ es $\frac{n!}{n_1! n_2! \dots n_k!}$
+\end{teo}
+
+\textbf{Ejemplo}
+
+Pruebe que $k!^{(k-1)!}|(k!)!$\\
+
+Si se tiene un conjunto de $k!$ elementos donde hay $(k-1)!$ tipos diferentes y de cada tipo hay $k$ elementos entonces la cantidad de permutaciones distintas de este conjunto es\\
+
+$\frac{(k!)!}{k!k!\dots k!}=\frac{(k!)!}{k!^{(k-1}!}$ \\
+
+luego como el número de permutaciones es un número entero entonces $k!^{(k-1)!}|(k!)!$
+
+
+\begin{teo}
+ El número de formas de particionar un conjunto de $n$ elementos distintos en $k$ categorías diferentes de forma que haya $n_1$ objetos en la categoría 1, $n_2$ objetos en la categoría 2 y así hasta llegar a $n_k$ objetos en la categoría $k$, donde $\sum^k_{i=1}n_i$ es $\frac{n!}{n_1!n_2!\dots n_k!}$
+\end{teo}
+
+\textbf{Demostración}\\\\
+${n}\choose{n_1}$ cantidad de formas de asignar $n_1$ objetos a las categoría 1\\
+luego ${n-n_1}\choose{n_2}$ es la cantidad de formas de dar $n_2$ objetos a las categoría 2\\
+por tanto ${n}\choose{n_1}$${n-n_1}\choose{n_2}$${n-n_1-n_2}\choose{n_3}$$\dots$${n-n_1-n_2-\dots-n_k-1}\choose{n_k}$ sería el total de formas\\
+
+Cuando se desarrolla esta expresión se llega a $\frac{n!}{n_1!n_2!\dots n_k!}$
+
+\begin{teo}
+ El número de formas de particionar $n$ objetos iguales en $k$ categorías diferentes es ${n+k-1}\choose{k-1}$
+\end{teo}
+
+\textbf{Demostración}
+
+Este problema es equivalemte a tener una secuencia de $n+k-1$ elementos iguales y convertir a $k-1$ de estos elementos en separadores. Luego, la solución tenemos el conjuntos de todas las posiciones que tiene tamaño $n+k-1$ habría que obtener todas las posibles combinaciones de $k-1$ posiciones y esto es ${n+k-1}\choose{k-1}$
+
+
+\end{document}          
