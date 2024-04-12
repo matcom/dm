@@ -1,0 +1,305 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{xcolor}
+
+\newtheorem*{pbo}{Principio del Buen Ordenamiento}
+\newtheorem*{pim}{Principio de Inducción Matemática}
+\newtheorem*{psm}{Principio de la Suma}
+\newtheorem*{ppr}{Principio del Producto}
+\newtheorem*{pie}{Principio de Inclusión - Exclusión}
+\newtheorem*{ppa}{Principio del Palomar}
+
+\newtheorem*{teo}{Teorema}
+
+\newtheorem*{cor}{Corolario}
+
+\newtheorem*{dem}{Demostración}
+
+\newtheorem*{dfn}{Definición}
+
+\newtheorem*{lem}{Lema}
+
+\newtheorem*{prp}{Propiedades}
+
+\newtheorem*{pro}{Proposición}
+
+\color{blue!60!black}
+
+% Title Page
+\title{Conferencia 9 - Relaciones de Recurrencia}
+\author{}
+
+
+
+\begin{document}
+\maketitle
+
+
+
+%\begin{abstract}
+%\end{abstract}
+
+\begin{teo}
+ Sean $\{x_n\}$ y $\{y_n\}$ soluciones de la relación de recurrencia\\ 
+ $a_n=c_1a_{n-1}+c_2a_{n-2}$, entonces $Ax_n + By_n$  $(A,B\in\mathbb{R})$ es solución de la ecuación de recurrencia dada.
+\end{teo}
+
+\textbf{Demostración}
+
+Como $\{x_n\}$ es solución entonces $x_n=c_1x_{n-1}+c_2x_{n-2}$ y
+
+$Ax_n=Ac_1x_{n-1}+Ac_2x_{n-2}$
+
+Como $\{y_n\}$ es solución entonces $y_n=c_1y_{n-1}+c_2y_{n-2}$ y
+
+$By_n=Bc_1Y_{n-1}+Bc_2y_{n-2}$
+
+Entonces $Ax_n+By_n=c_1(Ax_{n-1}+BY_{n-1})+c_2(Ax_{n-2}+By_{n-2})$
+
+luego $Ax_n+By_n$ es solución
+
+\begin{teo}
+ Sean $q_1$ y $q_2$ soluciones de la ecuación $x^2-c_1x-c2=0$ tal que $q_1\neq q_2 \neq 0$, entonces $x_n$ es solución de la relación $a_n=c_1a_{n-1}+c_2a_{n-2}$ donde $x_n=Aq^n_1+Bq^n_2$
+\end{teo}
+
+\textbf{Demostración}
+
+Por el Teorema previo se tiene entonces que las sucesiones de la forma $x_n$ son solución
+
+Ahora se debe demostrar que cualquier solución es de esta forma, que es equivalente a demostrar que el sistema siguiente tiene una única solución
+
+$Aq_1+Bq_2=a_1$
+
+$Aq^2_1+Bq^2_2=a2$
+
+para ello el determinante debe ser distinto de 0 y se cumple pues
+
+$q_1q^2_2-q_2q^2_1=q_1q_2(q_2-q_1)\neq0$
+
+
+
+
+\begin{teo}
+ Sea $q\in\mathbb{R}$, $q\neq 0$ única raíz de la ecuación $x^2-c_1x-c2=0$, entonces la sucesión $nq^n$  es solución de la relación de recurrencia $a_n=c_1a_{n-1}+c_2a_{n-2}$
+\end{teo}
+
+\textbf{Demostración}
+
+$q$ es raíz de $x^2-c_1x-c2$ luego $q^2-c_1q-c2=0$
+
+como $q$ es raíz única por Vieta se tiene que $2q=c_1$ y $q^2=-c_2$
+
+entonces $a_n=2qa_{n-1}-q_2a_{n-2}$
+
+Luego 
+
+$nq^n=2q(n-1)q^{n-1}-q^2(n-2)q^{n-2}$
+
+$nq^n=2(n-1)q^{n}-(n-2)q^{n}$
+
+$nq^n=(2n-2-n+2)q^{n}$
+
+$nq^n=nq^n$
+
+
+\begin{teo}
+ Sea $q\in\mathbb{R}$ raíz de multiplicidad 2 de la ecuación $x^2-c_1x-c2=0$, entonces $x_n$ es solución de la relación de recurrencia $a_n=c_1a_{n-1}+c_2a_{n-2}$ si y solo si $x_n=Aq^n + Bnq^n$ 
+\end{teo}
+
+\textbf{Demostración}
+Ya se vio que las sucesiones de la forma $x_n$ son solución
+
+Ahora se debe demostrar que cualquier solución es de esta forma, que es equivalente a demostrar que el sistema siguiente tiene una única solución
+
+$Aq+Bq=a_1$
+
+$Aq^2+2Bq^2=a2$
+
+para ello el determinante debe ser distinto de 0 y se cumple pues
+
+$2q^3-q^3=q^3\neq0$
+
+\begin{dfn}
+ La ecuación característica de la relación de recurrencia\\ 
+ $a_n=c_1a_{n-1}+a-2c_{n-2}+\dots+c_ka_{n-k}$ es de la forma\\ 
+ $p(x)=x^k-c_1x^{k-1}+c_2x^{k-2}+\dots+c_k=0$
+\end{dfn}
+
+\begin{teo}
+ Si la ecuación característica de la relación de recurrencia homogénea $a_n=c_1a_{n-1}+a-2c_{n-2}+\dots+c_ka_{n-k}$ tiene $k$ raíces distintas, entonces 
+ $A_1q^n_1+A_2q^n_2+\dots+A_kq^n_k$ es solución de la relación, donde $q_i\, 1\leq i\leq k$ son raíces de la ecuación característica ($p(x)$). 
+\end{teo}
+
+\begin{teo}
+ Sea $q\in\mathbb{R}$ raíz de multiplicidad $t$, $t\geq1$, de la ecuación característica de la relación de recurrencia $a_n=c_1a_{n-1}+a-2c_{n-2}+\dots+c_ka_{n-k}$, entonces $q^n,\, nq^n,\, n^2q^n,\,\dots,n^{t-1}q^n $ son soluciones de la relación de recurrencia.
+\end{teo}
+
+\begin{teo}
+ Si la ecuación característica de la relación de recurrencia\\ 
+ $a_n=c_1a_{n-1}+a-2c_{n-2}+\dots+c_ka_{n-k}$ tiene raíces $q_1,q_2,\dots,q_t$ con multiplicidades $m_1, m_2,\dots, m_t$, entonces la relación de recurrencia tiene como solución
+ $P_1(n)q^n_1+P_2(n)q^n_2+\dots+P_t(n)q^n_t$ donde $P_i$ es un polinomio en $n$ de grado $m_i $
+\end{teo}
+
+\begin{dfn}
+ Una solución particular de una relación de recurrencia es una sucesión que cumple la recurrencia aunque no satisfaga las condiciones iniciales
+\end{dfn}
+
+\begin{teo}
+ Sea $P_n$ una solución particular de la relación de recurrencia\\ 
+ $a_n=c_1a_{n-1}+a-2c_{n-2}+\dots+c_ka_{n-k}+f(n)$ entonces la solución general de la misma es
+ $P_n+H_n$, donde $H_n$ es la solución de la relación homogénea asociada
+\end{teo}
+
+\textbf{Solución Particular}
+
+Una solución particular $P_n$ se puede encontrar en algunos casos:
+
+\begin{enumerate}
+ \item Si $f(n)=T_k(n)$~(polinomio de grado $k$) entonces $P_n=Q_k(n)$~(polinomio de grado $k$), excepto si 1 es raíz característica con multiplicidad $s$, en cuyo caso $P_n=n^sQ_k(n)$
+ \item Si $f(n)=ca^n$, $c\in\mathbb{R}$, entonces $P_n=qa^n$, $q\in\mathbb{R}$, excepto si $a$ es raíz característica con multiplicidad $s$, en cuyo caso $P_n=n^sqa^n$
+ \item Si $f(n)=a^nT_k(n)$ entonces $P_n=a^nQ_k(n)$ excepto si $a$ es raíz característica con multiplicidad $s$, en cuyo caso $P_n=n^sa^nQ_k(n)$
+
+\end{enumerate}
+
+
+\textbf{Solución General}
+
+La solución general se obtiene de la siguiente forma:
+
+\begin{enumerate}
+ \item Se calcula la solución general de la ecuación homogénea\\ 
+ $a_n=c_1a_{n-1}+a-2c_{n-2}+\dots+c_ka_{n-k}$ 
+ \item Se calcula una soluciín particular $P_n$ de la ecuación\\ 
+ $a_n=c_1a_{n-1}+a-2c_{n-2}+\dots+c_ka_{n-k}+f(n)$ 
+ \item La suma de ambas soluciones es una solución general de la ecuación\\
+ $a_n=c_1a_{n-1}+a-2c_{n-2}+\dots+c_ka_{n-k}+f(n)$ 
+ \item Se obtiene la solución correspondiente a las condiciones iniciales
+ \end{enumerate}
+ 
+\textbf{Ejemplo 1}
+
+Sea la recurrencia $a_0=5,\, a_1=1,\, a_n=a_{n-1}+6a_{n-2}-6n^2+26n-25$\\
+
+La relación homogénea tiene como polinomio característico a
+
+$P(x)=x^2-x-6$  cuyas raíces son $q_1=-2\, q-2=3$ por lo que la solución 
+
+general de la ecuación es  $a_n=A(-2)^n+B3^n$\\
+
+Como $f(n)=-6n^2+26n-25$ es un polinomio de grado 2 entonces 
+
+$P_n$ es de grado 2 por lo que se prueba una solución particular de la forma 
+
+$P_n=an^2+bn+c$ que sustituida en la relación de recurrencia da una 
+
+solución $a=1\, b=0\, c=0$ por lo que una solución particular es $P_n=n^2$\\
+
+Entonces la solución general de la no homogénea es $a_n=A(-2)^n+B3^n+n^2$
+
+Cómo las condiciones iniciales son $a_0=5=A+B$ y $a_1=1=-2A+3B+1$ 
+
+entonces $A=3$ y $B=2$ y la solución de la recurrencia es 
+
+$a_n=3(-2)^n+2*3^n+n^2$\\
+
+\textbf{Ejemplo 2}
+
+Sea la recurrencia lineal $a_0=0,\, a_1=1,\, a_n=a_{n-1}+6a_{n-2}+2^n$\\
+
+La homogénea tiene como polinomio característico $P(x)=x^2-x-6$ 
+
+cuyas raíces son $q_1=-2\, q-2=3$ por lo que la solución 
+
+general de la ecuación es  $a_n=A(-2)^n+B3^n$\\
+
+Como $f(n)=2^n$ y  $b=2$ no es raíz del polinomio característico entonces 
+
+se puede probar una solución particular de la forma $P_n=c2^n$
+
+que cuando se sustituye en la recurrencia da como solución $c=-1$
+
+luego una solución particular de la recurrencia es $P_n=-2^n$\\
+
+Entonces la solución general de la no homogénea es 
+
+$a_n=A(-2)^n+B3^n-2^n$ y como las condiciones iniciales son 
+
+$a_0=0=A+B-1$ y $A_1=1=-2A+3B-2$ entonces $A=0$ y $B=1$
+
+por lo que la solución de la recurrencia es $a_n=3^n-2^n$\\
+
+\textbf{Ejemplo 3}
+
+Sea la recurrencia lineal $a_0=0,\, a_1=1,\, a_n=a_{n-1}+6a_{n-2}+3^n$\\
+
+La homogénea tiene como polinomio característico $P(x)=x^2-x-6$ 
+
+cuyas raíces son $q_1=-2\, q-2=3$ por lo que la solución 
+
+general de la ecuación es  $a_n=A(-2)^n+B3^n$\\
+
+cuyas raíces son $q_1=-2\, q-2=3$ por lo que la solución 
+
+general de la ecuación es  $a_n=A(-2)^n+B3^n$\\
+
+Como $f(n)=3^n$ y  $b=3$ es raíz del polinomio característico  
+
+con  multiplicidad 1 entonces se prueba con una solución particular 
+
+de la forma $P_n=cn3^n$ que cuando se sustituye en la recurrencia 
+
+da $c=3/5$ entonces la solución particular queda $P_n=\frac{n3^{n+1}}{5}$\\
+
+Entonces la solución general de la no homogénea queda 
+
+$a_n=A(-2)^n+B3^n+\frac{n3^{n+1}}{5}$ que, evaluando en las condiciones iniciales,
+
+queda $a_0=0=A+B$ y $a_1=1=-2A+(\frac{3}{5}+B)3$ luego 
+
+$A=\frac{4}{25}$ y $B=-\frac{4}{25}$ por tanto la solución de la recurrencia es
+
+$a_n=\frac{4}{25}(-2)^n+(\frac{15n-4}{25})3^n$\\
+
+\textbf{Ejemplo 4}
+
+Sea la recurrencia $a_1=1.\, a_n=2A_{n-1}+1$~(Torres de Hanoi)\\
+
+La relación homogénea ($a_n=2A_{n-1}$) tiene como polinomio característico
+
+$P(x)=x-2$ cuya raíz es $q=2$ luego la solución general de la homogénea 
+
+es  $P_n=A2^n$\\
+
+Entonces se prueba una solución particular de tipo $P_n=c$ que sustituida 
+
+en la recurrencia da $c=-1$ luego la solución particular es $P_n=-1$
+
+entonces la solución general de la homogénea es $a_n=A2^n-1$
+
+como la conidición inicial es $a_1=1=2A-1$ entonces $A=1$
+
+por lo que la solución de la recurrencia es $a_n=2^n-1$
+
+
+\begin{teo}
+ Si el término no homogéneo de la relación de recurrencia de orden $k$ es de la forma $P_1(n)S^n_1+P_2(n)S^n_2+\dots+P_n(n)S^n_n$ entonces hay una solución particular $f_1(n)+f_2(n)+\dots+f_n(n)$ donde $f_i(n)$ es solución particular de la recurrencia de orden $k$  $a_n=c_1a_{n-1}+c_2a_{n-2}+\dots+c_ka_{n-k}+P_i(n)S^n_i$
+\end{teo}
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+ 
+
+\end{document}          
