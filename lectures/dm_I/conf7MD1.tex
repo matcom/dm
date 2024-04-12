@@ -125,7 +125,7 @@ $=$${t}\choose{R}$$\sum^{t-R}_{k=0}\, (-1)^k$${t-R}\choose{k}$$=0$
 
 \begin{teo}
   Sea $U$ un conjunto finito de elementos y $P$ un conjunto arbitrario de $m$ propiedades, el número de elementos de $U$ que poseen satisfacen al menos $R$ propiedades y $0\leq R < m$ es
- $\bar{N}(R) = \sum^{m-R}_{k=0}\, (-1)^k$${k+R-1}\choose{k-1}$$S_{k+R}$
+ $\bar{N}(R) = \sum^{m-R}_{k=0}\, (-1)^k$${k+R-1}\choose{R-1}$$S_{k+R}$
 \end{teo}
 
 
@@ -152,6 +152,15 @@ $=$${t}\choose{R}$$\sum^{t-R}_{k=0}\, (-1)^k$${t-R}\choose{k}$$=0$
  existen $i,j$ $i\neq j$ tal que $S(A_i)\equiv S(A_j) \, (n)$ luego $S(A_i) - S(A_j)\equiv 0 \, (n)$
  
  Entonces se toma el conjunto $A_i - A_j = A_{i-j}$ asumiendo, sin perdida de generalidad, que $|A_i|>|A_j|$, luego $S(A_{i-j})\equiv 0 \, (n)$
+ 
+ 
+ \textbf{Ejemplo 2}
+
+ Sea la relación de conocerse una relación mutua, entonces en un grupo de 6 personas hay al menos 3 personas que se conocen entre ellos o al menos 3 que no se conocen entre ellos.
+ 
+ Si se toman n casillas, entendiendo que si alguien está en la misma casilla se conocen entre ellos y si están en casillas diferentes no se conoce entre si. Para $n > 2$ cualquier distirbución significa que hay al menos tres que no conocen entre si. Ahora si $1\leq n \leq 2$
+ entonces, por el \textbf{Prinicipio del Palomar}, en una casilla como mínimo habrá 3 personas y entonces habría al menos 3 personas que se conocen entre si.
+ 
  
 
 \end{document}          
