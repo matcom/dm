@@ -89,11 +89,66 @@ O sea, $P(m)$ se cumple, lo que es una ¡contradicción!
 
 \textbf{Demostración}
 
+Se debe demostrar que si $a|b$ y $b|a$ entonces $a|c$
+
+Como $a|b$ entonces existe $q_1, q_1\in\mathbb{Z}$ tal que $b=aq_1$
+Del mismo modo, como $b|c$ existe $q_2, q_2\in\mathbb{Z}$ tal que $c=bq_2$
+
+Ahora, como $c=bq_2=aq_1q_2$ entonces tomando $q=q_1q_2\in\mathbb{Z}$ se tiene entonces que $c=a*q$ y, por tanto, $a|c$ 
+
 \begin{teo}
  \textbf{Algoritmo de la División}, sean $a,b$, $a\in\mathbb{Z}$, $b\in\mathbb{Z}$, $b > 0$, entonces existen $q,r$, $q\in\mathbb{Z}$, $r\in\mathbb{Z}$, únicos tales que $a = b*q+r$ donde $0\leq r < b$
 \end{teo}
 
 \textbf{Demostración}
+
+Por una parte, si $b|a$ entonces existe $q\in\mathbb{Z}$ tal que $a=bq$, luego, para este caso con $r=0$ se cumple que $a=bq+r$
+
+En el otro caso, si $b\nmid a$ entonces se puede construir el conjunto 
+
+$S=\{a-sb|a-sb>0, s\in\mathbb{Z}\}$, noten que este es el conjunto los posibles $r$.
+
+Ahora se debe demostrar que $S$ no es vacío.
+
+Veamos para $a>0$, entonces para este caso se toma $s=0$ y es evidente aquí que el conjunto posee al menos al elemeno $a$.
+
+Para $a<0$ tomamos a $s=a-1$ y por tanto
+
+$a-sb=a-(a-1)b$
+
+$a-sb=a-ab-b$
+
+$a-sb=a(1-b)+b$
+
+Como $a<0$ y $1-b<0$~(pues $b>0$) entonces $a(1-b)$ es mayor que 0 y, por tanto, $a(1-b)+b$ también lo es.
+
+Luego, sea $r$ el elemento mínimo de $S$ y sea $s=q$ se tiene que $a-bq=r$ entonces $a=bq+r$
+
+Ahora se debe demostrar que $0\leq r < b$.
+
+Se sabe que $r=a-sb>0$
+
+Supongamos que $r>b$ por tanto
+
+$r-b>0$ y como $r=a-bq$ entonces $r-b=a-qb-b>0$ y estos es lo mismo que $r-b=a-q(b+1)>0$, luego $r-b\in\mathbb{Z}$ y como $r>r-b$ esto es una contradicción pues $r$ era el elemento mínimo de $S$.
+
+Ahora se debe demostrar que $q$ y $r$ son únicos.
+
+Supongamos que existen $q_1,r_1$ tal que $q_1\neq q$ y $r_1\neq r$ y $a=bq_1+r_1=bq+r$
+
+Entonces $b(q-q1)=r_1-r$
+
+y como se cumple que $0\leq r < b$ y $0\leq r_1 < b$
+
+se tiene que $-b<r-r_1<b$ y, por tanto,
+
+$-b<b(q-q_1)<b$
+
+$-1<q-q_1<1$
+
+Como $q-q_1\in\mathbb{Z}$ ello implica que $q-q_1=0$ y $q=q_1$ y esto es una contradicción, luego $q y r$ son únicos.
+
+
 
 \begin{dfn}
  Sea $a\in\mathbb{Z}$ tal que $n>1$, se dice que $n$ es un \textbf{número primo} si y solo sus únicos divisores positivos son $1$ y $n$, de lo contrario se dice que $n$ es un \textbf{número compuesto}
@@ -109,14 +164,51 @@ O sea, $P(m)$ se cumple, lo que es una ¡contradicción!
 
 \textbf{Demostración}
 
+\textit{Demostración 1}
+
+Para $n>1$
+
+Si $n$ es primo ya está demostrado.
+
+Si $n$ no es primo es compuesto, entonces $n=ab$, $1<a,b<n$
+
+Si $a$ es primo o $b$ es primo ya queda demostrado.
+
+Sino $a$ es compuesto y es de la forma $a=a_1b_1$, $1<a_1,b_1<n$
+
+\dots
+
+\dots
+
+Como no existe descenso infinito para números positivos, este proceso debe terminar encontrando un númro $a_i$ primo que por transitividad divide a $n$.
+
+\textit{Demostración 2}
+
+Para $n=3$ se cumple.
+
+Luego hasta $n-1$, entonces si $n$ es primo ya, sino $n=ab$, $1<a,b<n$.
+
+Si $a$ es primo se cumple sino $a$ es compuesto y como $a<n$ entonces tiene divisores primos los que, por transitividad, también lo son de $n$.
+
+\textit{Demostración 3}
+
+Si $n$ es primo, ya está demostrado.
+Sino, se tiene $D=\{d|\, d|n, 1<d<n\}$ y sea $m$ el mínimo elemento de $D$. 
+
+Supongamos que $m$ es compuesto, luego existe $p$ primo tal que $p|m$, entonces por transitividad $p|n$ y $p<n$, y esto es un contradicción. Luego $m$ es primo.
+
 \begin{teo}
  Hay una infinita cantidad de números primos
 \end{teo}
 
 \textbf{Demostración}
 
+Si tenemos el conjunto de $k$ números primos distintos,$A=\{p_1,_2,\dots ,p_k|\}$
+entonces tomemos $m=p_1p_2\dots p_k+1$
 
+Ahora, si $p_i|m (1\leq i\leq k)$ como $p_i|p_1p_2\dots p_k$  entonces $p_i|1$ lo que es una contradicción.
 
+Luego, existe $q$ primo tal que $q|m$ y $q\not\in A$
 
 
 
