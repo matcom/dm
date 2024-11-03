@@ -35,7 +35,7 @@
 \begin{pbo}
 
 Todo subconjunto no vacío de $\mathbb{Z}_{+}$ contiene un elemento mínimo. O sea,
-$\exists(m)$ tal que $\forall(x) x\in A\wedge x\neq m$ se cumple que $m<x$
+$\exists(m)$ tal que $\forall(x)\, x\in A\wedge x\neq m$ se cumple que $m<x$
 \end{pbo}
 
 \begin{pim}
@@ -47,13 +47,15 @@ $\exists(m)$ tal que $\forall(x) x\in A\wedge x\neq m$ se cumple que $m<x$
  El Principio del Buen Ordenamiento es equivalente al Principio de Inducción Matemática
 \end{teo}
 
-\textbf{Demostración}
+\textbf{Demostración que  el Principio del Buen Ordenamiento implica al Principio de Inducción Matemática}
 
 Sea $C$ el conjunto de los números naturales que no cumplen $P$ y asumamos que $P\neq \varnothing$. Entonces, por el \textbf{Principio del Buen Ordenamiento} existe $m\in C$ tal que $m$ es el mínimo elemento de $C$.
 
 Ahora, asumamos a 1 como $n_0$, luego como $P(1)$ se cumple entonces $m>1$ por lo que $m-1\geq 1$.
 
 Como $m-1<m$ entonces $m-1\notin C$ por lo que $P(m-1)$ se cumple. Por tanto, como para todo $n>1$ se tiene que $P(n)\Rightarrow P(n+1)$ entonces dado que $P(m-1)$ se cumple se tendría que $P(m)$ también se cumple ¡lo que es una contradicción!
+
+\textit{Se deja propuesta la demostración que el Principio de Inducción Matemática implica el Principio del Buen Ordenamiento}
 
 \textbf{Ejemplo}
 Demuestre, utilizando el \textbf{Principio del Buen Ordenamiento}, que para toda $n$, $n\in\mathbb{Z}$, $n\geq 1$ se cumple que $\sum^n_{k=1}(2k-1)=n^2$
