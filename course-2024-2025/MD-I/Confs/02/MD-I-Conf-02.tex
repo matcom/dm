@@ -80,15 +80,15 @@ Sea $S=\{d|d>0,\, a_1x_1+a_2x_2+\dots+a_nx_n,\, \forall (i)\, 1\leq i \leq n\, x
 
 $S\neq \emptyset$
 
-Por el \textbf{Principio del Buen Ordenamiento~(PBO}) tomemos 
+Por el \textbf{Principio del Buen Ordenamiento~(PBO)} tomemos 
 
 $s=a_1s_1+a_2s_2+\dots+a_ns_n$ como el menor elemento de $S$.
 
-Probemos que $a|a_1$
+Probemos que $s|a_1$
 
 Por el \textbf{Algoritmo de la División}
 
-$a_1=sq+r\, 0\leq r < s$ 
+$a_1=sq+r$ $0\leq r < s$ 
 
 Supongamos que $r>0$
 
@@ -102,7 +102,7 @@ Por tanto $r$ es una combinación lineal positiva de los $a_i$ tal que $r<s$ per
 
 Luego $r=0$ y, por tanto, $s|a_1$
 
-Análogamente, se puede demostrar que $a|a_i,\, 1\leq i \leq n$
+Análogamente, se puede demostrar que $s|a_i,\, 1\leq i \leq n$
 
 Entonces $s$ es divisor común de $a_i,\, 1\leq i \leq n$
 
@@ -142,9 +142,9 @@ $a=qb+r$
 
 $xy_1 = qxy_2 + r$
 
-$r = xy_1 = qxy_2$
+$r = xy_1 - qxy_2$
 
-$r = x(y_1-qy_2$
+$r = x(y_1-qy_2)$
 
 Por lo que $x|r$
 
@@ -154,7 +154,7 @@ $a=qb+r$
 
 $a=qxy_2+xy_3$
 
-$a=x(qy_2+y_3$
+$a=x(qy_2+y_3)$
 
 Por lo que $x|a$
 
@@ -252,7 +252,7 @@ Por tanto $8=mcd(3088,456)=3088*(-22)+456*149$
 \newpage
 \textbf{Demostración}
 
-Se debe demostrar, primero que es solución y lue que toda solución es de esa forma.
+Se debe demostrar, primero que es solución y luego que toda solución es de esa forma.
 \\
 
 La demostración de lo primero es trivial, basta sustituir en la ecuación original.
@@ -260,21 +260,21 @@ La demostración de lo primero es trivial, basta sustituir en la ecuación origi
 
 Para demostrar lo segudo, asumamos que $x_1$,$y_1$ son otra solución de la ecuación, luego
 
-$ax_0+by_o=ax_1+by_1$
+$ax_0+by_0=ax_1+by_1$
 
 $a(x_0-x_1)=b(y_1-y_0)$
 
-$\frac{a}{(a,b)}(x_0-x1)=\frac{b}{(a,b)}(y_1-y_0)$
+$\frac{a}{(a,b)}(x_0-x_1)=\frac{b}{(a,b)}(y_1-y_0)$
 
 Esto implica que
 
-$\frac{b}{(a,b)}|\frac{a}{(a,b)}(x_0-x1)$
+$\frac{b}{(a,b)}|\frac{a}{(a,b)}(x_0-x_1)$
 
 pero como se sabe que $(\frac{a}{(a,b)},\frac{b}{(a,b)})=1$ entoces $\frac{b}{(a,b)}|x_0-x_1$
 
 por tanto existe $k\in\mathbb{Z}$ tal que $x_1=x_0 + k\frac{b}{(a,b)}$ luego
 
-$\frac{a}{(a,b)}(x_0-x1)=\frac{b}{(a,b)}(y_1-y_0)$
+$\frac{a}{(a,b)}(x_0-x_1)=\frac{b}{(a,b)}(y_1-y_0)$
 
 
 $\frac{a}{(a,b)}(x_0- x_0 - k\frac{b}{(a,b)} )=\frac{b}{(a,b)}(y_1-y_0)$
