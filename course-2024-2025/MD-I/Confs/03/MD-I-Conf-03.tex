@@ -68,12 +68,12 @@ luego $p(rx+by)=b$ y como $rx+by$ es entero entonces $p|b$
 
 Para $n=1$ es trivial
 
-Asumamos $n=2$ y que $p|a_1*a_2$.  Si se cumple $pa|a_1$ ya estaría demostrado. Ahora, si se supone que $p\nmid a_1$ entonces $p|a_2$ y también quedaría demostrado.
+Asumamos $n=2$ y que $p|a_1*a_2$.  Si se cumple $p|a_1$ ya estaría demostrado. Ahora, si se supone que $p\nmid a_1$ entonces $p|a_2$ y también quedaría demostrado.
 
 Ahora, supongamos que para $n=k$ se cumple, entonces para $n=k+1$ como $p|a_1*a_2*\dots *a_k*a_{k+1}$ si se tiene que $p|a_{k+1}$ ya quedaría demostrado. Pero, si $p\nmid a_{k+1}$ se sabe que sí se cumple que $p|a_1*a_2*\dots *a_k$ (que fue lo que se supuso) y, por tanto, existe $j$, $1\leq j \leq k+1$ tal que $p|a_j$
 
 \begin{cor}
- Si $p,q_1,1_2,\dots,q_n$ son todos primos tales $p|q_1*q_2*\dots*q_n$ entonces $p=q_k$ para algún $k$, $1\leq k \leq n$
+ Si $p,q_1,q_2,\dots,q_n$ son todos primos tales $p|q_1*q_2*\dots*q_n$ entonces $p=q_k$ para algún $k$, $1\leq k \leq n$
 \end{cor}
 
 
@@ -97,15 +97,15 @@ Demostremos entonces que todo entero $n$, $n\geq 2$, se descompone en un product
 
 Para $n=2$ se cumple pues 2 es primo.
 
-Ahora, asumamos que para todos los enteros estrictamente menores que $n$ se cumple que se descomponen en un producto de primos.
+Ahora, asumamos que para todos los enteros estrictamente menores que $n$ y mayores o iguales que $2$, se cumple que se descomponen en un producto de primos.
 
-Entonces, si  $n$ es primo se cumple. Pero si $n$ no es primo, entonces es un número compuesto y, por tanto, $n=a*b$ con $1\leq a \leq b <n$ y, por lo supuesto, $a$ y $b$ se pueden expresar ambos como productos de primos, luego $n=a*b$ también lo es.
+Entonces, si  $n$ es primo se cumple. Pero si $n$ no es primo, entonces es un número compuesto y, por tanto, $n=a*b$ con $1 < a \leq b < n$ y, por lo supuesto, $a$ y $b$ se pueden expresar ambos como productos de primos, luego $n=a*b$ también lo es.
 
 Demostremos ahora que la descomposición es única para todo entero $n$, $n\geq 2$.
 
 Para $n=2$ se cumple.
 
-Ahora, asumamos que para todos los enteros estrictamente menores que $n$ se cumple que su descomposición es única.
+Ahora, asumamos que para todos los enteros estrictamente menores que $n$ y mayores o iguales que $2$, se cumple que su descomposición es única.
 
 Sea $n=p_1*p_2*\dots *p_R=q_1*q_2*\dots *q_S$ donde $p_i$ y $q_j$ son primos con  $1\leq i \leq R$, $1\leq j \leq S$, y están ordenados. Partiendo de esto se tiene que $p_1|n \Rightarrow p_1|q_1*q_2*\dots *q_S$ luego $p_1|q_j$ tal que $1\leq j \leq S$. Entonces, como son primos $p_1=q_j$ y cómo están ordenados $p_1\geq q_1$.
 
