@@ -23,7 +23,7 @@
 \newtheorem*{pro}{Proposición}
 
 % Title Page
-\title{Conferencia 3 - Congruencia}
+\title{Conferencia 4 - Congruencia}
 \author{}
 
 
@@ -44,6 +44,8 @@
 
 \textbf{Demostración}
 
+Demostremos que si $a\equiv b\, (n)$ entonces $n|a-b$
+
 Como $a\equiv b\, (n)$, por definición, $a=kn+r$ y $b=qn+r$  luego 
 
 $a-kn=b-qn$ 
@@ -53,6 +55,23 @@ $a-b=kn-qn$
 $a-b=(k-q)n$
 
 por lo que $n|a-b$
+\\
+
+Demostremos ahora que si $n|a-b$ entonces $a\equiv b\, (n)$
+
+Tenemos que 
+
+$a=nq_1+r_1$ y $b=nq_2+r_2$
+
+luego $a-b=n(q_1-q_2) + r_1 - r_2$
+
+Ahora, como $n|a-b$ y $n|n(q_1-q_2)$
+
+entonces $n|r_1-r_2$ y $n||r_1-r_2|$
+
+pero $|r_1-r_2|<n$ por lo que $r_-r_2=0$
+
+entonces $r_1=r_2$ y, por tanto, $a\equiv b\, (n)$
 
 \begin{teo}
  La relación de congruencia módulo $n$ es una relación de equivalencia
@@ -79,7 +98,7 @@ por lo que $n|a-b$
  
  Si $a-b=kn$ y $b-c=ln$ para $k,l$ enteros entonces $a-c=(k+l)n$
  
- \item Si $a \equiv b \, (n)$ y $c \equiv d \, (n)$ entonces $a\pm b \equiv c\pm d \, (n)$
+ \item Si $a \equiv b \, (n)$ y $c \equiv d \, (n)$ entonces $a\pm c \equiv b\pm d \, (n)$
  
  \textbf{Demostración}
  
@@ -93,7 +112,7 @@ por lo que $n|a-b$
  
  Se suma $k$ veces $a \equiv b \, (n)$
  
- \item Si $a \equiv b \, (n)$ y $c \equiv d \, (n)$ entonces $ab \equiv cd \, (n)$
+ \item Si $a \equiv b \, (n)$ y $c \equiv d \, (n)$ entonces $ac \equiv bd \, (n)$
  
  \textbf{Demostración}
  
