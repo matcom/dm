@@ -43,7 +43,7 @@
 
 
 \begin{teo}
- Sean $n\in\mathbb{Z}_+$, $k\in\mathbb{Z}$, $(k,n)=1$ y $\{a_1,a_2,\dots,a_n\}$ un sistema residual completo módulo $n$, entonces $\{ka_1,ka_2,\dots,ka_n\}$ es también un sistema residual completo módulo $n$.
+ Sean $n \in \mathbb{Z}_+$, $k\in\mathbb{Z}$, $(k,n)=1$ y $\{a_1,a_2,\dots,a_n\}$ un sistema residual completo módulo $n$, entonces $\{ka_1,ka_2,\dots,ka_n\}$ es también un sistema residual completo módulo $n$.
 \end{teo}
 
 \textbf{Demostración}
@@ -122,13 +122,13 @@ entonces se tiene que $\frac{t_1n}{d} \equiv \frac{t_2n}{d} \, (n)$
 
 como se tiene que $(\frac{n}{d},n)=\frac{n}{d}$ luego se llega a que $t_1\equiv t_2 \, (d)$
 
-y esto implica que $d|t_2-t_1$ pero esto es una contradicción pues se cumple que $0<t2-t1<d$
+y esto implica que $d|t_2-t_1$ pero esto es una contradicción pues se cumple que $0<t_2-t_1<d$
 
 Ahora hay que demostrar que cualquier otra solución $x_0 + \frac{n}{d}t$ 
 
 es congruente módulo $n$ con una de las soluciones $x_0$, $x_0 + \frac{n}{d}$,\dots, $x_0 + \frac{(d-1)n}{d}$
 
-Por el Algoritmo de la División  $t=qd+r$ donde $o\leq r \leq d-1$
+Por el Algoritmo de la División  $t=qd+r$ donde $0 \leq r \leq d-1$
 
 entonces $x_0 + \frac{n}{d}t = x_0 + \frac{n}{d}(qd+r) =  x_0 + nq + \frac{n}{d}r$
 
@@ -161,7 +161,7 @@ lo que es $x\equiv 4, 11, 18, 25, 32, 39 \, (42)$
  $\dots\dots$\\
  $\dots\dots$\\
  $x\equiv a_k \, (n_k)$\\
- tiene una única solución módulo $(n_1,n_2,\dots,n_k)$
+ tiene una única solución módulo $(n_1 * n_2 * \dots *n_k)$
 \end{teo}
 
 \textbf{Demostración}
@@ -211,7 +211,7 @@ $x\equiv 2 \, (3)$
 
 $x\equiv 3 \, (5)$
 
-$x\equiv 2 \, (7$
+$x\equiv 2 \, (7)$
 
 Entonces se tiene $p=3*5*7=105$
 
@@ -225,7 +225,7 @@ $21x_2\equiv 1 \, (5)$ donde $x_2=1$ es solución
 
 $15x_3\equiv 1 \, (7)$ donde $x_3=1$ es solución
 
-Luego $A=a_1 p_1 x_1 + a_2 p_2 x_2 + a_3 p_3 x_3 = 2*35*2 + 3*21*1 + 2*15+1 = 233$
+Luego $A=a_1 p_1 x_1 + a_2 p_2 x_2 + a_3 p_3 x_3 = 2*35*2 + 3*21*1 + 2*15*1 = 233$
 
 Entonces $A=233\equiv 23 \, (105)$
 
