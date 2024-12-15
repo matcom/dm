@@ -51,7 +51,7 @@
  \begin{enumerate}
   \item SRR posee $\varphi(n)$ elementos
   \item para cada $a\in SRR$ se cumple $(a,n)=1$
-  \item los elementos de SRR son incongruentes módulo de $n$ entre si. O lo que es lo mismo,  si $a,b\in SRRR$ y $a\neq b$ entonces $a\not\equiv b \, (n)$
+  \item los elementos de SRR son incongruentes módulo de $n$ entre si. O lo que es lo mismo,  si $a,b\in SRR$ y $a\neq b$ entonces $a\not\equiv b \, (n)$
  \end{enumerate}
 
  
@@ -117,7 +117,7 @@ entonces $a^{\varphi(n)}\equiv 1\, (n)$
 \end{dfn}
 
 \begin{dfn}
- Una función aritmética  $f$ se denomica \textbf{multiplicativa} si para cualquier $m$ y $n$ tales que $(m.n)=1$ se cumple que $f(mn)=f(m)f(n)$
+ Una función aritmética  $f$ se denomica \textbf{multiplicativa} si para cualquier $m$ y $n$ tales que $(m,n)=1$ se cumple que $f(mn)=f(m)f(n)$
 \end{dfn}
 
 \begin{teo}
@@ -142,7 +142,7 @@ probemos entonces que se cumple para $k=m+1$
 
 se tiene que $n=p_1^{e_1}p_2^{e_2}\dots p_{m}^{e_m}p_{m+1}^{e_m+1}$ y como todos los $p_i$, $1\leq i \leq m+1$, 
 
-son primos relativos 2 a 2, se cumple que $(p_1^{e_1}p_2^{e_2}\dots p_{m}^{e_m},p_{m+1}^{e_m+1})$
+son primos relativos 2 a 2, se cumple que $(p_1^{e_1}p_2^{e_2}\dots p_{m}^{e_m},p_{m+1}^{e_m+1})=1$
 
 y como $f$ es multiplicativa entonces $f(n)=f(p_1^{e_1}p_2^{e_2}\dots p_{m}^{e_m})f(p_{m+1}^{e_m+1})$
 
@@ -167,9 +167,7 @@ m & 2m & 3m& \dots & nm
 \end{pmatrix}
 \end{equation}
 
-Note que los que los elementos de cada fila son de la forma 
-
-$r+cm$, $1\leq r \leq m$, $1\leq c \leq m$
+Note que los que los elementos de una fila son de la forma $cm + r$,  $0 \leq c \leq n-1$ y una $r$ fija, $1\leq r \leq m$,
 
 Ahora, si $(r,m)>1$ entonces no hay ningún número es esa fila tal que sea primo relativo com $m$. Entonces eliminamos todas las filas de la matriz tales que $(r,m)>1$.
 
@@ -180,7 +178,7 @@ Se puede notar que cada una de estas filas es un $SRC(n)$ por lo que hay $\varph
 Entonces, como $\varphi(nm)$ es el número de enteros de la matriz que son primos relativos a $nm$, y como para que sea multiplicativa, por definición, se tiene que $(n,m)=1$, entonces como hay $\varphi(m)$ columnas con enteros primos relativos a $m$ y en cada una de ellas $\varphi(n)$ primos relativos con $n$, se tiene entonces que $\varphi(nm)=\varphi(m)\varphi(n)$
 
 \begin{teo}
- Sea $n\in\mathbb{Z}$ tal que $n=p_1^{e_1}p_2^{e_2}\dots p_k^{e_k}$ entonces 
+ Sea $n\in\mathbb{Z}$ con $n>1$ tal que $n=p_1^{e_1}p_2^{e_2}\dots p_k^{e_k}$ entonces 
  
  $\varphi(n)=n(1-\frac{1}{p_1})(1-\frac{2}{p_2})\dots(1-\frac{1}{p_k})$
 \end{teo}
