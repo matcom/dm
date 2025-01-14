@@ -39,9 +39,6 @@
 %\begin{abstract}
 %\end{abstract}
 
-Nota
-
-Consideremos funciones totales, en caso de no serlo se especificar\'a
 
 \begin{dfn}
   Sea $N_n$ el conjunto $N_n=\{1,2,\dots,n\}$, se dice que $A$ tiene $n$ elementos o que $|A|=n$ si existe $f:N_n\rightarrow A$ biyectiva. Si $A$ es vacío o tiene $n$ elementos se dice que es un conjunto finito
@@ -51,9 +48,13 @@ Consideremos funciones totales, en caso de no serlo se especificar\'a
  Dos conjuntos $A$ y $B$ se dice coordinables y se denota $A \sim B$ si existe $f:A\rightarrow B$ biyectiva
 \end{dfn}
 
+
+Si $A$ es  un conjunto no vacío y tiene cardinalidad $n$ entonces  $A$ es coordinable con $N_n$\\
+
 Nota
 
-Si $A$ es  un conjunto no vacío y tiene cardinalidad $n$ entonces  $A$ es coordinable con $N_n$
+Consideremos funciones totales, en caso de no serlo se especificar\'a\\
+
 
 \begin{teo}
  Si $A$ es coordinable con $B$ entonces $|A|=|B|$
@@ -167,6 +168,10 @@ luego si se tiene la compuesta $g\circ f: N_n\rightarrow B$ esta es biyectiva pu
  Si se tienen $n$ objetos diferentes entonces $P_n = n!$
 \end{teo}
 
+\textbf{Demostración}
+
+Una permutación de $n$ objetos se puede ver como las diferentes maneras de escoger $n$ objetos. El primer objeto a seleccionar se puede escoger de $n$  posibles objetos. El segundo objeto se escoge de los $n-1$ restantes, el tercero de los $n-2$ y así sucesivamente hasta que quede el último objeto. Entonces, por el Principio del Producto, las distintas maneras de escoger estos $n$ objetos sería $n*(n-1)*(n-2)*\dots *2*1$ que es $n!$.\\
+
 \textbf{Ejemplo}
  Si se va a formar un comité que involucra presidente, tesorero y secretario, habiendo 3 candidatos a, b, c ; cuando se elige por sorteo los cargos sucesivamente, hay $3!=6$ posibilidades u ordenaciones: abc, acb, bac, bca, cab, cba.
 
@@ -177,6 +182,16 @@ luego si se tiene la compuesta $g\circ f: N_n\rightarrow B$ esta es biyectiva pu
 \begin{teo}
  $V^n_k=\frac{n!}{(n-k)!}$
 \end{teo}
+
+\textbf{Demostración}
+
+Similar a la demostración anterior, hay que escoger $k$ objetos de $n$ posibles ($k\leq n$), entonces el primer objeto se puede escoger de $n$ posibles objetos, el segundo de $n-1$ posibles, el tercero de $n-2$ posibles y así sucesivamente hasta que el $k$-ésimo se puede escoger de entre $n-(k-1)$ posibles objetos. Entonces, por el Principio del Producto serían $n*(n-1)*(n-2)*\dots *(n-(k-1))$.  
+
+Por tanto $V^n_k=n*(n-1)*(n-2)*\dots *(n-(k-1))$
+
+Ahora, si se multiplica y se divide por $(n-k)!$ se tiene
+
+$V^n_k=\frac{n*(n-1)*(n-2)*\dots *(n-(k-1))*(n-k)!}{(n-k)!}=\frac{n!}{(n-k)!}$\\
 
 \textbf{Ejemplo}
  Si se va a formar un comité que involucra presidente, tesorero y secretario, habiendo 10 candidatos; cuando se elige por sorteo los cargos sucesivamente, hay $\frac{10!}{(10-3)!=\frac{10!}{7!}}=10*9*8=720$ posibilidades u ordenaciones
@@ -199,6 +214,11 @@ luego si se tiene la compuesta $g\circ f: N_n\rightarrow B$ esta es biyectiva pu
  ${n}\choose{k}$$=\frac{n!}{k!(n-k)!}$  
 \end{teo}
 
+\textbf{Demostración}
+
+Con las variaciones de $n$ en $k$ se tendrían todas las formas ordenadas de elegir $k$ objetos, lo que sería 
+$\frac{n!}{(n-k)!}$. Pero aquí se están contando varias veces las variaciones donde aparecen los mismos objetos pero que están ordenados de distinta forma. Entonces habría que dividir por la cantidad de ordenamientos diferentes de $k$ objetos. Pero todos los posibles ordenamientos de $k$ objetos no es más que sus posibles permutaciones que es $k!$. 
+Entonces se tiene  ${n}\choose{k}$$=\frac{\frac{n!}{(n-k)!}}{k!}=\frac{n!}{k!(n-k)!}$.\\
 
 \textbf{Ejemplo}
 
