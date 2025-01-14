@@ -3,6 +3,7 @@
 \usepackage{amsfonts}
 \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage{amsmath}
 
 \newtheorem*{pbo}{Principio del Buen Ordenamiento}
 \newtheorem*{pim}{Principio de Inducción Matemática}
@@ -38,14 +39,16 @@
 %\begin{abstract}
 %\end{abstract}
 
+Nota
 
+Consideremos funciones totales, en caso de no serlo se especificar\'a
 
 \begin{dfn}
-  Sea $N_n$ el conjunto $N_n=\{1,2,\dots,n\}$, se dice que $A$ tiene $n$ elementos o que $|A|=n$ si existe $f:N_n\rightarrow A$ biyectiva. Si $A$ es no vacío o tiene $n$ elementos se dices que es un conjunto finito
+  Sea $N_n$ el conjunto $N_n=\{1,2,\dots,n\}$, se dice que $A$ tiene $n$ elementos o que $|A|=n$ si existe $f:N_n\rightarrow A$ biyectiva. Si $A$ es vacío o tiene $n$ elementos se dice que es un conjunto finito
 \end{dfn}
 
 \begin{dfn}
- Dos conjuntos $A$ y $B$ se dice coordinables y se denota $A~B$ si existe $f:A\rightarrow B$ biyectiva
+ Dos conjuntos $A$ y $B$ se dice coordinables y se denota $A \sim B$ si existe $f:A\rightarrow B$ biyectiva
 \end{dfn}
 
 Nota
@@ -69,7 +72,7 @@ luego si se tiene la compuesta $g\circ f: N_n\rightarrow B$ esta es biyectiva pu
 
 \textbf{Ejemplo}
  
- En un torneo con ganador único donde comienzan $n$ jugadores ¿cuántos partidos se realizan si se descalifica al que pierde un parido?
+ En un torneo con ganador único donde comienzan $n$ jugadores ¿cuántos partidos se realizan si se descalifica al que pierde un partido?
  
  Se tiene $A$ como el conjunto de los juegos que se efectúan
  
@@ -77,11 +80,11 @@ luego si se tiene la compuesta $g\circ f: N_n\rightarrow B$ esta es biyectiva pu
  
  Se tiene  $f:A\rightarrow B$ donde $<x,y>\in f$ si $y$ pierde en el partido $x$
  
- Es fácil ver que $f$ es biyectiva y, por tanto, $A$ es coordinable con $b$:
+ Es fácil ver que $f$ es biyectiva y, por tanto, $A$ es coordinable con $B$:
  
  $f$ es inyectiva porque para dos partidos diferentes son descalificados judadores diferentes
  
- $f$ es sobrectiva porque todos los jugados son descalificados producto de un partido
+ $f$ es sobrectiva porque todos los jugadores descalificados fue producto de un partido
  
  Como son $n$ jugadores y hay un solo ganador entonces hay $n-1$ jugadores descalificados
  
@@ -105,7 +108,7 @@ luego si se tiene la compuesta $g\circ f: N_n\rightarrow B$ esta es biyectiva pu
  
 
 \begin{psm}
- Si un suceso $A$ puede ocurrir de $n$ maneras y un suceso $B$ puede ocurrir de $m$ maneras y $A$ y $B$ no pueden ocurrir simultáneamente, entonces el suceso $A\vee B$ sucede de $n + m$ maneras diferentes.
+ Si un suceso $A$ puede ocurrir de $n$ maneras y un suceso $B$ puede ocurrir de $m$ maneras y, $A$ y $B$ no pueden ocurrir simultáneamente, entonces el suceso $A \lor  B$ sucede de $n + m$ maneras diferentes.
 \end{psm}
 
 \begin{teo}
@@ -114,7 +117,7 @@ luego si se tiene la compuesta $g\circ f: N_n\rightarrow B$ esta es biyectiva pu
 \end{teo}
 
 \begin{gpsm}
- Si se tienen $k$ posibles sucesos $A_1$, $A_2$, $\dots$, $A_k$, donde ningun par de ellos ocurre simultáneamente, y cada suceso puede ocurrir de $n_i$ maneras respectivamente ($1\leq i \leq k$), entonces el suceso $A_1\vee A_2\vee \dots \vee A_k$ sucede de $\sum^k_{i=1}n_i$ maneras diferentes.
+ Si se tienen $k$ posibles sucesos $A_1$, $A_2$, $\dots$, $A_k$, donde ning\'un par de ellos ocurre simultáneamente, y cada suceso puede ocurrir de $n_i$ maneras respectivamente ($1\leq i \leq k$), entonces el suceso $A_1\vee A_2\vee \dots \vee A_k$ sucede de $\sum^k_{i=1}n_i$ maneras diferentes.
 \end{gpsm}
 
 \begin{teo}
@@ -149,7 +152,7 @@ luego si se tiene la compuesta $g\circ f: N_n\rightarrow B$ esta es biyectiva pu
  $10*10*10*2=2000$ números posibles
  
  \item ¿Cuántos divisores tiene $n$?\\
- $n=p^{e_1}_1 p^{e_2}_2 \dots p{e_k}_k$ luego tiene $(e_1+1)(e_2+1)\dots(e_k+1)$ divisores\\
+ $n=p^{e_1}_1 p^{e_2}_2 \dots p^{e_k}_k$ luego tiene $(e_1+1)(e_2+1)\dots(e_k+1)$ divisores\\
  y si fueran divisores propios serían $(e_1+1)(e_2+1)\dots(e_k+1)-2$ 
  
 \end{itemize}
