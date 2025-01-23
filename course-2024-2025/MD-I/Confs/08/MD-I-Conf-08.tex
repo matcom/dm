@@ -3,6 +3,7 @@
 \usepackage{amsfonts}
 \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage{amsmath} 
 
 \newtheorem*{pbo}{Principio del Buen Ordenamiento}
 \newtheorem*{pim}{Principio de Inducción Matemática}
@@ -40,25 +41,25 @@
 
 \textbf{Binomio de Newton}
 
-$(a+b)^n=\sum^n_{k=0}\,$${n}\choose{k}$$\, a^{n-k}b^k$\\
+$$(a+b)^n = \sum^n_{k=0} \binom{n}{k}  a^{n-k}b^k$$\\
 
 ${n}\choose{k}$ se conocen como coeficientes binomiales\\
 
 \textbf{Propiedades de los Coeficientes}
 
 \begin{enumerate}
- \item  ${n}\choose{k}$$=$${n}\choose{n-k}$
+ \item  $$\binom{n}{k}=\binom{n}{n-k}$$
  
  \textbf{Demostración}
  
- ${n}\choose{k}$ representa la cantidad de formas en que se pueden seleccionar $k$ elementos de un conjunto que posee $n$ elementos, esto pudiera verse 
- como de cuantas formas puede particionarse el conjunto de $n$ elementos en dos categor\'ias $A$ y $B$ de modo que la categor\'ia $A$ tenga $k$ elementos y $B$ los $n-k$ elementos restantes,
+ $\binom{n}{k}$ representa la cantidad de formas en que se pueden seleccionar $k$ elementos de un conjunto que posee $n$ elementos, esto pudiera verse 
+ como de cu\'antas formas puede particionarse el conjunto de $n$ elementos en dos categor\'ias $A$ y $B$ de modo que la categor\'ia $A$ tenga $k$ elementos y $B$ los $n-k$ elementos restantes,
  de donde el n\'umero de particiones en los conjuntos $A$ y $B$ tambi\'en se pudieran contar a partir de conocer de c\'uantas formas podemos poner $n-k$ elementos en el conjunto $B$ y dejar los $k$ restantes en el conjunto $A$, valor que se obtiene 
- mediante la explresi\'on ${n}\choose{n-k}$.
+ mediante la expresi\'on ${n}\choose{n-k}$.
 
  Luego ${n}\choose{k}$$=$${n}\choose{n-k}$
  
- \item ${n}\choose{k}$$=$${n-1}\choose{k}$$+$${n-1}\choose{k-1}$
+ \item $$\binom{n}{k}=\binom{n-1}{k}+\binom{n-1}{k-1}$$
  
  \textbf{Demostración}
  
@@ -73,34 +74,34 @@ ${n}\choose{k}$ se conocen como coeficientes binomiales\\
  Luego ${n}\choose{k}$$=$${n-1}\choose{k}$$+$${n-1}\choose{k-1}$
  
  
- \item $k$${n}\choose{k}$$=(n-k+1)$${n}\choose{k-1}$$=n$${n-1}\choose{k-1}$
+ \item $$k\binom{n}{k}=(n-k+1)\binom{n}{k-1}=n\binom{n-1}{k-1}$$
  
  \textbf{Demostración}
  
  Las tres expresiones cuentan el n\'umero de formas de seleccionar un subgrupo de $k$ personas de un grupo de $n$ personas y asignar a uno como l\'ider.
 
- La primera expresi\'in cuenta de cuantas formas se puede seleccionar $k$ de $n$ y de los $k$ seleccionados escoger uno de ellos para ser el l\'ider, lo cual por principio de multiplicaci\'on queda $k$${n}\choose{k}$. 
+ La primera expresi\'in cuenta de cu\'antas formas se puede seleccionar $k$ de $n$ y de los $k$ seleccionados escoger uno de ellos para ser el l\'ider, lo cual por principio de multiplicaci\'on queda $k$${n}\choose{k}$. 
  
- La segunda expresi\'on cuenta de cuantas formas se puede seleccionar $k-1$ personas del grupo y de las restantes seleccionar a una como l\'ider y agregarla a la selecci\'on anterior, teniendose finalmente cuantos subgrupos hay de $k$ personas y una de ellas l\'ider $(n-k+1)$${n}\choose{k-1}$.
+ La segunda expresi\'on cuenta de cu\'antas formas se puede seleccionar $k-1$ personas del grupo y de las restantes seleccionar a una como l\'ider y agregarla a la selecci\'on anterior, teniendose finalmente cuantos subgrupos hay de $k$ personas y una de ellas l\'ider $(n-k+1)$${n}\choose{k-1}$.
 
- La tercera expresi\'on cuanta de cuantas formas se puede selccionar al l\'ider entre las $n$ personas del grupo y luego seleccionar a $k-1$ miembros de las $n-1$ personas restantes, contando de igual modo los subgrupo de $k$ personas donde una de ellas es l\'ider.
+ La tercera expresi\'on cuanta de cuantas formas se puede selccionar al l\'ider entre las $n$ personas del grupo y luego seleccionar a $k-1$ miembros de las $n-1$ personas restantes, contando de igual modo los subgrupos de $k$ personas donde una de ellas es l\'ider.
 
- \item ${k}\choose{k}$$+$${k+1}\choose{k}$$+$${k+2}\choose{k}$$+\dots +$${n}\choose{k}$$=$${n+1}\choose{k+1}$\\ 
+ \item $$\binom{k}{k}+\binom{k+1}{k}+\binom{k+2}{k}+\dots +\binom{n}{k}=\binom{n+1}{k+1}$$\\ 
  o lo que es lo mismo $\sum^n_{j=k}$${j}\choose{k}$$=$${n+1}\choose{k+1}$\\\\
  
  \textbf{Demostración}
 
- El miembro derecho de la igualdad represnta el n\'umero de fromas en que se pueden seleccionar $k+1$ elementos de un conjunto de $n+1$ elementos. De igual modo 
- cada sumando de la parte izquierda de la igualdad representa de cuantas formas seleccionar $k+1$ elementos de un conjunto de $n$ elementos, pero en cada uno fijando que el el $k+1$-\'esimo elemento es el que ocupa la posicion $k+i +1$ y que los restantes $k$ elementos se toman de la posicion $1$ a la $k+i$. 
+ El miembro derecho de la igualdad represnta el n\'umero de formas en que se pueden seleccionar $k+1$ elementos de un conjunto de $n+1$ elementos. De igual modo 
+ cada sumando de la parte izquierda de la igualdad representa de cuantas formas seleccionar $k+1$ elementos de un conjunto de $n$ elementos, pero en cada uno fijando que el $k+1$-\'esimo elemento es el que ocupa la posicion $k+i +1$ y que los restantes $k$ elementos se toman de la posicion $1$ a la $k+i$. 
  Es decir:
  
- ${k}\choose{k}$ cuenta los casos donde el se toman $k$ elemantos desde el $1$ al $k$ y el elemento $k+1$ es el que toma la posicion $k+1$.
+ ${k}\choose{k}$ cuenta los casos donde el se toman $k$ elementos desde el $1$ al $k$ y el elemento $k+1$ es el que toma la posicion $k+1$.
 
  ${k+1}\choose{k}$ cuenta los casos donde el se toman $k$ elemantos desde el $1$ al $k+1$ y el elemento $k+1$ es el que toma la posicion $k+2$.
 
- ${k+2}\choose{k}$ cuenta los casos donde el se toman $k$ elemantos desde el $1$ al $k+2$ y el elemento $k+1$ es el que toma la posicion $k+3$.
+ ${k+2}\choose{k}$ cuenta los casos donde el se toman $k$ elementos desde el $1$ al $k+2$ y el elemento $k+1$ es el que toma la posicion $k+3$.
 
- y as\'i sucesivamente hasta que  ${n}\choose{k}$ cuenta los casos donde el se toman $k$ elemantos desde el $1$ al $n$ y el elemento $k+1$ es el que toma la posicion $n+1$.
+ y as\'i sucesivamente hasta que  ${n}\choose{k}$ cuenta los casos donde el se toman $k$ elementos desde el $1$ al $n$ y el elemento $k+1$ es el que toma la posicion $n+1$.
 
  Al sumar todos estos t\'erminos se obtiene en general el n\'umero de formas de escoger $k+1$ elementos de un conjunto de $n+1$ elementos.
 
@@ -110,15 +111,7 @@ ${n}\choose{k}$ se conocen como coeficientes binomiales\\
 
 Si se desea computar el valor de la suma $\sum_{i=1}^{n} i$, tenemos que:
 
-$1 =$${1}\choose{1}$\\
-
-$2=$${2}\choose{1}$\\
-
-$2=$${3}\choose{1}$\\
-
-\dots\\
-
-$n=$${n}\choose{1}$\\
+$$1 = \binom{1}{1} \, 2 = \binom{2}{1} \, 3=\binom{3}{1} \dots \, n=\binom{n}{1}$$
 
 Luego $\sum_{i=1}^{n} i = \sum_{i=1}^{n}$${i}\choose{1}$$=$${n+1}\choose{2}$$= \frac{(n+1)!}{2!(n-1)!} = \frac{n(n+1)}{2}$
 
@@ -135,13 +128,13 @@ Un submulticonjunto $<B,n>$ del multiconjunto $<A,m>$ cumple que $B\subseteq A$ 
 
 \begin{teo}
  Sea un multiconjunto $N$ con $n$ objetos donde hay $n_1$ objetos de tipo 1, $n_2$ objetos de tipo 2 y así hasta $n_k$ objetos de tipo $k$ donde $n=\sum^k_{i=1}a_i$\\
- Entonces el número de permutaciones distintas de $N$ es $\frac{n!}{n_1! n_2! \dots n_k!}$
+ Entonces el número de permutaciones distintas de $N$ es $$\frac{n!}{n_1! n_2! \dots n_k!}$$
 \end{teo}
 
 \begin{dem}
     Sea $P$ el n\'umero total de permutaciones de un conjunto de $n$ elementos, sabemos que $P = n!$, luego sea $X$ el n\'umero total de permutaciones sin repeticiones, 
-    por cada permutaci\'on que se haya contado en $X$, si en dicha permutacion intercambiamos los $n_1$ objetos de tipo $1$ seguimos obteneindo permutaciones iguales, pero que en $P$ se cuentan como diferentes, lo mismo 
-    con los $n_2$ objetos de tipo $2$ y en genetal con los $n_i$ objetos de tipo $i$; esto por principio de la multiplicaci\'on ser\'ia $Xn_1!n_2!...n_k!$ y aqu\'i como por cada permutaci\'on diferente estamos contando todas sus r\'eplicas que se generan al permutar los objetos iguales entre s\'i, en general estamos contando todas las permutaciones del conjunto de $n$ elementos,
+    por cada permutaci\'on que se haya contado en $X$, si en dicha permutacion intercambiamos los $n_1$ objetos de tipo $1$ seguimos obteniendo permutaciones iguales, pero que en $P$ se cuentan como diferentes, lo mismo 
+    con los $n_2$ objetos de tipo $2$ y en general con los $n_i$ objetos de tipo $i$; esto por principio de la multiplicaci\'on ser\'ia $Xn_1!n_2!...n_k!$ y aqu\'i como por cada permutaci\'on diferente estamos contando todas sus r\'eplicas que se generan al permutar los objetos iguales entre s\'i, en general estamos contando todas las permutaciones del conjunto de $n$ elementos,
     luego $P = Xn_1!n_2!...n_k!$ de donde $X = \frac{n!}{n_1!n_2!...n_k!}$
 \end{dem}
 
@@ -152,13 +145,14 @@ Pruebe que $k!^{(k-1)!}|(k!)!$\\
 
 Si se tiene un conjunto de $k!$ elementos donde hay $(k-1)!$ tipos diferentes y de cada tipo hay $k$ elementos entonces la cantidad de permutaciones distintas de este conjunto es\\
 
-$\frac{(k!)!}{k!k!\dots k!}=\frac{(k!)!}{k!^{(k-1)!}}$ \\
+$$\frac{(k!)!}{k!k!\dots k!}=\frac{(k!)!}{k!^{(k-1)!}}$$ \\
 
 luego como el número de permutaciones es un número entero entonces $k!^{(k-1)!}|(k!)!$
 
 
 \begin{teo}
- El número de formas de particionar un conjunto de $n$ elementos distintos en $k$ categorías diferentes de forma que haya $n_1$ objetos en la categoría 1, $n_2$ objetos en la categoría 2 y así hasta llegar a $n_k$ objetos en la categoría $k$, donde $n = \sum^k_{i=1}n_i$ es  ${n}\choose{n_1}$${n-n_1}\choose{n_2}$${n-n_1-n_2}\choose{n_3}$$\dots$${n-n_1-n_2-\dots-n_k-1}\choose{n_k}$$=\frac{n!}{n_1!n_2!\dots n_k!}$
+ El número de formas de particionar un conjunto de $n$ elementos distintos en $k$ categorías diferentes de forma que haya $n_1$ objetos en la categoría 1, $n_2$ objetos en la categoría 2 y así hasta llegar a $n_k$ objetos en la categoría $k$, donde $n = \sum^k_{i=1}n_i$ es  
+ $$\binom{n}{n_1} \binom{n - n_1}{n_2} \binom{n-n_1-n_2}{n_3} \dots \binom{n-n_1-n_2-...-n_{k-1}}{n_k} =\frac{n!}{n_1!n_2!\dots n_k!}$$
 \end{teo}
 
 
@@ -168,25 +162,25 @@ ${n}\choose{n_1}$ cantidad de formas de asignar $n_1$ objetos a las categoría 1
 luego ${n-n_1}\choose{n_2}$ es la cantidad de formas de dar $n_2$ objetos a las categoría 2\\
 por tanto ${n}\choose{n_1}$${n-n_1}\choose{n_2}$${n-n_1-n_2}\choose{n_3}$$\dots$${n-n_1-n_2-\dots-n_k-1}\choose{n_k}$ sería el total de formas\\
 
-De igual modo este problema se pudiera resolver mediante un enfoque de permutaciones sin repetici\'on, puesto que si ponemos los $n$ elementos dispuestos uno al lado del otro en una permutaci\'on, y designamis los $n_1$ primeros a la categor\'ia $1$, los $n_2$ siguientes a la categor\'ia $2$, y as\'i sucesivamente hasta asignar los $n_k$ finales a la categor\'ia $k$, al analizar todas las podibles permutaciones tendr\'iamos todas las posibles clasificaciones de los elementos en las $k$ categor\'ias.
-Sin embargo hay que tener el cuenta que en las permutaciones, se generan casos en los que para unos mismos $n_1$ elementos ellos se intercambien entre s\'i, lo mismo para los $n_2$ siguientes y en general para todos los $n_i$ elementos que formen parte de cada categor\'ia, por lo que es necesario eliminar las repeticiones, de donde se tiene que la expresi\'on $\frac{n!}{n_1!n_2!\dots n_k!}$ tambi\'en representa el n\'umero de formas de asignar los objetos a las categor\'ias.
-
+De igual modo este problema se pudiera resolver mediante un enfoque de permutaciones sin repetici\'on, puesto que si ponemos los $n$ elementos dispuestos uno al lado del otro en una permutaci\'on, y designamos los $n_1$ primeros a la categor\'ia $1$, los $n_2$ siguientes a la categor\'ia $2$, y as\'i sucesivamente hasta asignar los $n_k$ finales a la categor\'ia $k$, al analizar todas las posibles permutaciones tendr\'iamos todas las posibles clasificaciones de los elementos en las $k$ categor\'ias.
+Sin embargo hay que tener el cuenta que en las permutaciones, se generan casos en los que para unos mismos $n_1$ elementos ellos se intercambien entre s\'i, lo mismo para los $n_2$ siguientes y en general para todos los $n_i$ elementos que formen parte de cada categor\'ia, por lo que es necesario eliminar las repeticiones, de donde se tiene que la expresi\'on $\frac{n!}{n_1!n_2!\dots n_k!}$ tambi\'en representa el n\'umero de formas de asignar los objetos a las categor\'ias. Por lo que se puede establecer una biyecci\'on con el conjunto de las palabras con $n_1$ letras del tipo $1$, $n_2$ del tipo $2$, ..., $n_k$ del tipo $k$, dando la condici\'on que la letra que est\'a en la posici\'on $i-$\'esima es su categoria.
+ 
 \begin{teo}
-    El n\'umero de k-permutaciones con repeticiones en un conjunto de $n$ elementos es $n^k$.
+    El n\'umero de k-permutaciones con repeticiones en un conjunto de $n$ elementos es $$n^k$$.
 \end{teo}
 
 \textbf{Demostración}\\\\
 Se tienen $k$ espacios disponibles y cada uno se puede rellenar con cualquiera de los $n$ elementos, por principio de multiplicaci\'on eso es $n^k$.
 
 \begin{teo}
-    Repartir $n$ objetos distintos en $k$ categor\'ias diferentes es $k^n$.
+    Repartir $n$ objetos distintos en $k$ categor\'ias diferentes es $$k^n$$.
 \end{teo}
 
 \textbf{Demostración}\\\\
 Para cada uno de los objetos se decide en cual de las $n$ categor\'ias va a estar, como para cada uno hay $n$ opciones, por principio de multiplicaci\'on es $k^n$.
 
 \begin{teo}
- El número de formas de particionar $n$ objetos iguales en $k$ categorías diferentes es ${n+k-1}\choose{k-1}$
+ El número de formas de particionar $n$ objetos iguales en $k$ categorías diferentes es $$\binom{n+k-1}{k-1}$$
 \end{teo}
 
 
@@ -194,7 +188,7 @@ Para cada uno de los objetos se decide en cual de las $n$ categor\'ias va a esta
 Este problema es equivalente a tener una secuencia de $n+k-1$ elementos iguales y convertir a $k-1$ de estos elementos en separadores. Luego, la solución tenemos el conjuntos de todas las posibles combinaciones de $k-1$ posiciones que pueden ser seleccionadas como separadores y esto es ${n+k-1}\choose{k-1}$
 
 \begin{teo}
-    El número de formas de particionar $n$ objetos iguales en $k$ categorías diferentes de modo que ninguna categor\'ia quede vac\'ia es ${n-1}\choose{k-1}$
+    El número de formas de particionar $n$ objetos iguales en $k$ categorías diferentes de modo que ninguna categor\'ia quede vac\'ia es $$\binom{n-1}{k-1}$$
    \end{teo}
    
    \textbf{Demostración}
@@ -203,9 +197,9 @@ proceso a agregar la $k-1$ barritas teniendo  ${n - k + k-1}\choose{k-1}$$=$${n 
 
 
 \begin{teo}
-   La cantidad de k-combinaciones con repeticiones es ${k+n-1}\choose{n-1}$ (repartir $k$ objetos entre $n$ personas)
+   La cantidad de k-combinaciones con repeticiones es $$\binom{k+n-1}{n-1}$$ (repartir $k$ objetos entre $n$ personas)
 \end{teo}
 
 \textbf{Demostración}
-Utilizando la idea de los separadores, se posicionan los $k$ elementos y se agregan $n -1$ separadores, luego es se cacula de cuantas formas se pueden tomar $n-1$ de las posiciones para q
+Utilizando la idea de los separadores, se posicionan los $k$ elementos y se agregan $n -1$ separadores, luego se calcula de cu\'antas formas se pueden tomar $n-1$ de las posiciones.
 \end{document}          
