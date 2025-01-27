@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsfonts}
 \usepackage{amsthm}
+\usepackage{amsmath}
 \usepackage{amssymb}
 
 \newtheorem*{pbo}{Principio del Buen Ordenamiento}
@@ -41,12 +42,12 @@
 
 \begin{pie}
 Permite calcular la cardinalidad de la unión de varios conjuntos\\
- $|\bigcup^n_{i=1}A_i|=\sum^n_{k=1}(-1)^{k+1}|\cap A_i|_{i\in I\subseteq\{1,2,\dots,n\},|I|=k}$
+ $$|\bigcup^n_{i=1}A_i|=\sum^n_{k=1}(-1)^{k+1} \underset{\underset{|I|=k}{i\in I\subseteq\{1,2,\dots,n\}}}{|\cap A_i|}$$
 \end{pie}
 
 \textbf{Ejemplo}
 
-De 200 estudiantes 50 toman el curso de matemáticas discretas, 140 el curso de economía y 24 ambos. Como ambos cursos programaron exámenes para el día siguiente, sólo los estudiantes que no esten en ninguno de estos curso podrán ir a la fiesta de la noche. Se quiere ver cuántos estudiantes iran a la fiesta.
+De 200 estudiantes 50 toman el curso de matemáticas discretas, 140 el curso de economía y 24 ambos. Como ambos cursos programaron exámenes para el día siguiente, sólo los estudiantes que no est\'en en ninguno de estos curso podrán ir a la fiesta de la noche. Se quiere ver cuántos estudiantes iran a la fiesta.
 
 Si $A_1$ es el conjunto que estudia discreta y $A_2$ el de los que estudian economía entonces $|A_1\cup A_2|=50+140-24=166$ por lo que irán a la fiesta $200-166=34$\\
 
@@ -63,9 +64,9 @@ Si $x$ cumple exactamente una propiedad, o sea, $\exists \, i$ tal que  $x\in A_
 
 Si $x$ cumple $k$ propiedades al mismo tiempo entonces:
 
-se cuenta $k$ en $\sum_{1\leq i \leq m}|A_i|$
+se cuenta $k$ en $\sum_{1\leq i \leq n}|A_i|$
 
-se cuenta ${k}\choose{2}$ en $\sum_{1\leq i < j\leq m}|A_i\cap A_j|$
+se cuenta ${k}\choose{2}$ en $\sum_{1\leq i < j\leq n}|A_i\cap A_j|$
 
 $\dots$
 
@@ -89,7 +90,7 @@ $k$ - $k\choose 2$ + $k\choose 3$ - $\dots$ + $(-1)^{k+1}$$k\choose k$
 \begin{dfn}
 Sea un universo tal que existen $m$ posibles propiedades $P_1,P_2,\dots,P_m$. Si $\{P_{i_i},P_{i_2},\dots,P_{i_k}\}$ es un subconjunto de las $m$ posibles propiedades se denota 
 $N_{i_i,i_2,\dots,i_k}$ a la cantidad de elementos que cumplen las propiedades 
-$P_{i_1},P_{i_2},\dots,P_{i_m}$. 
+$P_{i_1},P_{i_2},\dots,P_{i_k}$. 
 
 $s_k$ es la cantidad de veces que se cumplen $k$ propiedades
  
@@ -121,7 +122,7 @@ Se puede notar que la fórmula comienza por $S_R$ lo que implica que $x$ no apar
 
 Si $t=R$ se cuenta 1 vez, solo se cuenta en $S_R$
 
-Si $t>R$ entonces $N(R) = \sum^{m-R}_{k=0}\, (-1)^k$${k+R}\choose{k}$$S_{k+R}$ porque no se va a contar en interesecciones de más de $t$
+Si $t>R$ entonces $N(R) = \sum^{t-R}_{k=0}\, (-1)^k$${k+R}\choose{k}$$S_{k+R}$ porque no se va a contar en interesecciones de más de $t$
 
 Ahora $k+R\leq t$ por tanto el elemento se cuenta $t\choose{k+R}$ veces en $S_{k+R}$ 
 
@@ -138,32 +139,32 @@ luego $\sum^{t-R}_{k=0}\, (-1)^k$${k+R}\choose{k}$${t}\choose{k+R}$$=$$\sum^{t-R
 $=$${t}\choose{R}$$\sum^{t-R}_{k=0}\, (-1)^k$${t-R}\choose{k}$$=0$
 
 \begin{teo}
-  Sea $U$ un conjunto finito de elementos y $P$ un conjunto arbitrario de $m$ propiedades, el número de elementos de $U$ que poseen satisfacen al menos $R$ propiedades y $0\leq R < m$ es
+  Sea $U$ un conjunto finito de elementos y $P$ un conjunto arbitrario de $m$ propiedades, el número de elementos de $U$ que satisfacen al menos $R$ propiedades y $0\leq R < m$ es
  $\bar{N}(R) = \sum^{m-R}_{k=0}\, (-1)^k$${k+R-1}\choose{R-1}$$S_{k+R}$
 \end{teo}
 
 \begin{pin}
- Sean $A$ y $B$ comjuntos tal que $B$ es finito. Entonces $A$ es finitos y $|A|\leq|B|$ si y solo si existe una función inyectiva de $A$ en $B$.
+ Sean $A$ y $B$ conjuntos tal que $B$ es finito. Entonces $A$ es finito y $|A|\leq|B|$ si y solo si existe una función inyectiva de $A$ en $B$.
 \end{pin}
 
 \textbf{Demostración}
 
-En el sentido directo, se tiene que si $|A|=m$ y $|B|=n$ entonces se tiene se tiene que existen las funciones $f:A\rightarrow\mathbb{N}_m$ y $f:B\rightarrow\mathbb{N}_n$ biyectivas. Ahora, como $m\leq n$ se tiene que $\mathbb{N}_m\subseteq\mathbb{N}_n$, luego $f\circ g^{-1}:A\rightarrow B$ es inyectiva.
+En el sentido directo, se tiene que si $|A|=m$ y $|B|=n$ entonces se tiene se tiene que existen las funciones $f:A\rightarrow\mathbb{N}_m$ y $g:B\rightarrow\mathbb{N}_n$ biyectivas. Ahora, como $m\leq n$ se tiene que $\mathbb{N}_m\subseteq\mathbb{N}_n$, luego $g^{-1} \circ f:A\rightarrow B$ es inyectiva.
 
 Se deja propuesta la demostración en el otro sentido. 
 
 \begin{pso}
- Sean $A$ y $B$ comjuntos tal que $B$ es finito. Entonces $A$ es finitos y $|A|\leq|B|$ si y solo si existe una función sobreyectiva de $B$ en $A$.
+ Sean $A$ y $B$ conjuntos tal que $B$ es finito. Entonces $A$ es finito y $|A|\leq|B|$ si y solo si existe una función sobreyectiva de $B$ en $A$.
 \end{pso}
 
 \textbf{Demostración}
 
-En el sentido directo, se tiene que si $|A|=m$ y $|B|=n$ entonces se tiene se tiene que existen las funciones $f:A\rightarrow\mathbb{N}_m$ y $f:B\rightarrow\mathbb{N}_n$ biyectivas, con $m\leq n$. Se puede definir la función $f':\mathbb{N}_m\rightarrow A$ ahora $f'(x)=f^{-1}(min(x,n))$ y como $f$ es biyectiva $f^{-1}$ lo es también, luego también es sobreyectiva y, por tanto, $f'$ es también sobreyectiva. Entonces $f'\circ g:B¨\rightarrow A$ es sobreyectiva (la composición de funciones sobreyectivas es sobreyectiva).
+En el sentido directo, se tiene que si $|A|=m$ y $|B|=n$ entonces se tiene se tiene que existen las funciones $f:A\rightarrow\mathbb{N}_m$ y $g:B\rightarrow\mathbb{N}_n$ biyectivas, con $m\leq n$. Se puede definir la función $f':\mathbb{N}_m\rightarrow A$ ahora $f'(x)=f^{-1}(min(x,n))$ y como $f$ es biyectiva $f^{-1}$ lo es también, luego también es sobreyectiva y, por tanto, $f'$ es también sobreyectiva. Entonces $f'\circ g:B¨\rightarrow A$ es sobreyectiva (la composición de funciones sobreyectivas es sobreyectiva).
 
-En el otro sentido, se puede definir $B={b_1,b_2,\dots,b_m}$ y $f:B\rightarrow A$ sobreyectiva, entonces está bien definida la función $h:A\rightarrow B$ definida como $h(a)=b_i$, donde $i$ es el mínimo índice tal que $f(b_i)=a$. Es fácil ver que $h$ es inyectiva, Luego, por la proposición anterior  $A$ es finitos y $|A|\leq|B|$.
+En el otro sentido, se puede definir $B={b_1,b_2,\dots,b_m}$ y $f:B\rightarrow A$ sobreyectiva, entonces está bien definida la función $h:A\rightarrow B$ definida como $h(a)=b_i$, donde $i$ es el mínimo índice tal que $f(b_i)=a$. Es fácil ver que $h$ es inyectiva, Luego, por la proposición anterior  $A$ es finito y $|A|\leq|B|$.
 
 \begin{ppa}
- Si se tiene un palomar con $n$ agujeros o casillas y $m$, $m>n$, palomas, entonces existe una casilla que contiene más de una paloma. De manera general, existe una casilla que tiene más de $\lfloor\frac{m}{n}\rfloor$ palomas.
+ Si se tiene un palomar con $n$ agujeros o casillas y $m$, $m>n$, palomas, entonces existe una casilla que contiene más de una paloma. De manera general, existe una casilla que tiene al menos $\lceil {\frac{m}{n}} \rceil$ palomas.
 \end{ppa}
 
 \textbf{Ejemplo 1}
@@ -190,7 +191,7 @@ En el otro sentido, se puede definir $B={b_1,b_2,\dots,b_m}$ y $f:B\rightarrow A
 
  Sea la relación de conocerse una relación mutua, entonces en un grupo de 6 personas hay al menos 3 personas que se conocen entre ellos o al menos 3 que no se conocen entre ellos.
  
- Si se toman n casillas, entendiendo que si alguien está en la misma casilla se conocen entre ellos y si están en casillas diferentes no se conoce entre si. Para $n > 2$ cualquier distribución significa que hay al menos tres que no conocen entre si. Ahora si $1\leq n \leq 2$
+ Si se toman n casillas, entendiendo que si alguien está en la misma casilla se conocen entre ellos y si están en casillas diferentes no se conoce entre si. Para $n > 2$ cualquier distribución significa que hay al menos tres que no se conocen entre si. Ahora si $1\leq n \leq 2$
  entonces, por el \textbf{Prinicipio del Palomar}, en una casilla como mínimo habrá 3 personas y entonces habría al menos 3 personas que se conocen entre si.
  
  
