@@ -113,7 +113,7 @@ $|A_1^c\cap A_2^c\cap \dots \cap A_m^c| = S_0 - S_1 + S_2 - \dots (-1)^{m}S_m$
 
 \textbf{Demostración}
 
-Sea $k$ un elemento del universo que cumple $t$ propiedades
+Sea $x$ un elemento del universo que cumple $t$ propiedades
 
 Si $t<R$ se cuenta 0 veces
 
@@ -121,7 +121,7 @@ Se puede notar que la fórmula comienza por $S_R$ lo que implica que $x$ no apar
 
 Si $t=R$ se cuenta 1 vez, solo se cuenta en $S_R$
 
-Si $t>R$ entonces $N(R) = \sum^{m-R}_{k=0}\, (-1)^k$${k+R}\choose{k}$$S_{k+R}$ porque no se va a contar en interesecciones de más de $t$
+Si $t>R$ entonces $N(R) = \sum^{t-R}_{k=0}\, (-1)^k$${k+R}\choose{k}$$S_{k+R}$ porque no se va a contar en intersecciones de más de $t$
 
 Ahora $k+R\leq t$ por tanto el elemento se cuenta $t\choose{k+R}$ veces en $S_{k+R}$ 
 
@@ -148,7 +148,7 @@ $=$${t}\choose{R}$$\sum^{t-R}_{k=0}\, (-1)^k$${t-R}\choose{k}$$=0$
 
 \textbf{Demostración}
 
-En el sentido directo, se tiene que si $|A|=m$ y $|B|=n$ entonces se tiene se tiene que existen las funciones $f:A\rightarrow\mathbb{N}_m$ y $f:B\rightarrow\mathbb{N}_n$ biyectivas. Ahora, como $m\leq n$ se tiene que $\mathbb{N}_m\subseteq\mathbb{N}_n$, luego $f\circ g^{-1}:A\rightarrow B$ es inyectiva.
+En el sentido directo, se tiene que si $|A|=m$ y $|B|=n$ entonces existen las funciones $f:A\rightarrow\mathbb{N}_m$ y $g:B\rightarrow\mathbb{N}_n$ biyectivas. Ahora, como $m\leq n$ se tiene que $\mathbb{N}_m\subseteq\mathbb{N}_n$, luego $g^{-1}\circ f:A\rightarrow B$ es inyectiva.
 
 Se deja propuesta la demostración en el otro sentido. 
 
@@ -158,9 +158,9 @@ Se deja propuesta la demostración en el otro sentido.
 
 \textbf{Demostración}
 
-En el sentido directo, se tiene que si $|A|=m$ y $|B|=n$ entonces se tiene se tiene que existen las funciones $f:A\rightarrow\mathbb{N}_m$ y $f:B\rightarrow\mathbb{N}_n$ biyectivas, con $m\leq n$. Se puede definir la función $f':\mathbb{N}_m\rightarrow A$ ahora $f'(x)=f^{-1}(min(x,n))$ y como $f$ es biyectiva $f^{-1}$ lo es también, luego también es sobreyectiva y, por tanto, $f'$ es también sobreyectiva. Entonces $f'\circ g:B¨\rightarrow A$ es sobreyectiva (la composición de funciones sobreyectivas es sobreyectiva).
+En el sentido directo, se tiene que si $|A|=m$ y $|B|=n$ entonces se tiene se tiene que existen las funciones $f:A\rightarrow\mathbb{N}_m$ y $g:B\rightarrow\mathbb{N}_n$ biyectivas, con $m\leq n$. Se puede definir la función $f':\mathbb{N}_m\rightarrow A$ ahora $f'(x)=f^{-1}(min(x,n))$ y como $f$ es biyectiva $f^{-1}$ lo es también, luego también es sobreyectiva y, por tanto, $f'$ es también sobreyectiva. Entonces $f'\circ g:B¨\rightarrow A$ es sobreyectiva (la composición de funciones sobreyectivas es sobreyectiva).
 
-En el otro sentido, se puede definir $B={b_1,b_2,\dots,b_m}$ y $f:B\rightarrow A$ sobreyectiva, entonces está bien definida la función $h:A\rightarrow B$ definida como $h(a)=b_i$, donde $i$ es el mínimo índice tal que $f(b_i)=a$. Es fácil ver que $h$ es inyectiva, Luego, por la proposición anterior  $A$ es finitos y $|A|\leq|B|$.
+En el otro sentido, se puede definir $B={b_1,b_2,\dots,b_m}$ y $f:B\rightarrow A$ sobreyectiva, entonces está bien definida la función $h:A\rightarrow B$ definida como $h(a)=b_i$, donde $i$ es el mínimo índice tal que $f(b_i)=a$. Es fácil ver que $h$ es inyectiva, Luego, por la proposición anterior  $A$ es finito y $|A|\leq|B|$.
 
 \begin{ppa}
  Si se tiene un palomar con $n$ agujeros o casillas y $m$, $m>n$, palomas, entonces existe una casilla que contiene más de una paloma. De manera general, existe una casilla que tiene más de $\lfloor\frac{m}{n}\rfloor$ palomas.
