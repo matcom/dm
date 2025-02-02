@@ -60,7 +60,7 @@ hay un punto del plano donde se corten 3 o más líneas.
 
 ¿En cuántas regiones queda dividido el plano luego de pintar todas las líneas?
 
-$a_0=0$
+$a_0=1$
 
 $a_1=2$
 
@@ -72,7 +72,7 @@ $a_n=a_{n-1}+n$
 
 Cuando se pinta la primera línea el plano se divide en 2 regiones.
 
-Cuando se pinta la línea k-ésima el plano está dividido en $a_{n-1}$ regiones ya, y la nueva línea corta a las $k-1$ rectas ya existentes~(no hay 2 rectas paralelas), por tanto por cada región que pasa la divide en 2 nuevas regiones y pasa por $(k-1)+1$ regiones, luego $a+k=a_{k-1}+k$.\\
+Cuando se pinta la línea n-ésima el plano está dividido en $a_{n-1}$ regiones ya, y la nueva línea corta a las $n-1$ rectas ya existentes~(no hay 2 rectas paralelas), por tanto por cada l\'inea que pasa la divide en 2 nuevas regiones y pasa por $(n-1)+1$ regiones (por el final pasa cuando entra y cuando sale), luego $a_n=a_{n-1}+n$.\\
 
 
 \textbf{Ejercicio}
@@ -91,9 +91,9 @@ Entonces $a(n,k)=a(n,k-1)+a(n-1,k)$ con $n\geq 0$,$k\geq 1$ donde $a(n,1)=1$ y $
 
 Una compañía tiene 2 oficinas, A y B, y su negocio es rentar carros para recorridos locales. Al final de cada mes la mitad de los carros de la oficina A terminan en B y un tercio de los carros de B terminan en A. Si se conocen los valores iniciales de los carros que hay en A($c_A$) y en B($c_B$), al transcurrir $n$ meses cuántos carros hay en A y en B respectivamente.
 
-$A_n=\frac{A_{n-1}}{2}+\frac{B_{n-1}}{3}$
+$$A_n=\frac{A_{n-1}}{2}+\frac{B_{n-1}}{3}$$
 
-$B_n=\frac{2B_{n-1}}{3}+\frac{A_{n-1}}{2}$
+$$B_n=\frac{2B_{n-1}}{3}+\frac{A_{n-1}}{2}$$
 
 donde $A_1=c_A$ y $B_1=c_B$.\\
 
@@ -105,7 +105,7 @@ Si hay $n$ personas y se ejecutan alternadamente ¿cuál sobrevive?
 
 Tomemos $a_n$ como la persona sobreviviente.
 
-$n$ es par, si el número inicial de personas es par, entonces la persona en la posición $x$ durante la segunda vuelta alrededor del círculo estaba en la posición $2x-1$~(para cualquier valor de $x$). Entonces, si $n=2j$ la persona en $a_j$ que ahora sobrevive, inicialmente estaba en la posición $2a_j-1$. Luego tiene como recurrencia a $a_{2n}=2a_{n-1}-1$
+$n$ es par, si el número inicial de personas es par, entonces la persona en la posición $x$ durante la segunda vuelta alrededor del círculo estaba en la posición $2x-1$~(para cualquier valor de $x$). Entonces, si $n=2j$ la persona en $a_j$ que ahora sobrevive, inicialmente estaba en la posición $2a_j-1$. Luego tiene como recurrencia a $a_{2n}=2a_{n}-1$
 
 Si el número de personas inicial es impar, entonces pensamos que las personas en la primera posición morirán al final de la primera vuelta alrededor del círculo. En este caso, la persona en la posición $x$ estaba originalmente en la posición $2x+1$. Esto da la recurrencia $a_{2n+1}=2a_n+1$.
 
@@ -172,10 +172,10 @@ El caso base es siempre $a_1=1$.\\
   
    \textbf{Demostración}
 
-   Como $\{q^n\}$ satisface $a_n=c_1a_{n-1}+c_2a_{n-2}$ entonces $q^n=c_1q^{n-1}+c_2q{n-2}$, por tanto
+   Como $\{q^n\}$ satisface $a_n=c_1a_{n-1}+c_2a_{n-2}$ entonces $q^n=c_1q^{n-1}+c_2q^{n-2}$, por tanto
    $q^2=c_1q+c_2$ luego  $q^2-c_1q-c_2=0$ entonces $p(x)=x^2-c_1x-c_2=0$ tiene como raíz a $q$.\\
    
-   Por otra parte, si $p(x)=0$ se tiene que $p(q)=q^2-c_1q-c_2=0$ por lo que $q^2-c_1q-c_2=0$, luego $q^n=c_1q^{n-1}+c_2q{n-2}$ y, por tanto, $\{q^n\}$ satisface $a_n=c_1a_{n-1}+c_2a_{n-2}$
+   Por otra parte, si $p(x)=0$ se tiene que $p(q)=q^2-c_1q-c_2=0$ por lo que $q^2-c_1q-c_2=0$, luego $q^n=c_1q^{n-1}+c_2q^{n-2}$ y, por tanto, $\{q^n\}$ satisface $a_n=c_1a_{n-1}+c_2a_{n-2}$
    
 \begin{teo}
  Sean $\{x_n\}$ y $\{y_n\}$ soluciones de la relación de recurrencia\\ 
@@ -190,9 +190,9 @@ $Ax_n=Ac_1x_{n-1}+Ac_2x_{n-2}$
 
 Como $\{y_n\}$ es solución entonces $y_n=c_1y_{n-1}+c_2y_{n-2}$ y
 
-$By_n=Bc_1Y_{n-1}+Bc_2y_{n-2}$
+$By_n=Bc_1y_{n-1}+Bc_2y_{n-2}$
 
-Entonces $Ax_n+By_n=c_1(Ax_{n-1}+BY_{n-1})+c_2(Ax_{n-2}+By_{n-2})$
+Entonces $Ax_n+By_n=c_1(Ax_{n-1}+By_{n-1})+c_2(Ax_{n-2}+By_{n-2})$
 
 luego $Ax_n+By_n$ es solución
 
@@ -208,7 +208,7 @@ Ahora se debe demostrar que cualquier solución es de esta forma, que es equival
 
 $Aq_1+Bq_2=a_1$
 
-$Aq^2_1+Bq^2_2=a2$
+$Aq^2_1+Bq^2_2=a_2$
 
 para ello el determinante debe ser distinto de 0 y se cumple pues
 
@@ -218,16 +218,16 @@ $q_1q^2_2-q_2q^2_1=q_1q_2(q_2-q_1)\neq0$
 
 
 \begin{teo}
- Sea $q\in\mathbb{R}$, $q\neq 0$ única raíz de la ecuación $x^2-c_1x-c2=0$, entonces la sucesión $nq^n$  es solución de la relación de recurrencia $a_n=c_1a_{n-1}+c_2a_{n-2}$
+ Sea $q\in\mathbb{R}$, $q\neq 0$ única raíz de la ecuación $x^2-c_1x-c_2=0$, entonces la sucesión $nq^n$  es solución de la relación de recurrencia $a_n=c_1a_{n-1}+c_2a_{n-2}$
 \end{teo}
 
 \textbf{Demostración}
 
-$q$ es raíz de $x^2-c_1x-c2$ luego $q^2-c_1q-c2=0$
+$q$ es raíz de $x^2-c_1x-c_2$ luego $q^2-c_1q-c_2=0$
 
 como $q$ es raíz única por Vieta se tiene que $2q=c_1$ y $q^2=-c_2$
 
-entonces $a_n=2qa_{n-1}-q_2a_{n-2}$
+entonces $a_n=2qa_{n-1}-q^2a_{n-2}$
 
 Luego 
 
