@@ -42,7 +42,7 @@
 
 
 \begin{dfn}
- Una relación de recurrencia para la suceción $a_1, a_2,\dots, a_n$ es una ecuación que relaciona el término n-ésimo con alguno(s) de sus predecesores
+ Una relación de recurrencia para la sucesión $a_1, a_2,\dots, a_n$ es una ecuación que relaciona el término n-ésimo con alguno(s) de sus predecesores
 \end{dfn}
 
 \textbf{Ejemplos}
@@ -162,7 +162,7 @@ El caso base es siempre $a_1=1$.\\
  \end{teo}
 
  \begin{teo}
-  Sea $q\in \mathbb{R}$, $q>0$, la suseción $\{q^n\}$ satisface la ecuación de recurrencia $a_n=c_1a_{n-1}+c_2a_{n-2}$ si y solo si $q$ es raíz de la ecuación 
+  Sea $q\in \mathbb{R}$, $q>0$, la sucesión $\{q^n\}$ satisface la ecuación de recurrencia $a_n=c_1a_{n-1}+c_2a_{n-2}$ si y solo si $q$ es raíz de la ecuación 
   
   $x^2-c_1x-c_2=0$
  \end{teo}
@@ -173,9 +173,10 @@ El caso base es siempre $a_1=1$.\\
    \textbf{Demostración}
 
    Como $\{q^n\}$ satisface $a_n=c_1a_{n-1}+c_2a_{n-2}$ entonces $q^n=c_1q^{n-1}+c_2q^{n-2}$, por tanto
-   $q^2=c_1q+c_2$ luego  $q^2-c_1q-c_2=0$ entonces $p(x)=x^2-c_1x-c_2=0$ tiene como raíz a $q$.\\
+   $q^2=c_1q+c_2$ luego $q^2-c_1q-c_2=0$ entonces $p(x)=x^2-c_1x-c_2=0$ tiene como raíz a $q$.\\
    
-   Por otra parte, si $p(x)=0$ se tiene que $p(q)=q^2-c_1q-c_2=0$ por lo que $q^2-c_1q-c_2=0$, luego $q^n=c_1q^{n-1}+c_2q^{n-2}$ y, por tanto, $\{q^n\}$ satisface $a_n=c_1a_{n-1}+c_2a_{n-2}$
+   Por otra parte, si $p(x)=0$ se tiene que $p(q)=q^2-c_1q-c_2=0$ por lo que $q^2-c_1q-c_2=0$, luego, multiplicando por $q^{n-2}$ y despejando, se tiene que 
+   $q^n=c_1q^{n-1}+c_2q^{n-2}$ y, por tanto, $\{q^n\}$ satisface $a_n=c_1a_{n-1}+c_2a_{n-2}$
    
 \begin{teo}
  Sean $\{x_n\}$ y $\{y_n\}$ soluciones de la relación de recurrencia\\ 
