@@ -44,7 +44,7 @@
 
 
 \begin{teo}
- Sea $q\in\mathbb{R}$ raíz de multiplicidad 2 de la ecuación $x^2-c_1x-c2=0$, entonces $x_n$ es solución de la relación de recurrencia $a_n=c_1a_{n-1}+c_2a_{n-2}$ si y solo si $x_n=Aq^n + Bnq^n$ 
+ Sea $q\in\mathbb{R}$ raíz de multiplicidad 2 de la ecuación $x^2-c_1x-c_2=0$, entonces $x_n$ es solución de la relación de recurrencia $a_n=c_1a_{n-1}+c_2a_{n-2}$ si y solo si $x_n=Aq^n + Bnq^n$ 
 \end{teo}
 
 \textbf{Demostración}
@@ -54,7 +54,7 @@ Ahora se debe demostrar que cualquier solución es de esta forma, que es equival
 
 $Aq+Bq=a_1$
 
-$Aq^2+2Bq^2=a2$
+$Aq^2+2Bq^2=a_x2$
 
 para ello el determinante debe ser distinto de 0 y se cumple pues
 
@@ -109,11 +109,11 @@ La solución general se obtiene de la siguiente forma:
 
 \begin{enumerate}
  \item Se calcula la solución general de la ecuación homogénea\\ 
- $a_n=c_1a_{n-1}+a-2c_{n-2}+\dots+c_ka_{n-k}$ 
- \item Se calcula una soluciín particular $P_n$ de la ecuación\\ 
- $a_n=c_1a_{n-1}+a-2c_{n-2}+\dots+c_ka_{n-k}+f(n)$ 
+ $a_n=c_1a_{n-1}+c_2a_{n-2}+\dots+c_ka_{n-k}$ 
+ \item Se calcula una soluci\'on particular $P_n$ de la ecuación\\ 
+ $a_n=c_1a_{n-1}+c_2a_{n-2}+\dots+c_ka_{n-k}+f(n)$ 
  \item La suma de ambas soluciones es una solución general de la ecuación\\
- $a_n=c_1a_{n-1}+a-2c_{n-2}+\dots+c_ka_{n-k}+f(n)$ 
+ $a_n=c_1a_{n-1}+c_2a_{n-2}+\dots+c_ka_{n-k}+f(n)$ 
  \item Se obtiene la solución correspondiente a las condiciones iniciales
  \end{enumerate}
  
@@ -123,7 +123,7 @@ Sea la recurrencia $a_0=5,\, a_1=1,\, a_n=a_{n-1}+6a_{n-2}-6n^2+26n-25$\\
 
 La relación homogénea tiene como polinomio característico a
 
-$P(x)=x^2-x-6$  cuyas raíces son $q_1=-2\, q-2=3$ por lo que la solución 
+$P(x)=x^2-x-6$  cuyas raíces son $q_1=-2\, q_2=3$ por lo que la solución 
 
 general de la ecuación es  $a_n=A(-2)^n+B3^n$\\
 
@@ -149,7 +149,7 @@ Sea la recurrencia lineal $a_0=0,\, a_1=1,\, a_n=a_{n-1}+6a_{n-2}+2^n$\\
 
 La homogénea tiene como polinomio característico $P(x)=x^2-x-6$ 
 
-cuyas raíces son $q_1=-2\, q-2=3$ por lo que la solución 
+cuyas raíces son $q_1=-2\, q_2=3$ por lo que la solución 
 
 general de la ecuación es  $a_n=A(-2)^n+B3^n$\\
 
@@ -165,7 +165,7 @@ Entonces la solución general de la no homogénea es
 
 $a_n=A(-2)^n+B3^n-2^n$ y como las condiciones iniciales son 
 
-$a_0=0=A+B-1$ y $A_1=1=-2A+3B-2$ entonces $A=0$ y $B=1$
+$a_0=0=A+B-1$ y $a_1=1=-2A+3B-2$ entonces $A=0$ y $B=1$
 
 por lo que la solución de la recurrencia es $a_n=3^n-2^n$\\
 
@@ -175,11 +175,11 @@ Sea la recurrencia lineal $a_0=0,\, a_1=1,\, a_n=a_{n-1}+6a_{n-2}+3^n$\\
 
 La homogénea tiene como polinomio característico $P(x)=x^2-x-6$ 
 
-cuyas raíces son $q_1=-2\, q-2=3$ por lo que la solución 
+cuyas raíces son $q_1=-2\, q_2=3$ por lo que la solución 
 
 general de la ecuación es  $a_n=A(-2)^n+B3^n$\\
 
-cuyas raíces son $q_1=-2\, q-2=3$ por lo que la solución 
+cuyas raíces son $q_1=-2\, q_2=3$ por lo que la solución 
 
 general de la ecuación es  $a_n=A(-2)^n+B3^n$\\
 
