@@ -223,9 +223,9 @@
 \begin{dem}[V\'ia 1: PBO]\end{dem}
     Se hace un proceso iterativo por los v\'ertices. Como en el grafo hay al menos una arista, sea esta $\{v_1, v_2\}$, se toma el v\'ertice $v_1$.\\
     
-    Si $deg(v_1) = 1$ ya tendr\'iamos uno de los v\'ertices buscados, si no, $v_1$ tiene al menos $2$ vecinos, tomando a cualquier otro adyacente a $v_1$ distinto de $v_2$, sea este $v_3$, si $deg(v_3) = 1$, entonces $v_3$ es uno de los v\'ertices de grado $1$, si no se toma una de los adyecentes a $v_3$ distinto de $v_1$, se repite el mismo proceso que con $v_1$, y as\'i sucesivamente, n\'otese que nunca se vuelven a visitar v\'ertices anteriormente analizados puesto que esto implicar\'ia la existencia de un ciclo en $G$, luego el procedimiento eventualmente termina, ya que la cantidad de v\'ertices de grafo es finita y por PBO no es posible un crecimiento infinito en un conjunto acotado superiormente.\\
+    Si $deg(v_1) = 1$ ya tendr\'iamos uno de los v\'ertices buscados, si no, $v_1$ tiene al menos $2$ vecinos, tomando a cualquier otro adyacente a $v_1$ distinto de $v_2$, sea este $v_3$, si $deg(v_3) = 1$, entonces $v_3$ es uno de los v\'ertices de grado $1$, si no se toma una de los adyecentes a $v_3$ distinto de $v_1$, se repite el mismo proceso que con $v_1$, y as\'i sucesivamente, n\'otese que nunca se vuelven a visitar v\'ertices anteriormente analizados puesto que esto implicar\'ia la existencia de un ciclo en $G$, luego el procedimiento eventualmente termina, ya que la cantidad de v\'ertices del grafo es finita y por PBO no es posible un crecimiento infinito en un conjunto acotado superiormente.\\
     
-    Luego este proceso se vuelve a realizar partiendo de $v_2$ para asi obtener el segundo v\'ertice con estas caracter\'isticas $\blacksquare$.
+    Luego este proceso se vuelve a realizar partiendo de $v_2$ para as\'i obtener el segundo v\'ertice con estas caracter\'isticas $\blacksquare$.
 
 \begin{dem}[V\'ia 2: Directa]\end{dem}
 
@@ -257,7 +257,7 @@ A los v\'ertices con $deg(v) = 1$ de un bosque se le denomina hojas.
 \end{teo}
 
 \begin{dem}[V\'ia Constructiva]\end{dem}
-Sea $G$ un grafo conexo, si es ac\'iclico, listo, $T = G$, si no, $G$ tiene ciclos, si se toma un ciclo de $G$ y se quita una asita esto no rompe la conexidad, y este proceso se puede realizar reiteradamente hasta que no queden m\'as ciclos, obteni\'endose as\'i un \'arbol abarcador de $G$.\\
+Sea $G$ un grafo conexo, si es ac\'iclico, listo, $T = G$, si no, $G$ tiene ciclos, si se toma un ciclo de $G$ y se quita una arista esto no rompe la conexidad, y este proceso se puede realizar reiteradamente hasta que no queden m\'as ciclos, obteni\'endose as\'i un \'arbol abarcador de $G$.\\
 
 
 \textbf{Nota:} N\'otese que el \'arbol abarcador no es \'unico para $G$, que adem\'as $|E(G)| \geq |E(T)|$ puesto que en el propio proceso de obtenci\'on de $T$ se quitan aristas de $G$ en cada paso y que para un grafo no conexo se puede obtener un \'arbol abarcador por cada componente conexa, gener\'andose as\'i un bosque.
@@ -288,7 +288,7 @@ Sea $G$ tal que $n = |V(G)| \geq 2$, son equivalentes las siguientes proposicion
     \item $G$ es conexo y $|E(G)| = n-1$.
     \item $G$ es conexo pero si le quitas una arista deja de serlo.
     \item $G$ es ac\'iclico, pero si le agregas una arista se forma exactamente un ciclo.
-    \item Todo par de v\'ertices en $G$ est\'a conectado exactamente por un camino simple. 
+    \item Todo par de v\'ertices en $G$ est\'an conectados exactamente por un camino simple. 
 \end{enumerate}
 \end{teo}
 
@@ -297,11 +297,11 @@ Sea $G$ tal que $n = |V(G)| \geq 2$, son equivalentes las siguientes proposicion
 \end{dem}
 \begin{dem}[$P_1 \Rightarrow P_2$ V\'ia: Inducci\'on en $|V(G)| = n$] $G$ es un \'arbol $\Rightarrow$ $G$ no tiene ciclos y $|E(G)| = n-1$.\end{dem}
 
-Caso base $n = 2$ Como $G$ es arbol, entonces es conexo, luego los dos v\'ertives tienen que estar unidos por una arista de donde $|E(G)| = 1 = n-1$.
+Caso base $n = 2$ Como $G$ es \'arbol, entonces es conexo, luego los dos v\'ertives tienen que estar unidos por una arista de donde $|E(G)| = 1 = n-1$.
 
 Hip\'otesis $n$: Supongamos que para cualquier \'arbol de $n$ v\'ertices se cumple que este tiene $|E(V)| = n -1$.
 
-Demostración $n+1$: Sea $G$ un grafo de $n+1$ v\'ertice, como por el teorema anteriormente demostrado sabemos que existen en $G$ al menos dos hojas, sea $v$ una hoja, $G' = G - v$ sigue siendo un \'arbol ya que quitar v\'ertices no produce ciclos y adem\'as como este v\'ertice tiene grado $1$ quitarlo no desconecta el grafo. Luego $G'$ es un \'arbol de $n$ v\'ertices, por lo que cumple con la hip\'otesis de inducci\'on y $|E(G')| = n-1$. Como $|E(G)| = |E(G')| +1$, ya que junto al v\'ertice $v$ se quita la arista que lo conectaba a $G$, entonces $|E(G)| = n-1+1 = n \blacksquare$.
+Demostración $n+1$: Sea $G$ un grafo de $n+1$ v\'ertices, como por el teorema anteriormente demostrado sabemos que existen en $G$ al menos dos hojas, sea $v$ una hoja, $G' = G - v$ sigue siendo un \'arbol ya que quitar v\'ertices no produce ciclos y adem\'as como este v\'ertice tiene grado $1$ quitarlo no desconecta el grafo. Luego $G'$ es un \'arbol de $n$ v\'ertices, por lo que cumple con la hip\'otesis de inducci\'on y $|E(G')| = n-1$. Como $|E(G)| = |E(G')| +1$, ya que junto al v\'ertice $v$ se quita la arista que lo conectaba a $G$, entonces $|E(G)| = n-1+1 = n \blacksquare$.
 
 \begin{dem}[$P_2 \Rightarrow P_3$ V\'ia: Directa] $G$ no tiene ciclos y $|E(G)| = n-1 \Rightarrow$ $G$ es conexo y $|E(G)| = n-1$. .\end{dem}
 
@@ -313,7 +313,7 @@ Luego $k = 1$ siendo $G$ conexo $\blacksquare$.
 
 \begin{dem}[$P_3 \Rightarrow P_4$ V\'ia: \'Arbol Abarcador] $G$ conexo y $|E(G)| = n-1 \Rightarrow$ $G$ es conexo pero si se le quita una arista se desconecta.\end{dem}
 
-Esto es equivalente a demostrar que para que un grafo sea conexo tiene que tener una cantidad de aristas mayor o igual a $n-1$. Ya que si esto se cumple, al $G$ ser conexo y tener $n-1$ arista si le quitamos una perder\'ia su conexidad.
+Esto es equivalente a demostrar que para que un grafo sea conexo tiene que tener una cantidad de aristas mayor o igual a $n-1$. Ya que si esto se cumple, al $G$ ser conexo y tener $n-1$ aristas si le quitamos una perder\'ia su conexidad.
 
 Sea $G$ conexo, entonces se puede obtener $T$ \'arbol abarcador de $G$, donde $|E(G)| \geq |E(T)| = n-1$ luego si $G$ conexo $|E(G)| \geq n-1 \blacksquare$. 
 
@@ -336,6 +336,6 @@ La demostraci\'on es an\'aloga a la de la suma de los grados de un grafo es el d
 
 \begin{dem}[$\Leftarrow$]  $\sum_{i=1}^{n} d_i$ es par $\Rightarrow$ $d_1, d_2,..., d_n$ es la secuencia de grados de un pseudografo \end{dem}
 
-Para demostrarlo basta con construir un pseudografo con $n$ v\'ertices tal que los grados de estos coincidan con la secuencia. Para ello, creamos $n$ v\'ertices y para aquellos $d_i$ que sean pares, al v\'ertice $i$ le ponemos $\frac{d_i}{2}$ lazos, y a para $d_i$ que son impares al v\'ertice $i$ le ponemos $\frac{d_i -1}{2}$ lazos, como $\sum_{i=1}^n d_i$ es par, entonces hay una cantidad par de v\'ertices con grado impar, a cada uno le falta agregarle una arista m\'as para que su grado coincida con su $d_i$ asignado, por lo que se unen en parejas mediante una arista.
+Para demostrarlo basta con construir un pseudografo con $n$ v\'ertices tal que los grados de estos coincidan con la secuencia. Para ello, creamos $n$ v\'ertices y para aquellos $d_i$ que sean pares, al v\'ertice $i$ le ponemos $\frac{d_i}{2}$ lazos, y para los $d_i$ que son impares al v\'ertice $i$ le ponemos $\frac{d_i -1}{2}$ lazos, como $\sum_{i=1}^n d_i$ es par, entonces hay una cantidad par de v\'ertices con grado impar, a cada uno le falta agregarle una arista m\'as para que su grado coincida con su $d_i$ asignado, por lo que se unen en parejas mediante una arista.
 
 \end{document} 
