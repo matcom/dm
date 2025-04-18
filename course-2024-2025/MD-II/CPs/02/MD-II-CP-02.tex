@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usepackage{amsmath} 
+\usepackage{nopageno}
+
+\begin{document}
+
+\title{Clase pr\'actica 2}
+\maketitle
+
+\begin{enumerate}
+    \item Demuestre que todo \'arbol con vértices de grado $k$ tiene al menos $k$ vértices de grado $1$.
+    
+    \item Demuestre que la secuencia de enteros positivos no creciente $d_1, d_2, ..., d_n$ es un \'arbol si y solo si $\sum_{i=1}^{n} d_i = 2(n-1)$
+    
+    \item En todo \'arbol existe al menos un centroide: un vértice tal que al quitarlo la cantidad de vértices de los \'arboles resultantes es a lo sumo $n/2$ siendo $n$ el tamaño del \'arbol inicial.
+    
+    \item Una secuencia no creciente de enteros no negativos $d_1, d_2, ..., d_n$ con $(n \geq 2)$ es gr\'afica si y solo si la secuencia $d_2 - 1, d_3 - 1, ..., d_{d_1+1} - 1, d_{d_1 + 2} ,d_{d_1+3} ..., d_n $ es gr\'afica.
+    
+    \item Sea un árbol $T$ de orden $n$ que solo contiene vértices de degree $1$ o $3$. Pruebe que $T$ contiene $\frac{n-2}{2}$ vértices de degree $3$.
+
+    \item Demuestre que si la secuencia no creciente $\{d_1,d_2,...,d_n\}$ de n\'umeros positivos es gr\'afica entonces $\forall k$ se tiene que : $\sum_{i=1}^{k} d_i \leq k(k-1) + \sum_{j=k+1}^{n} min(k,d_j)$
+    
+    \item Si $T$ es un \'arbol con $k$ aristas y $G$ es un grafo tal que $\delta(G) \geq k$, entonces $T$ es un subgrafo de $G$, asumiendo que podemos renombrar las etiquetas de los vértices.
+ \end{enumerate}
+\end{document}

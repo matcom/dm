@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usepackage{amsmath} 
+\usepackage{nopageno}
+
+\begin{document}
+
+\title{Clase pr\'actica 1}
+\maketitle
+
+\begin{enumerate}
+    \item Sea $G$ un grafo y $v, w \in V(G)$, demuestre que, si existen dos caminos diferentes que conetan a $v$ y $w$ entonces existe un ciclo en $G$.
+    \item Sea $G$ un grafo,  $|V(G)| = n$, si $\forall v,w \in V(G)$ tal que $v$ y $w$ no son adyacentes se cumple que $deg(v) + deg(w) \geq n-1$, entonces $G$ es conexo.
+    \item Sea $G$ un grafo tal que $|V(G)| = n$ y $|E(G)|=m$ entonces el n\'umero de componentes conexas de $G$ es mayor o igual que $n-m$.
+    \item Demuestre que si $|V(G)| \geq 9$ entonces $\alpha(G)\geq 4$ (n\'umero de independencia) o $\omega(G) \geq 3$ (n\'umero de clique).
+    \item Sea $G$ un grafo, tal que $|V(G)| = n$, demuestre que si $$\sum_{v \in V(G)} \binom{deg(v)}{2} > \binom{n}{2}$$ entonces en $G$ hay un ciclo de longitud $4$.
+    \item Demuestre que un grafo es bipartito $ \Leftrightarrow $ no tiene ciclos de longitud impar.
+    \item Demuestre que todo grafo $G$ tiene un subgrafo en expansi\'on  $G'$ que es bipartito y que cumple que $|E(G')| \geq \frac{|E(G)|}{2}$.
+  \end{enumerate}
+\end{document}
