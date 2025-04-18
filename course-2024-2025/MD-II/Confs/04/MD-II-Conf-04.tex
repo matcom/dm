@@ -65,6 +65,16 @@ Un grafo G es un grafo Hamiltoniano si tiene un ciclo de Hamilton
 \textbf{Paso inductivo}: Como se cumple para $K_n$ existe un ciclo Hamiltoniano $<v_1,v_2,\dots,v_n,v_1>$, entonces si añade el vértice $v_{n+1}$ a $K_n$ de modo que como grafo resultante se tenga $K_{n+1}$ ($v_{n+1}$ enlazado a todos los vértices de $K_n$) entonces se puede tener el ciclo $<v_1,v_2,\dots,v_n,v_{n+1},v_1>$ que es un ciclo Hamiltoniano $\blacksquare$. 
 
 
+\begin{teo}
+ Si un grafo G es Hamiltoniano entonces para cualquier subconjunto no vacío de vértices S de G, el número de componentes conexas del subgrafo $G - S$ es menor o igual que  $|S|$.
+\end{teo}
+
+
+\begin{dem}[Demostración del Teorema]
+ 
+\end{dem}
+ Cuando de remueven los vértices de S de G, el ciclo Hamiltoniano se divide en $|S|$ segmentos~(cadenas de vértices consecutivos del ciclo que no contienen vértices de S). Cada segmento corresponde a una componente conexa de G-S si no existen aristas adicionales en G que estén fuera del ciclo y que conecten a estos segmentos. Si existieran estas aristas, entonces conectarían segmentos y, con ello, se reduciría el número de componentes conexas. Luego, el número de componente conexas del subgrafo $G - S$ es menor o igual que  $|S|$ $\blacksquare$.
+
 \begin{teo}[Teorema de Dirac]
  Sea G un grafo con $|V(G)|=n,\, n\geq3$, si para todo $v,\, v\in V(G)$ se tiene que $deg(v)\geq \frac{n}{2}$ entonces G es Hamiltoniano.
 \end{teo}
@@ -126,13 +136,13 @@ Entonces lo supuesto es falso, por tanto existe $v_i$ en c tal que $v_i$ es adya
 
 Por tanto se puede tomar el ciclo $<v_0=x,v_{i+1},\dots,v_{n-1}=y,v_i,v_{i-1},\dots,v_1,v_0=x>$ que es un ciclo Hamiltoniano.\\
 
-Luego G es Hamiltoniano si y solo si su clausura lo es$\blacksquare$.
+Luego G es Hamiltoniano si y solo si su clausura lo es $\blacksquare$.
 
 \begin{dem}[Demostración del \textbf{Teorema de Ore}]
  
 \end{dem}
 
-Note que si G cumple las condiciones de Ore entonces la clausura es $K_n$ y todo grafo completo es claramente Hamiltoniano, luego por el lema G es Hamiltoniano.
+Note que si G cumple las condiciones de Ore entonces la clausura es $K_n$ y todo grafo completo es claramente Hamiltoniano, luego por el lema G es Hamiltoniano  $\blacksquare$.
   
 \begin{cor}[Corolario del \textbf{Teorema de Ore}]
   Si $G$ es un grafo conexo, simple y sin lazos con n vértices, con $n\geq 3$, en el cual $deg(u)+deg(v)\geq n - 1$ para todo par de vértices no adyacentes u, v, entonces $G$ posee un camino Hamiltoniano.
