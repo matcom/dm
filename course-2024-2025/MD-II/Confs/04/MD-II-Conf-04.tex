@@ -49,6 +49,22 @@ Un ciclo c en un grafo G se dice Hamiltoniano si contiene a todos los vértices 
 Un grafo G es un grafo Hamiltoniano si tiene un ciclo de Hamilton
 \end{dfn}
 
+\begin{lem}
+ Todo grafo completo G, $|V(G)|>2$, es Hamiltoniano. 
+\end{lem}
+
+
+\begin{dem}[Demostración por Inducción del Lema]
+ 
+\end{dem}
+
+\textbf{Caso base}: para $n=3$ se tiene el ciclo  $<v_1,v_2,v_3,v_1>$ que es Hamiltoniano.
+
+\textbf{Hipótesis}: Si se cumple que $K_n$ es Hamiltoniano entonces $K_{n+1}$ es Hamiltoniano.
+
+\textbf{Paso inductivo}: Como se cumple para $K_n$ existe un ciclo Hamiltoniano $<v_1,v_2,\dots,v_n,v_1>$, entonces si añade el vértice $v_{n+1}$ a $K_n$ de modo que como grafo resultante se tenga $K_{n+1}$ ($v_{n+1}$ enlazado a todos los vértices de $K_n$) entonces se puede tener el ciclo $<v_1,v_2,\dots,v_n,v_{n+1},v_1>$ que es un ciclo Hamiltoniano $\blacksquare$. 
+
+
 \begin{teo}[Teorema de Dirac]
  Sea G un grafo con $|V(G)|=n,\, n\geq3$, si para todo $v,\, v\in V(G)$ se tiene que $deg(v)\geq \frac{n}{2}$ entonces G es Hamiltoniano.
 \end{teo}
