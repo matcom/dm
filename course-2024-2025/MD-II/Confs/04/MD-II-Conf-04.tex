@@ -1,0 +1,134 @@
+\documentclass[a4paper,1pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage[rightcaption]{sidecap}
+
+\newtheorem*{pbo}{Principio del Buen Ordenamiento}
+
+\newtheorem*{pim}{Principio de Inducción Matemática}
+
+\newtheorem*{teo}{Teorema}
+
+\newtheorem*{cor}{Corolario}
+
+\newtheorem*{dem}{Demostración}
+
+\newtheorem*{dfn}{Definición}
+
+\newtheorem*{lem}{Lema}
+
+\newtheorem*{prp}{Propiedades}
+
+
+% Title Page
+\title{Conferencia 4 - Grafo Hamiltoniano}
+\author{}
+
+
+
+\begin{document}
+\maketitle
+
+\begin{dfn}[Cadena Hamiltoniana] 
+Una cadena en un grafo G se dice Hamiltoniana si contiene a
+todos los vértices del grafo.
+\end{dfn}
+
+\begin{dfn}[Ciclo Hamiltoniano]
+Un ciclo c en un grafo G se dice Hamiltoniano si contiene a todos los vértices del grafo.
+\end{dfn}
+
+\begin{dfn}[Grafo Hamiltoniano]
+Un grafo G es un grafo Hamiltoniano si tiene un ciclo de Hamilton
+\end{dfn}
+
+\begin{teo}[Teorema de Dirac]
+ Sea G un grafo con $|V(G)|=n,\, n\geq3$, si para todo $v,\, v\in V(G)$ se tiene que $deg(v)\geq \frac{n}{2}$ entonces G es Hamiltoniano.
+\end{teo}
+
+\begin{teo}[Teorema de Ore]
+Sea G un grafo con $|V(G)|=n,\, n\geq3$, si para todo par $v,w$ de vértices no adayacentes se cumple que $deg(v)+deg(w)\geq n$ entonces G es Hamiltoniano.
+\end{teo}
+ 
+ \begin{dem}[Demostración del \textbf{Teorema de Dirac}] \end{dem}
+ Vea que si $deg(v)\geq \frac{n}{2}$ para todo v de G, entonces\\ 
+ 
+ $deg(v)+deg(w)\geq \frac{n}{2}+\frac{n}{2}=n$ \\
+ 
+ y si se cumpliera el \textbf{Teorema de Ore}, como ya se tiene su condición, entonces sería Hamiltoniano. Luego, solo habría que demostrar el \textbf{Teorema de Ore}.\\
+  
+ Para demostrar el \textbf{Teorema de Ore} se utilizarán la definición de clausura y el \textbf{Teorema de Bondy-Chvátal}:
+ 
+  \begin{dfn}
+ Dado G, $|V(G)|=n$ se define inductivamente la secuencia $G_0,G_1,\dots,G_k$ de grafos donde
+ $G_0=G$ y $G_{i+1=G_i+\{x,y\}}$ donde $x,y$ son vértices no adyacentes en $G_i$ tal $deg(x)+deg(y)\geq n$, entonces $G_k$ es la clausura ge $G$
+ \end{dfn}
+ 
+ O escrita de otra forma:
+ 
+  \begin{dfn}
+  Dado un grafo G con n vértices, la clausura de G es el grafo que tiene los mismos vértices que G y que aparece al agregar todas las aristas de la forma $\{u, v\}$ para cualquier par de vértices u y v que no sean adyacentes y cumplan que 
+  $deg(v) + deg(u)\geq n$.
+ \end{dfn}
+ 
+ \begin{teo}[Teorema de Bondy-Chvátal]
+  G es Hamiltoniano si y solo si su clausura es Hamiltoniana.
+ \end{teo}
+
+  \begin{dem}[Demostración del \textbf{Teorema de Bondy-Chvátal}] \end{dem}
+
+En el sentido directo, G es Hamiltoniano $\Rightarrow$ su clausura es Hamiltoniana, la demostración es obvia. Si G es Hamiltoniano entonces cualquier ciclo Hamiltoniano sigue existiendo en la clausura de G porque las aristas que se añaden al grafo original no afectan el ciclo (solo conectan vértices no adyacentes).\\
+  
+En el otro sentido, si la clausura de G es Hamiltoniana $\Rightarrow$ G es Hamiltoniano, si se parte de $G=G_0$ hasta llegar a $G_k$, clausura de G, bastaría con demostrar que $G_i$ es Hamiltoniano ssi $G_{i+i}$ también lo es.
+
+Luego, si $G_i$ es Hamiltoniano es obvio que $G_{i+1}$ también lo es.
+
+Ahora, veamos que pasa si $G_{i+1}$ es Hamiltoniano.
+
+Si en $G_{i+1}$ hay un ciclo de Hamilton que no contiene a la arista $\{x,y\}$ (la agregada que no estaba en $G_i$), entonces este ciclo también aparecía en $G_i$.
+
+Suponga que $\{x,y\}$ si aparece en el ciclo, por tanto en el grafo $G_i$, como no está $\{x,y\}$ habrá un ciclo Hamiltoniano: 
+
+$c=<v_0,v_1,\dots,v_{n-1}>$ donde $v_0=x$ y $v_{n-1}=y$
+
+obviamente todos los vértices que son adaycentes a x o a y aparecen en el camino puesto que este contiene a todos los vértices del grafo.
+
+Suponga que no existe un vértice $v_i$ de camino que sea adyacente a y, y que $v_{i+1}$ sea adyacente a x. 
+
+Luego, se conoce que $deg(y)\leq n-1$ y, además, sabemos que y al menos no tiene de vértices adyacentes la misma cantidad de vértices que son adyacentes a x (por cada vértice en el camino a x se sabe que el anterior no es adyacente a y) por tanto $deg(y)\leq n-1 - deg(x)$ luego $deg(y) + deg(x)\leq n-1 $. Y esto es una contradicción!! 
+
+(como se añadió $\{x,y\}$  a $G_{i+1}$ entonces $deg(x)+deg(y)\geq n$)
+
+Entonces lo supuesto es falso, por tanto existe $v_i$ en c tal que $v_i$ es adyacente a y, y $v_{i+1}$ es adyacente a x. 
+
+Por tanto se puede tomar el ciclo $<v_0=x,v_{i+1},\dots,v_{n-1}=y,v_i,v_{i-1},\dots,v_1,v_0=x>$ que es un ciclo Hamiltoniano.\\
+
+Luego G es Hamiltoniano si y solo si su clausura lo es$\blacksquare$.
+
+\begin{dem}[Demostración del \textbf{Teorema de Ore}]
+ 
+\end{dem}
+
+Note que si G cumple las condiciones de Ore entonces la clausura es $K_n$ y todo grafo completo es claramente Hamiltoniano, luego por el lema G es Hamiltoniano.
+  
+\begin{cor}[Corolario del \textbf{Teorema de Ore}]
+  Si $G$ es un grafo conexo, simple y sin lazos con n vértices, con $n\geq 3$, en el cual $deg(u)+deg(v)\geq n - 1$ para todo par de vértices no adyacentes u, v, entonces $G$ posee un camino Hamiltoniano.
+\end{cor}
+
+\begin{dem}[Demostración del Corolario del \textbf{Teorema de Ore}]
+ 
+\end{dem}
+
+Como G es conexo, sin lazos, y con n vértices, entonces no contiene un ciclo Hamiltoniano. Ahora, si creamos el grafo $G'$ a partr de añadir el vértice $w$ y conectarlo con todos los vértices existentes se cumpliría ahora  que\\ $deg(u)+deg(v)\geq n - 1 + 2 = n + 1$ para todo par de vértices u, v no adyacentes,
+luego $G'$ es Hamiltoniano por el \textbf{Teorema de Ore}.
+
+Entonces existe un ciclo Hamiltoniano en $G'$ y este tiene que pasar por el vértice $w$, porque si no pasara por $w$ significaría que existían un ciclo en G y este, por definición, no lo tenía. Entonces como hay un ciclo Hamiltoniano en $G'$ que pasa por $w$, basta con eliminar este vértice y se tendría para G un camino Hamiltoniano $\blacksquare$.
+
+\end{document} 
