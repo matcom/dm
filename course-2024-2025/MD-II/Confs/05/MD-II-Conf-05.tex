@@ -36,65 +36,53 @@
 
 
 \begin{dfn}
- Sea G un grafo, la secuencia de los grados de los vértices de G es la lista de los grados de sus vértices. Entonces, un grafo con secuencia D se dice que realiza D.
-\end{dfn}
-
-\begin{dfn}
- Una secuencia S de números no negativos se dice gráfica si existe un grafo que realiza S.
-\end{dfn}
-
-\begin{teo}
- Una secuencia no creciente de números no negativos $d_1,d_2,\dots,d_n$ es la secuencia de los grados de un pseudografo si y solo $\sum^n_{i=1}d_i$ es par
-\end{teo}
-
-\begin{dem}
-\end{dem}
-
-
-Demostremos en el sentido directo.
-
-Cada arista aumenta la suma total de los grados en 2, por tanto la la paridad de la suma no varía con cada arista. Como se comienza sin aristas, en 0, al ir incorporando aristas la suma final es par.\\
-
-En el sentido contrario.
-
-Como tiene una cantidad par de números impares~(para que la suma sea par), tomaremos parejas de vértices y los conectaremos con una arista, de esta forma el grado de cada uno sería 1 y ahora la cantidad de números que faltan por ubicar serían todos pares. Por cada vértices se hacen tantos lazos como indiquen los números tal que se forma un pseudografo.
-
-\begin{teo}
- La secuencia no creciente de enteros no negativos $d_1,d_2,\dots,d_n$ es gráfica si y solo si lo es la secuencia 
- $d_2-1,d_3-1,\dots,d_{d_1+1}-1,d_{d_1+2},d_{d_1+3},\dots,d_n$
-\end{teo}
-
-\begin{dem}
-
-\end{dem}
-
-En sentido contrario.
-
-Si $d_2-1,d_3-1,\dots,d_{d_1+1}-1,d_{d_1+2},d_{d_1+3},\dots,d_n$ es gráfica entonces existe un gráfico con n-1 vértices con dichos grados. Por tanto, se puede añadir un vértices $v_1$ que se pondrá adyacente a los vértices con los grados $d_2-1,d_3-1,\dots,d_{d_1+1}-1$, entonces $v_1$ tendría grado $d_1$ y estos vétices tendrían grados $d_2,d_3\dots,d_{d_1+1}$, luego la nueva lista de grados sería $d_1,d_2,\dots,d_n$ que es gráfica.\\
-
-En sentido directo.
-
-Denotemos por $v_i$ al vértice cuyo grado es $d_i$. De todos los grafos que se pueden formar a partir de la secuencia $d_1,d_2,\dots,d_n$ tomemos aquel tal que la suma de los grados de los vértices adyacentes a $v_1$ es máxima. Sea este G, suponga que no todos los vértices adyacentes a $v_1$ son los de mayor grado después de él, por tanto existe $v_p$ y $v_k$ tal que $v_i$ es adyacente a $v_p$, no adyacente a $v_k$ y $deg(v_k)\geq deg(v_p)$.
-
-Como el $deg(v_k)\geq deg(v_p)$ entonces existe $v_j$ tal que $v_j$ es adayacente a $v_k$ y no lo es a $v_p$.  Por tanto, si se suprimen las aristas $\{v_1,v_p\}$ y $\{v_k,v_j\}$ y se añaden las aristas $\{v_1,v_k\}$ y $\{v_p,v_j\}$ se tiene un grafo nuevo donde los grados de los vértices no fueron alterados y la suma de los grados de los vértices adyacente a $v_1$ es mayor que en G. Lo que es una contradicción porque en G esto era maximal.
-
-Entonces se puede asegurar que existe un grafo donde $v_1$ es el vértice de mayor grado y los $d_1$ vértices adyacentes son los de mayor grado después de él, o sea $v_2,v_3,\dots,v_{d_1+1}$.
-
-Si a este grafo se le suprime el vértice $v_1$ y las aristas que inciden sobre él entonces se obtendría un grafo cuya secuencia de grados sería \\
-$d_2-1,d_3-1,\dots,d_{d_1+1}-1,d_{d_1+2},d_{d_1+3},\dots,d_n$
-
-\begin{dfn}
  Un grafo G es planar si existe un dibujo en el plano de G donde nunca dos de sus aristas se crucen.
 \end{dfn}
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures5/G.png}
+    \caption{G}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+    \includegraphics[width=0.4\textwidth]{figures5/Gplanar.png}
+    \caption{Dibujo planar de G}
+    \end{subfigure}
+\end{figure} 
 
 \begin{teo}
  Si G es planar entonces hay un dibujo de G que se puede hacer solo con líneas rectas
 \end{teo}
 
-
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures5/Gplanar.png}
+    \caption{Dibujo planar de G}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+    \includegraphics[width=0.4\textwidth]{figures5/Grectas.png}
+    \caption{G con l\'ineas rectas}
+    \end{subfigure}
+\end{figure} 
 
 \begin{dfn}
 Una cara de un dibujo planar de un grafo planar es una región maximal del plano que no contiene ningún vértice o arista. 
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures5/face.png}
+\end{subfigure}
+\caption{F es una cara en el grafo G}
+\end{figure} 
 
 \begin{itemize}
  \item Toda cara interior está bordeada por un ciclo.
@@ -102,6 +90,29 @@ Una cara de un dibujo planar de un grafo planar es una región maximal del plano
 \end{itemize}
 
 \end{dfn}
+
+\textbf{Nota:} Este tema se adentra en el campo de la Topología. En esta clase nos interesa más el dibujo del grafo y se
+realizarán no se realizan las demostraciones de todos los teoremas por falta de formalismo en las cuestiones topológicas. (no son objetivo de la asignatura)\\
+
+
+\textbf{Problema:} Dadas casas y servicios que se quieren brindar (agua, teléfono, electricidad, gas). Se desean
+conectar casas con servicios sin que se crucen las conexiones de los servicios.
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures5/services.png}
+    \end{subfigure}
+\end{figure} 
+
+Este problema en teoría de grafo sería: ¿Es posible pintar un grafo sin que se crucen sus aristas?
+
+
+\textbf{Aplicaciones de la solución:} En toda rama donde se necesite aprovechar el espacio sin que los elementos se
+solapen o entrecrucen. Por ejemplo, la nanotecnología, la fabricación de componentes electrónicas
+(motherboards, chips).
 
 \begin{teo}[Teorema de Euler]
 Sea G un grafo conexo con $|E(G)|=m$  y $|V(G)|=n$, para todo dibujo planar de G se cumple que $n-m+f=2$ donde $f$ es la cantidad de caras del dibujo.
@@ -130,7 +141,7 @@ Demostración del \textbf{Teorema de Euler} por inducción en el número de aris
 
 \textbf{Caso base} Tomamos $m=n-1$ (mínima cantidad de aristas para que G sea conexo)
 
-Como G es conexo y  $m=n-1$  entonces G es un arbol, luego es acíclico. Como G es acíclico entonces no tiene caras interiores, por tanto $f=1$ (tiene la cara exterior que es la única).
+Como G es conexo y  $m=n-1$  entonces G es un \'arbol, luego es acíclico. Como G es acíclico entonces no tiene caras interiores, por tanto $f=1$ (tiene la cara exterior que es la única).
 
 Por tanto, $n-m+f=n - (n-1)+1=2$\\
 
@@ -144,6 +155,7 @@ $|E(G$'$)| = m-1$ y $|V(G$'$)|=n$, además, como se pierde 1 ciclo también se p
 \begin{dfn}
  El grado de una cara es la cantidad de aristas que participan en ella.
 \end{dfn}
+
 
 Nota: las aristas de corte se cuentan doble.
 
@@ -172,15 +184,33 @@ Nota: Todo grafo maximal planar es conexo
  Sea G un grafo conexo con $|V(G)|\geq 3$, G es maximal planar si y solo si toda cara de un dibujo planar es un triángulo, o sea,  dicha cara tiene grado 3
 \end{teo}
 
-\begin{dem}
- 
+\begin{dem}[$\Rightarrow$]
+  G maximal planar $\Rightarrow$ Todas sus caras son de grado 3.
 \end{dem}
-
-En el sentido directo.
 
 Suponga que existe $c_i$ tal que $deg(c_i)\geq 4$. Luego, en $c_i$ hay al menos dos vértices que no son adyacentes, por tanto se puede trazar una arista entre ellos y no dejará de ser un dibujo planar. Y esto es una contradicción pues G es maximal planar.\\
 
-En sentido contrario es bastante claro.
+\begin{dem}[$\Leftarrow$]
+    Si G planar con todas las caras de grado 3 $\Rightarrow$ G maximal planar
+\end{dem}
+
+Supongamos que no es maximal, le podemos entonces agregar una arista $e$ al grafo sin romper la planaridad, sea $e = \{x,y\}$, quitando esa arista se tiene que $x, y$ son no adyacentes en G de donde la cara que los contiene tendr\'ia grado mayor o igual que 4. 
+
+Luego G es maximal planar si y solo si toda cara de G tiene grado 3 $\blacksquare$
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures5/Gplanar.png}
+    \caption{G es maximal planar}
+\end{subfigure}
+\begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures5/C5.png}
+    \caption{G no es maximal, si agregamos $\{2,4\}$ aun es planar}
+\end{subfigure}
+\end{figure} 
 
 \begin{teo}
  Si G un grafo maximal planar donde $|E(G)|=m$  y $|V(G)|=n$ entonces $m=3n-6$
@@ -222,7 +252,7 @@ Similarmente, para al menos 4  vértices con grado menor o igual a 5.
  Sea G un grafo y $e=\{x,y\}$ una arista de G. Una subdivisión de e consite en suprimir a esta y añadir un nuevo vértice z con las aristas $\{x,z\}$  y $\{z,y\}$. Si el grafo G se obtiene de un grafo H a través de una secuencia de subdivisiones de aristas de H. se dice que G es una subdivisión de H o que es homeomorfo con H.
 \end{dfn}   
 
-\begin{teo}[Teorema de Kuratoski]
+\begin{teo}[Teorema de Kuratowski]
  Un grafo G es planar si y solo si no contiene un subgrafo que sea una subdivisión de $K_5$ o de $K_{3,3}$
 \end{teo}
 
@@ -237,8 +267,23 @@ solo un vértice de grado 2. Si hacemos eso, obtenemos lo que se llama un menor 
  Un grafo G es planar si y solo si no contiene a $K_5$ o  $K_{3,3}$  como menor (no necesariamente topológico). 
 \end{teo}
 
-Dado que un menor topológico es un menor en el sentido general, solo sería necesario probar que si un grafo contiene un menor de $K_5$ o  $K_{3,3}$, debe contener también un menor topológico de alguno de estos (no necesariamente el mismo).
+Dado que un menor topológico es un menor en el sentido general, solo sería necesario probar que si un grafo contiene un menor de $K_5$ o  $K_{3,3}$, debe contener también un menor topológico de alguno de estos (no necesariamente el mismo).\\
 
 
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.45\textwidth]{figures5/K5.png}
+        \caption{$K_5$}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.45\textwidth]{figures5/K33.png}
+        \caption{$K_{3,3}$}
+    \end{subfigure}
+\end{figure} 
+
+De manera general tanto \textbf{Kuratowski} como \textbf{Warner} expresan que para que un grafo  G sea planar no puede tener ``como parte de \'el'' ni a $K_5$ ni a $K_{3,3}$ 
 \end{document} 
