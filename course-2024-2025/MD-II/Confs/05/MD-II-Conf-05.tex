@@ -91,8 +91,8 @@ Una cara de un dibujo planar de un grafo planar es una región maximal del plano
 
 \end{dfn}
 
-\textbf{Nota:} Este tema se adentra en el campo de la Topología. En esta clase nos interesa más el dibujo del grafo y se
-realizarán no se realizan las demostraciones de todos los teoremas por falta de formalismo en las cuestiones topológicas. (no son objetivo de la asignatura)\\
+\textbf{Nota:} Este tema se adentra en el campo de la Topología. En esta clase nos interesa más el dibujo del grafo y
+ no se realizan las demostraciones de todos los teoremas por falta de formalismo en las cuestiones topológicas. (no son objetivo de la asignatura)\\
 
 
 \textbf{Problema:} Dadas casas y servicios que se quieren brindar (agua, teléfono, electricidad, gas). Se desean
@@ -256,6 +256,32 @@ Similarmente, para al menos 4  vértices con grado menor o igual a 5.
  Un grafo G es planar si y solo si no contiene un subgrafo que sea una subdivisión de $K_5$ o de $K_{3,3}$
 \end{teo}
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures5/k33Petersen1.png}
+    \caption{$K_{3,3}$}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+    \includegraphics[width=0.4\textwidth]{figures5/k33Petersen2.png}
+    \caption{Subdivisiones a $K_{3,3}$}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+    \includegraphics[width=0.4\textwidth]{figures5/k33Petersen3.png}
+    \caption{Reorganizando el dibujo del grafo}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+    \includegraphics[width=0.4\textwidth]{figures5/k33Petersen4.png}
+    \caption{Grafo de Petersen}
+    \end{subfigure}
+    \caption{Realizando una serie de subdivisiones a $K_{3,3}$, se obtiene un subgrefo de del Grafo de Petersen, esto demuestra por el teorema de \textbf{Kuratowski} que Petersen es no planar.}
+\end{figure} 
+
+
 \begin{dfn} 
 Si un grafo G contiene una subdivisión de un grafo H como subgrafo, entonces decimos que H es un menor topológico de G. 
 \end{dfn}
@@ -267,9 +293,42 @@ solo un vértice de grado 2. Si hacemos eso, obtenemos lo que se llama un menor 
  Un grafo G es planar si y solo si no contiene a $K_5$ o  $K_{3,3}$  como menor (no necesariamente topológico). 
 \end{teo}
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures5/Petersenk51.png}
+    \caption{Grafo de Petersen}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.4\textwidth]{figures5/Petersenk52.png}
+        \caption{Contracción de la arista $\{1,9\}$}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.4\textwidth]{figures5/Petersenk53.png}
+        \caption{Contracción de la arista $\{7,4\}$}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.4\textwidth]{figures5/Petersenk54.png}
+        \caption{Contracción de la arista $\{6,8\}$}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.4\textwidth]{figures5/Petersenk55.png}
+        \caption{Contracción de la arista $\{3,10\}$}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.4\textwidth]{figures5/Petersenk56.png}
+        \caption{Contracción de la arista $\{2,5\}$}
+    \end{subfigure}
+    \caption{Obtnci\'on de $K_5$ a partir de contracciones del grafo de Petersen, esto demuestra por el teorema de \textbf{Wagner} que Petersen es no planar.}
+\end{figure} 
+
 Dado que un menor topológico es un menor en el sentido general, solo sería necesario probar que si un grafo contiene un menor de $K_5$ o  $K_{3,3}$, debe contener también un menor topológico de alguno de estos (no necesariamente el mismo).\\
-
-
 
 \begin{figure}[H]
     \centering
