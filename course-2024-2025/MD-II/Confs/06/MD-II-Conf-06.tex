@@ -1,0 +1,173 @@
+\documentclass[a4paper,1pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage[rightcaption]{sidecap}
+
+\newtheorem*{pbo}{Principio del Buen Ordenamiento}
+
+\newtheorem*{pim}{Principio de Inducción Matemática}
+
+\newtheorem*{teo}{Teorema}
+
+\newtheorem*{cor}{Corolario}
+
+\newtheorem*{dem}{Demostración}
+
+\newtheorem*{dfn}{Definición}
+
+\newtheorem*{lem}{Lema}
+
+\newtheorem*{prp}{Propiedades}
+
+
+% Title Page
+\title{Conferencia 5 - Coloración}
+\author{}
+
+\begin{document}
+\maketitle
+
+\begin{dfn}
+ Sea G un grafo y k, $k\in\mathbb{Z},\,k\geq 0$, una k-coloración se define como una función
+ $f:V(G)\rightarrow\{0,1,2,\dots,k\}$
+\end{dfn}
+
+\begin{dfn}
+ Una k-coloración se dice propia si $\forall \{v,w\}\in E(G)$ se tiene que $f(v)\neq f(w)$. Si G tiene una k-coloración propia se dice que G es k-coloreable.
+\end{dfn}
+
+\begin{dfn}
+ Se llama número cromático de G, $\chi (G)$, al menor k tal que G es k-coloreable
+\end{dfn}
+
+Observaciones:
+\begin{itemize}
+ \item $\chi (K_n)=n$
+ \item $\chi (C_{2k})=2$
+ \item $\chi (C_{2k+1})=3$
+ \item Si un grafo es bipartito es 2-coloreable
+ \item El número cromático es la menor cantidad de conjuntos independientes que se pueden formar en G
+ \item Si H es subgrafo de G entonces $\chi (H)\leq \chi (G)$
+ \item $w(G)\leq \chi (G)$, donde w es el número de clique de G
+\end{itemize}
+
+\begin{dfn}
+ Un grafo G es k-crítico si  $\forall v\in V(G)$ se tiene que $\chi (G-v)<\chi (G)$
+\end{dfn}
+
+Nota: $\chi (G-v)=\chi (G)-1$
+
+\begin{teo}
+ Si G es un grafo k-crítico con $k\geq 2$ entonces G es conexo y $\delta (G)\geq k-1$
+\end{teo}
+
+\begin{dem}
+ 
+\end{dem}
+
+
+Demostremos que G es conexo
+
+Suponga que G es k-crítico y no es conexo, entonces se descompone en t componentes conexas $c_1,c_2,\dots,c_t$, luego $k=max(\chi(c_1),\chi(c_2),\dots,\chi(c_t))$ por lo que existe un i tal que $1\leq i \leq t$ y $\chi(c_i)=k$ entonces es posible quitar cualquier vértice de cualquier componente conexa que no sea $c_i$ y se mantendría entonces $k=\chi(c_i)=max(\chi(c_1),\chi(c_2),\dots,\chi(c_t))$, por tanto G no sería k-crítico, lo que es una contradicción. Por tanto G es conexo.\\
+
+Demostremos la segunda parte.
+
+Supongamos que  $\delta (G)< k-1$, entonces sea $v\in V(G)$ tal que 
+
+$deg(v)=\delta (G)$, por tanto tomemos G'=G-v. Como G es k-crítico entonces $\chi(G$´$)=\chi(G)-1$ o sea, se puede colorear a G' con k-1 colores
+
+Si se pone de vuelta a v como $deg(v)<k-1$ entonces v tiene a lo sumo $k-2$ vértices adyacentes a él, que potencialmente tienen todos colores diferentes, como se dispone de k-1 colores, se puede colorear a v con un color que no tenga ninguno de sus adyacentes, luego es posible colorear a G con $k-1$ colores lo que es una contradicción. 
+
+\begin{teo}
+ Sea G un grafo tal que $\chi(G)=k$ entonces al menos k vértices de G tienen grado mayor o igual que $k-1$
+\end{teo}
+
+\begin{dem}
+ 
+\end{dem}
+
+Si G no es k-crítico entonces se pueden suprimir aristas hasta que lo sea. El grafo resultante, Q, al ser k-crítico cumple que $\delta(Q)\geq k-1$ y tiene al menos k vértices. Luego el grado de cualquier vértices es igual o mayor que $k-1$
+
+Note que al regresar al grafo original, como se añaden aristas lo único que puede pasar es que el grado de eso k vértices aumente de modo que seguirán teniendo un grado mayor o igual que $k-1$
+
+\begin{teo}
+ Sea G un grafo, entonces $\chi(G)\leq 1 + \Delta(G)$
+\end{teo}
+
+\begin{dem}
+Demostración por inducción en el número de vértices n. 
+\end{dem}
+
+\textbf{Caso base:} Para n=1 se tiene que $\chi(G)=1$ y $\Delta(G)=0$, luego $1\leq1+0$\\
+
+\textbf{Paso inductivo:} Probemos que si se cumple para n se cumple para n+1\\
+
+Sea G con n+1 vértices, si se tiene G'=G-v entonces G' tiene n vértices luego
+$\chi(G$´$)\leq 1 + \Delta(G$´$)$ pero $\Delta(G$'$)\leq \Delta(G)$\\ 
+por tanto\\
+$\chi(G$´$)\leq 1 + \Delta(G$´$)\leq 1 + \Delta(G)$\\
+
+Luego es posible colorear a G' con $\Delta(G)+1$ colores distintos. Note que v a lo sumo tiene $\Delta(G)$ vértices adyacentes, como hay $\Delta(G)+1$ colores siempre puede colorearse v de modo que no tenga el mismo color que ninguno dde sus adyacentes, por tanto es posible colorear a G con $\Delta(G)+1$ colores distintos, luego $\chi(G)\leq 1 + \Delta(G)$
+
+\begin{teo}
+ Sea G un grafo planar entonces $\chi(G)\leq 6$
+\end{teo}
+
+\begin{dem}
+Demostración por inducción en el número de aristas.
+\end{dem}
+
+\textbf{Caso base:} Para n=1 es obvio.
+
+\textbf{Paso inductivo:} Probemos que si se cumple para n se cumple para n+1
+
+Como G, con n+1 vértices, es planar tiene al menos un vértice cuyo grados es menor o igual a 5, digamoes que este vértice es v.
+
+Tomemos el grafo G'=G-v, como G es planar entonces al quitar un vértice a este y dando G', G'continúa siendo planar. 
+
+Como el número de vértices de G' es n y es planar, por hipótesis de inducción, se tiene que 
+$\chi(G$'$)\leq 6$. Al reinsertar v, como $deg(v)\leq 5$, se tiene que v tiene a lo sumo 5 vértices adyacentes cuyos colores pueden ser todos potencialmente distintos, basta con colorear v con un color que no tengan sus vecinos, luego es posible colorear a G con 6 colores distintos.-
+
+\begin{teo}[Teorema de los 5 colores] El número cromático de un grafo planar es menor o igual que 5 
+\end{teo}
+
+\begin{dem}
+Demostración por inducción en el número de vértices.
+\end{dem}
+
+
+Si este es menor que 5 entonces es obvio.
+
+Ahora, como el grafo G es planar, tiene n+1 vertices, siempre hay un vértice con 5 o menos vértices adyacente, digamos que ese vértice es v. Entonces se tiene G'= G-v, con n vértices, que es 5-coloreable (por hipótesis de inducción)
+
+Ahora, si $deg(v)\leq 4$ ya estaría demostrado. Si el $deg(v)=5$ pero sus vértices adyacentes 
+solo usan, entre ellos, 4 colores también estaría demostrado.
+
+Tendríamos que ver el caso con $deg(v)=5$ y sus adyacentes usan 5 colores.
+
+Para ello llamaremos a,b,c,d y e a los vértices adayacentes y los tendremos en ese mismo oreden en el sentido del giro de las agujas del reloj.
+
+Entonces consideremos el conjunto $V_{ad}$ como los vértices de G' que tienen el mismo color de a o de d. Es obvio que a y d pertenecen a $V_{ad}$.
+
+Entonces puede suceder que o existe un camino de a hasta d utilizando solo los vértices de $V_{ad}$ o no existe.
+
+En el caso de que no exista se buscan todos los caminos de a hasta los distintos vértices que  están en $V_{ad}$ y se invierten los colores (si tiene el color de a toma el de d y viceversa). Al final del proceso, a tendrá el mismo color de d y cuando unamos de nuevo v este tomaría el color de a.
+
+Ahora, en el caso se que si existe una camino entre a y d, también se formaría un ciclo con las aristas $\{a,v\}$ y $\{v,d\}$. Tendríamos también el conjunto $V_{be}$ construido de manera similar a $V_{ad}$, estos conjuntos son disjuntos pues a,b,d y e tienen colores diferentes. Como se forma el ciclo mencionado una de las aristas b o e quedaría dentro del ciclo. De esta manera no podría haber camino entre b y e pues para que hubiera camino tendrían que pasar por un nodo que esté en $V_{ad}$ y eso no puede ocurrir pues $V_{ad}$ y $V_{be}$ son disjuntos.
+
+Entonces b y e estarían en caso en que no hay un camino entre ellos pasando solo por los vértices de $V_{be}$. Luego estaríamos en el primer caso analizado y se haría entonces el remapeo de colores.
+
+
+\begin{teo}[Teorema de los 4 colores] El número cromático de un grafo planar es menor o igual que 4 
+\end{teo}
+
+La demostración del \textbf{Teorema de los 4 colores} se ha realizado con verficiación computacional combinando varias ideas teóricas.
+
+\end{document} 
