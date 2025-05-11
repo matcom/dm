@@ -135,7 +135,7 @@ Primeramente demostremos el siguiente Lema:
 
     \begin{dem}        
     \end{dem}
-    Si G no es k-crítico entonces se puede suprimir un v\'ertice de $G$ tal que $G' = G-v$ siga cumpliendo que $\chi{G'} = k$. 
+    Si G no es k-crítico entonces se puede suprimir un v\'ertice de $G$ tal que $G' = G-v$ siga cumpliendo que $\chi(G') = k$. 
     Este procedimiento se repite, es decir si $G'$ no es $k-$cr\'itico se suprime otro v\'ertice que no modifique el n\'umero crom\'atico.
     Eventualmente se detiene este proceso pues no se puede hacer una eliminaci\'on infinita en los v\'ertices del grafo por \textbf{PBO}. Por tanto el grafo que se obtiene al terminar el procedimiento es un subgrafo $k-$critico de $G \ \blacksquare$
 \end{itemize}
@@ -178,7 +178,7 @@ $\chi(G$´$)\leq 1 + \Delta(G$´$)\leq 1 + \Delta(G) \  $\\
 Luego es posible colorear a G' con $\Delta(G)+1$ colores distintos. Note que v a lo sumo tiene $\Delta(G)$ vértices adyacentes, como hay $\Delta(G)+1$ colores siempre puede colorearse v de modo que no tenga el mismo color que ninguno de sus adyacentes, por tanto es posible colorear a G con $\Delta(G)+1$ colores distintos, luego $\chi(G)\leq 1 + \Delta(G)$ $\blacksquare$\\
 
 
-\textbf{Problema:} Cual es la menor cantidad de colores para representar un mapa, de modo que los territorios adyacentes tengan diferentes colores asignados.
+\textbf{Problema:} Cuál es la menor cantidad de colores para representar un mapa, de modo que los territorios adyacentes tengan diferentes colores asignados.
 
 \begin{figure}[H]
     \centering
@@ -211,9 +211,9 @@ Demostración por inducción en el número de v\'ertices.
 
 \textbf{Paso inductivo:} Probemos que si se cumple para n se cumple para n+1
 
-Como $G$, con $n+1$ vértices, es planar tiene al menos un vértice cuyo grados es menor o igual a 5, digamoes que este vértice es v.
+Como $G$, con $n+1$ vértices, es planar tiene al menos un vértice cuyo grados es menor o igual a 5, digamos que este vértice es v.
 
-Tomemos el grafo G'=G-v, como G es planar entonces al quitar un vértice a este y dando G', G'continúa siendo planar. 
+Tomemos el grafo G'=G-v, como G es planar entonces al quitar un vértice a este y dando G', G' continúa siendo planar. 
 
 Como el número de vértices de G' es n y es planar, por hipótesis de inducción, se tiene que 
 $\chi(G$'$)\leq 6$. Al reinsertar v, como $deg(v)\leq 5$, se tiene que v tiene a lo sumo 5 vértices adyacentes cuyos colores pueden ser todos potencialmente distintos, basta con colorear v con un color que no tengan sus vecinos, luego es posible colorear a G con 6 colores distintos $\blacksquare$.
