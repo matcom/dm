@@ -55,7 +55,7 @@
         \includegraphics[width=0.4\textwidth]{figures7/matching.png}
         \caption{Emparejamiento en $G$}
     \end{subfigure}
-    \caption{En la figura las aristas $\{ 5,8\}, \{2,3\}$ y $\{7,5\}$ son independientes dos a dos, por lo que forman un emparejamiento}
+    \caption{En la figura las aristas $\{ 4,8\}, \{2,3\}$ y $\{7,5\}$ son independientes dos a dos, por lo que forman un emparejamiento}
 \end{figure} 
 
 \begin{dfn}
@@ -63,7 +63,7 @@
 \end{dfn}
 
 \begin{dfn}
- Se dice que M satura a $X\subset V(G)$ si satura a todo v tal que $v\in X$
+ Se dice que M satura a $X\subseteq V(G)$ si satura a todo v tal que $v\in X$
 \end{dfn}
 
 \begin{figure}[H]
@@ -135,18 +135,18 @@
  
 \end{dem}
 
+Si $|V(G)| = 1$ es trivial.
 
-Tomemos el camino simple máximo de G, $c=<v_1,v_2,\dots,v_{k-1},v_k>$ (que sabemos existe puesto que en G hay a menos una arista ya que todos sus v\'ertices tienen grado mayo o igual a 1)
+Para demostrar que $G$ con $|V(G)| >1$ es $P_n$ o $C_n$, tomemos el camino simple maximal $c=<v_1,v_2,\dots,v_{k-1},v_k>$ (que sabemos existe puesto que en G hay a menos una arista ya que todo grafo conexo con $|V(G)| > 1$ los v\'ertices tienen grado mayor o igual a 1)
 
-Entonces para todo i, $1 < i < k$ se tiene que $deg(v_i)=2$ por tanto no existe $w\in V(G)$ tal que  $w\neq v_{i-1}\wedge w\neq v_{i+1}\wedge \{v_i,w\}\in E(G)$ puesto que si existiera el grado de $v_i$ sería mayor que 2 lo que sería una contradicción.
+Es necesario demostrar que toda arista de $G$ pertenece a $c$ salvo quizas la arista $\{v_1,v_k\}$. Para ellos analicemos para cada v\'ertice de $c$ las aristas que inciden en ellos.
 
-Si existe $w\in V(G)$ tal que $w\neq c$ como G  es conexo entonces w sería adyacente a $v_1$ o a $v_k$ lo que también serían una contradicción porque c es maximal.
+\begin{itemize}
+    \item[] Para $v_i, \ 1<i< k$, es decir para los v\'ertices intermedios del camino, como todos los v\'ertices de $G$ tienen grado menor o igual a 2, y para cada uno en $c$ est\'an las aristas $\{v_{i-1}, v_i\}$ y $\{v_i, v_{i+1}\}$, toda arista que incide en $v_i$ est\'a en el camino.
+    \item[] Para $v_1$ y $v_k$, o sea, los v\'ertices extremos del camino, sabemos que est\'an conectados a $c$ por las aristas $\{v_1, v_2\}$ y $\{v_{k-1}, v_k\}$ respectivamente, de donde para ambos se cumple que solo es posible tener un adyacente m\'as, pero para ning\'un otro v\'ertice intermedio puede existir una conexi\'on con $v_1$ o $v_k$, puesto que en el caso que analizamos anteriormente se evidencia que los vertices intermedios solo est\'an conectados a su antecesor y a su sucesor en el camino y no pueden tener m\'as adyacentes porque su grado m\'aximo es 2. Adem\'as no puede ser que $v_1$ o $v_k$ sean adyavcentes a un $w \notin c$ porque que $c$ es m\'aximo. De modo que solo es posible para $v_1$ y $v_k$ que exista la arista $\{v_1, v_k\}$.
+\end{itemize}
 
-Luego, para todo vértice de G se tiene que este pertenece a c.
-
-Además, como se vio que para todo i, $1 < i < k$ se tiene que $deg(v_i)=2$, por  tanto las aristas involucradas en estos vértices están presentes en el camino.
-
-Ahora, lo que \'unico que pudiera suceder es que exista una arista $\{v_1,v_k\}$ con lo que c sería un ciclo, o que no exista en cuyo caso seguiría siendo un camnio simple.  Luego G es un camino simple o un ciclo $\blacksquare$.
+En caso que $\{v1, v_k\} \in G$, $G$ ser\'ia $C_n$ y en caso contrario $P_n$ $\blacksquare$.
 
 
 \begin{teo}
@@ -235,7 +235,7 @@ Como $|M'|>|M|$ entonces en $M'\bigtriangleup M$ hay más aristas de M' que de M
  
 \end{dem}
 
-Tomemos S, un subconjunto cualquiera de X, como en G hay un emparejamiento que satura a X, entonces la menos para cada vértice v de S existe un vértice w en Y tal que $\{v,w\}$ pertenece al emparejamiento y por tanto a N(S), luego N(S) tendrá al menos la misma cantidad de vértices que S, por tanto $|N(S)|\geq |S|$\\
+Tomemos S, un subconjunto cualquiera de X, como en G hay un emparejamiento que satura a X, entonces al menos para cada vértice v de S existe un vértice w en Y tal que $\{v,w\}$ pertenece al emparejamiento y por tanto a N(S), luego N(S) tendrá al menos la misma cantidad de vértices que S, por tanto $|N(S)|\geq |S|$\\
 
 
 \begin{dem}[$\Leftarrow$]
