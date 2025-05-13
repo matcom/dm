@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usepackage{amsmath} 
+\usepackage{nopageno}
+
+\begin{document}
+
+\title{Clase pr\'actica 6}
+\maketitle
+
+\begin{enumerate}
+    \item Sea $G$ un grafo con $n$ vértices. Demuestre que:
+        \begin{itemize}
+            \item $\sqrt{n} \leq \chi(G) + \chi(G^c) \leq n + 1$
+            \item $n \leq \chi(G) \chi(G^c) \leq (\frac{n+1}{2})^2$
+        \end{itemize}
+    \item  Sea $G$ un grafo con $n$ vértices y $m$ aristas. Demuestre que $\chi(G) \leq \sqrt{\frac{2m(n-1)}{n}}$
+    \item Sea $G$ un grafo con $n$ vértices, tal que $\delta(G) \geq d$ siendo $d$ un entero positivo. Demuestra que $\chi(G) \geq \frac{n}{n-d}$.
+    \item Sea $G$ un grafo con $m$ aristas. Demuestra que $\chi(G) \leq \frac{1}{2} + \sqrt{2m + \frac{1}{4}}$.
+    \item Sea $d_1, d_2, ..., d_n$ la secuencia no creciente de grados de un grafo $G$, entonces $\chi(G) \leq 1 + max_{1 \leq i \leq n} \{min(d_i, i-1)\}$.
+    \item Sea $G$ un grafo donde todo par de ciclos de longitud impar tienen al menos un vértice en común. Demuestre que $\chi(G) \leq 5$.
+    \item Para todo valor de $k$, encuentre un grafo $G$ tal que $\chi(G) = k$, cumpliendo que $C_3$ no es un subgrafo de $G$.
+\end{enumerate}
+\end{document}
