@@ -72,8 +72,18 @@ Observaciones:
  \item $w(G)\leq \chi (G)$, donde w es el número de clique de G
 \end{itemize}
 
-\begin{dfn}[Grafo $k-$cr\'itico]
- Un grafo G es k-crítico si su n\'umero crom\'atico es $k$ y $\forall v\in V(G)$ se tiene que $\chi (G-v)<\chi (G)$
+\begin{dfn}[Grafo cr\'itico]
+ Un grafo G es cr\'itico si para todo subgrafo propio H de G se cumple que el n\'umero 
+ crom\'atico de H es menor que el n\'umero crom\'atico de G, o sea, $\chi (H)<\chi (G)$
+\end{dfn}
+
+\begin{dfn}[Grafo k-cr\'itico]
+ Un grafo G es k-cr\'itico si es crítico y $\chi (G)=k$
+\end{dfn}
+
+
+\begin{dfn}[Grafo k-v\'ertice-cr\'itico]
+ Un grafo G es k-v\'ertice-cr\'itico si su n\'umero crom\'atico es $k$ y $\forall v\in V(G)$ se tiene que $\chi (G-v)<\chi (G)$
 \end{dfn}
 
 \textbf{Nota:} $\chi (G-v)=k-1$
