@@ -38,8 +38,17 @@
  Un \textbf{grafo dirigido}~(digrafo) consiste en dos conjuntos V, el conjunto de los vértices, y E, el conjunto de aristas, formado ahora por pares ordenados del conjunto V.
 \end{dfn}
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.80\textwidth}
+        \centering
+        \includegraphics[width=0.4\textwidth]{figures8/digrafo.png}
+    \end{subfigure} 
+    \caption{Ejemplo de Digrafo}
+\end{figure} 
+
 \begin{dfn}
- Sean $v,w\in V(G)$ donde G es un digrafo, v,w son adayacentes si la arista $<v,w>\in E(G)$. Se dice que la arista $<v,w>$ es incidente desde v y que es incidente a w.
+ Sean $v,w\in V(G)$ donde G es un digrafo, v,w son adayacentes si la arista $<v,w>\in E(G)$ o si la arista $<w,v> \in E(G)$. Si $<v,w> \in E(G)$ se dice que la arista $<v,w>$ es incidente desde v y que es incidente a w.
 \end{dfn}
 
 \begin{dfn}
@@ -49,6 +58,20 @@
   \item El grado interior de v es el número de aristas incidentes sobre v~(indeg(v))
  \end{itemize}
 \end{dfn}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{figures8/outdeg.png}
+        \caption{$outdeg(6) = 3$}
+    \end{subfigure} 
+        \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{figures8/indeg.png}
+        \caption{$intdeg(6) = 2$}
+         \end{subfigure} 
+\end{figure} 
 
 \begin{teo}
  En todo digrafo se cumple que:
@@ -60,11 +83,8 @@
 \end{teo}
 
 \begin{dfn}
- Un camino en un digrafo G es una secuencia de vértices de G $c=<v_1,v_2,\dots,v_k>$ tal que:
- \begin{enumerate}
-  \item $k>1$
-  \item $k>1$ implica que $<v_i,v_{i+1}>\in E(G)\, (1\leq i \leq k-1)$
- \end{enumerate}
+ Un camino en un digrafo G es una secuencia de vértices de G $c=<v_1,v_2,\dots,v_k>$ tal que $k>1$ y $\forall i, \ 1 \leq i \leq k-1\ $ la arista $<v_i, v_{i+1}> \ \in E(G)$.
+\\
 Luego:
 \begin{itemize}
  \item El camino es simple si no se repiten vértices
@@ -77,7 +97,19 @@ Luego:
 \begin{dfn}
  El \textbf{grafo subyacente} es el multigrafo que resulta de quitar la orientación de las aristas de un digrafo
 \end{dfn}
-
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{figures8/digrafo.png}
+        \caption{$G$}
+    \end{subfigure} 
+        \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{figures8/Gsubyecente.png}
+        \caption{Grafo subyacente de $G$}
+         \end{subfigure} 
+\end{figure} 
 \begin{dfn}
  Un digrafo D es conexo si el grafo subyacente de D es conexo
 \end{dfn}
@@ -86,27 +118,46 @@ Luego:
  Un digrafo es \textbf{fuertemente conexo} si todo par de vértices del digrafo es mutuamente accesible, o sea si hay camino de uno al otro, y viceversa
 \end{dfn}
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{figures8/digrafo.png}
+        \caption{$G$ fuertemente conexo}
+    \end{subfigure} 
+        \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{figures8/NoFConex.png}
+        \caption{$G$ no fuertemente conexo}
+         \end{subfigure} 
+
+        \caption{En el ejemplo, en a), para todo par de v\'ertices hay un camino por lo que es fuertemente conexo, mientras que en b), desde el vertice $v =7$, no es posible alcamnzar ning\'un otro.}
+\end{figure} 
+
 \begin{dfn}
- Un grafo es \textbf{orientable} si es posible orientar sus aristas de modo que el digrafo resultanto sea fuertemente conexo
+ Un grafo es \textbf{orientable} si es posible orientar sus aristas de modo que el digrafo resultante sea fuertemente conexo
 \end{dfn}
 
 \begin{teo}
- Sea G un grafo conexo, entonces G es orientable si y solo si no tiene puentes 
+ Sea G un grafo conexo, entonces G es orientable si y solo si G es conexo y no tiene puentes 
 \end{teo}
 
-\begin{dem}
+\begin{dem}[$\Rightarrow$]
  
 \end{dem}
+La demostraci\'on de que $G$ tiene que ser conexo es trival, porque orientar las aristas no va a crear caminos entre las componentes conexas de $G$.
 
+Demostraremos que si G tiene puentes entonces G es no orientable.
 
+Sea $e$ una arista puente tal que $e=\{u,v\}$.
 
-En el sentido directo, demostraremos que si G tiene puentes entonces G es no orientable~(contrarecíproco).
+Como $e$ es un puente al removerla $u$ y $v$ quedan en componentes conexas distintas, lo que explica que no exista camino que los conecte. Por lo que si tratamos de orientar 
+las aristas de $G-e$ no es posible llegar de $u$ a $v$ (y viceversa). Finalmente la ariasta $\{u,v\}$ se tiene que orientar, si se agrega como $<u,v>$ no habr\'ia camino de $v$ a $u$ en el grafo, an\'alogo para cuando se orienta como $<v,u>$. 
+Por tanto  G no es fuertemente conexo luego G no es orientable. \\
 
-Sea e una arista puente tal que $e=<u,v>$.
-
-Como e es un puente al removerla u y v quedan en componentes conexas distintas, lo que explica que no exista camino que los conecte, por tanto  G no es fuertemente conexo luego G no es orientable. \\
-
-En el otro sentido.
+\begin{dem}[$\Leftarrow$]
+ 
+\end{dem}
 
 Vamos a utilizar el siguiente lema.
 
@@ -121,30 +172,39 @@ Demostración del lema
 
 Demostremos que si participa en algún ciclo no es puente.
 
-Sea $e=\{u,v\}\in E(G)$ tal que $e\in c$ de manera que c es el ciclo $c=<u,v,v_1,v_2,\dots,v_k,u>$ entonces $c_1=<v,v_1,v_2,\dots,v_k,u>$ es un camino que contiene a los vértices u,v.
+Sea $e=\{u,v\}\in E(G)$ tal que $e$ participa en el ciclo $c=<u,v,v_1,v_2,\dots,v_k,u>$ entonces $c_1=<v,v_1,v_2,\dots,v_k,u>$ es un camino que contiene a los vértices u,v.
 Entre todo par de vértices de G, si el camino que los une contiene a la arista $\{u,v\}$, esta puede ser reemplazada por el camino $c_1$, por tanto el grafo resultante de eliminar $\{u,v\}$ no varió en la cantidad de componentes conexas, entonces  E no es una arista puente.\\
 
 En el otro sentido, si no es una arista puente entonces participa en algún ciclo.
 
-Sea $e=\{m,v\}\in E(G)$ tal que no es arista puente, por tanto existe otro camino que conecta a m con v que no contiene a e, 
+Sea $e=\{m,v\}\in E(G)$ tal que no es arista puente, en $G-e$ existe un camino que conecta a $m$ con $v$ que no contiene a $e$. 
 
-Sea este $<m,v_1,v_2,\dots,v_k,v>$  luego $c=<m,v_1,v_2,\dots,v_k,v,m>$ es un ciclo al que pertenece e.\\
+Sea este $<m,v_1,v_2,\dots,v_k,v>$  luego $c=<m,v_1,v_2,\dots,v_k,v,m>$ es un ciclo al que pertenece $e$.\\
 
 Retornemos a la demostración del teorema.\\
 
-Sea G' el mayor subgrafo orientable de G, suponga que hay vértices de G que no pertenecen a G'.
+Sea $G'$ el mayor subgrafo orientable de $G$, suponga que hay vértices de $G$ que no pertenecen a $G'$.
 
-Sea entonces v tal que pertenece a G y no pertenece a G', note que existe u que pertenece a G' tal que que $\{u,v\}\in V(G)$ pues G es conexo.
+Sea entonces $v \in G$ y $v \notin G'$, note que existe $u \in G'$ tal que que $\{u,v\}\in V(G)$ pues $G$ es conexo.
 
-Como G no tiene puentes, por el lema anterior entonces $\{u,v\}$ pertenece a algún ciclo. Sea este $c=<u,v,v_1,v_2,\dots,v_k,u>$, sea w el primer vértice de c luego de v tal que pertenece a V(G'). Este existe debido a que u pertenece a G' y es el último vértice de c.
+Como $G$ no tiene puentes, por el lema anterior entonces $\{u,v\}$ pertenece a algún ciclo. Sea este $c=<u,v,v_1,v_2,\dots,v_k,u>$, y sea $w$ el primer vértice de $c$ desde $v$ tal que pertenece a $w \in V(G')$ (Este existe debido a que $u$ pertenece a $G'$ y es el último vértice de $c$).
 
-Entonces se tomará el camino no dirigido de u hacia w de la siguiente forma c'$=<u,v,\dots,w>$ tal que las aristas se dirijan en ese sentido.
+Entonces se tomará el camino no dirigido de $u$ hacia $w$ y se orientar\'a de la siguiente forma c'$=<u,v,\dots,w>$ tal que las aristas se dirijan en ese sentido.
 
-Note que para todo vértice que pertenece a G' se puede acceder a todo vértice de c'~(puesto que G' es orientable) y cada vértice de c' puede acceder a w, lo que implica que puede acceder a todo vértice de G' y por tanto G'+c' es un subgrafo de G que es orientable y es mayor que G' lo que es una contradicción, luego el mayor subgrafo de G que es orientable es el propio G.
+Note que para todo vértice que pertenece a $G$' se puede acceder a todo vértice de c'~(puesto que $G'$ es orientable y todo v\'ertice tiene un camino en $G'$ hasta $u$, luego de ahi movi\'endose por $c'$ se alcanzan todos los v\'ertices del camino) y cada vértice de $c'$ puede acceder a $w$, lo que implica que puede acceder a todo vértice de $G'$ y por tanto $G'+c'$ es un subgrafo de $G$ que es orientable y es mayor que $G'$ lo que es una contradicción, luego el mayor subgrafo de $G$ que es orientable es el propio $G$ .
 
 \begin{dfn}
  Un \textbf{torneo} es un digrafo que tiene como grafo subyacente un grafo completo, o sea, un grafo completo orientado
 \end{dfn}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.80\textwidth}
+        \centering
+        \includegraphics[width=0.4\textwidth]{figures8/torneo.png}
+    \end{subfigure} 
+    \caption{Ejemplo de Torneo}
+\end{figure} 
 
 \begin{teo}
  En todo torneo hay un camino de Hamilton.
@@ -166,16 +226,30 @@ Note que T' es un torneo, pues tiene n vértices~(hipótesis de inducción), y p
 
 Ahora:
 \begin{itemize}
- \item Si $exdeg(v)=0$ entonces $indeg(v)=n$ luego el camino $<v_1,v_2,\dots,v_n,v>$ es de Hamilton
- \item Si $exdeg(v)=n$ entonces $indeg(v)=0$ luego el camino $<v,v_1,v_2,\dots,v_n>$ es de Hamilton
+ \item Si $outdeg(v)=0$ entonces $indeg(v)=n$ luego el camino $<v_1,v_2,\dots,v_n,v>$ es de Hamilton
 \end{itemize}
 
-Sea $exdeg(v)=k$ tal que $i\leq k < n$, entonces existe $v_i$ tal que 
+Sea $outdeg(v)=k$ tal que $1 \leq k < n$, entonces se pone $v$ delante del primer v\'ertice $v_i$ tal que $<v, v_i> \in G$ (que sabemos existe porque $k > 0$).
+Si $v_i = v_1$ entonces se forma el camni de Hamilton $c =<v, v_1,v_1,...,v_n>$, en cualquier otro caso, como $v_i$ es el primero tal que $<v, v_i> \in G$, entonces para $v_{i-1}$ se tiene que $<v_{i-1}, v> \in G$, de donde se forma el camino de Hamilton 
+$c = <v_1,...v_{i-1}, v, v_i, ..., v_n>$
 
-$<v,v_i>\in E(T)$ y $<v_{i- 1},v>\in E(T)$, luego $<v_1,v_2,\dots,v_{i-1},v,v_i,\dots,v_n>$ es un camino de Hamilton. Este i debe existir pues todas las aristas consecutivas dentro del camino tendrán el mismo sentido, en algún momento deben cambiar pues el grado exterior es k, y por tanto el interior es n-k.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.30\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{figures8/Chamilton.png}
+    \end{subfigure} 
+        \begin{subfigure}[b]{0.55\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{figures8/HamiltonPath.png}
+         \end{subfigure} 
+
+        \caption{Ejemplo de un camino de Hamilton en un Torneo}
+\end{figure} 
 
 \begin{teo}
- En un digrafo D se cumple que existe un camino de longitud $X(D)-1$
+ En un digrafo D se cumple que existe un camino de longitud $\chi(D)-1$
 \end{teo}
 
 \begin{dem}
@@ -183,25 +257,24 @@ $<v,v_i>\in E(T)$ y $<v_{i- 1},v>\in E(T)$, luego $<v_1,v_2,\dots,v_{i-1},v,v_i,
 \end{dem}
 
 
-Sea A un conjunto minimal de arcos tal que cuando se elimine el grafo resultante D-A sea acíclico.
+Sea $A$ un conjunto minimal de arcos tal que cuando se elimine el grafo resultante $D-A$ sea acíclico.
 
-Sea k la longitud del camino simple más lardo de D-A.
+Sea $k$ la longitud del camino simple más largo de $D-A$.
 
-aplíquese la siguiente función de coloración  para los vértices de D-A, $f(v)=p$ si $p-1$ es la longitud del camino más largo desde v.
+Aplíquese la siguiente función de coloración  para los vértices de $D-A$, $f(v)=p$ si $p-1$ es la longitud del camino más largo desde $v$.
 
-Note que para todo vértice v de D-A si $<v,w>\in E(D-A)$ entonces $f(v)\neq f(w)$
+Note que para todo vértice $v$ de $D-A$ si $<v,w>\in E(D-A)$ entonces $f(v)\neq f(w)$
 
-Probemos esto, supongamos lo contrario que el camino más largo desde v es igual al camino más largo desde w, ambos igual a p.
+Probemos esto, sea $<w,\dots,x>$ de longitud $p-1$, el camino de mayor longitud  desde $w$, n\'otese que ese camino no contiene a $v$ puesto que $D-A$ ac\'iclico.
+Luego el camino $<v,w,\dots,x>$ es de longitud $p$, por lo que para $v, \ f(v) \geq p + 1 \neq p = f(w)$ 
 
-Como existe $<v,w>$ entonces en el camino desde w no aparece v, pues D-A es acíclico.
-Luego, el camino $<v,w,\dots,x>$ donde $<w,\dots,x>$ es camino de mayor longitud desde w, tiene longitud p, y es más largo que desde v que era de longitud p-1, lo que es una contradicción.
 
-Ahora volvamos, igualmente, se demuestra que para todo vértice v que pertenece a un camino simple se tiene colores distintos.
+Igualmente, se demuestra que para todo vértice $v$ que pertenece a un camino simple se tienen colores distintos.
 
-Como el camino de longitud máxima es de tamño k entonces para colorear a a D-A bastan k+1 colores.
+Como el camino de longitud máxima es de tamaño $k$ entonces para colorear a  $D-A$ bastan $k+1$ colores.
 
-Note que añadir una de A necesariamente crea un ciclo, puesto que A era minimal, por tanto si $e=<e,y>$ entonces en D-A existía un camino desde x hasta a y, y por tanto sus colores son distintos.
+Note que añadir una arista de $A$ necesariamente crea un ciclo, puesto que $A$ era minimal, por tanto si $e=<x,y> \in A$ entonces en $D-A$ existía un camino desde $x$ hasta  $y$, y por tanto sus colores son distintos.
 
-Al añadir todas las aristas de A el grafo continúa siendo k+1 coloreable, entonces $X(D)\leq k+1$  luego $k\geq X(D)-1$
+Al añadir todas las aristas de $A$ el grafo continúa pudiendose colorear con $k+1$ colores, entonces $\chi(D)\leq k+1$  luego $k\geq X(D)-1$
   
 \end{document} 
