@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usepackage{amsmath} 
+\usepackage{nopageno}
+
+\begin{document}
+
+\title{Clase pr\'actica 7}
+\maketitle
+
+\begin{enumerate}
+    \item Un \textit{vertex cover} de un grafo, es un conjunto de vértices $U$ tal que para toda arista del grafo se tiene que $U$ tiene al menos uno de sus extremos. Sea $G$ un grafo bipartito, demuestre que el tamaño del \textit{matching} máximo es igual al tamaño del \textit{vertex cover} mínimo. \textbf{Teorema de Köning}.
+    \item Sea $G=(A \cup B, E)$ un grafo bipartito, con particiones $A$ y $B$. Demuestre que existe un \textit{matching} que satura a $A$ si y solo si se cumple \textit{marriage condition}, $\forall S \subseteq A: |S| \leq |N(S)|$ siendo $N(S)$ la vecindad (\textit{neighborhood}) de $S$. \textbf{Teorema de Hall}.
+    \begin{enumerate}
+        \item Demuestrelo utilizando inducción.
+        \item Demuestrelo utilizando el \textbf{Teorema de Köning}.
+    \end{enumerate} 
+    \item Sea $G=(A \cup B, E)$ un grafo bipartito, con particiones $A$ y $B$. Demuestre que existe un \textit{matching} de cardinalidad $|A| - d$ si se cumple que, $\forall S \subseteq A: |S| - d \leq |N(S)|$.
+    \item Si $G$ es un grafo bipartito regular de grado $k > 0$, entonces en $G$ hay $k$ emparejamientos perfectos disjuntos.
+    \item Sean $M$ un emparejamiento máximo y $M'$ un emparejamiento maximal de un grafo $G$. Demuestre que $\frac{|M|}{2} \leq |M'|$.
+    \item Demuestre que para todo grafo $G$ con una cantidad par de vértices $n$, donde se cumple que $\forall u,v \in V(G)$ no adyacentes $deg(v) + deg(u) \geq n-1$ entonces en $G$ existe un emparejamiento perfecto.
+\end{enumerate}
+\end{document}
