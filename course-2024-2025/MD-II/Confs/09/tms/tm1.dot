@@ -1,0 +1,13 @@
+digraph TuringMachine {
+  rankdir=LR;
+  node [shape = circle];
+  q0 [label="q0"];
+  q1 [label="q1"];
+  q2 [shape=doublecircle, label="q2"];
+  inicio [shape=point];
+  inicio -> q0;
+  q0 -> q0 [label="b:b,D", headport=n];
+  q0 -> q0 [label="a:a,D", headport=s];
+  q0 -> q1 [label="*:*,I"];
+  q1 -> q2 [label="a:a,D"];
+}
