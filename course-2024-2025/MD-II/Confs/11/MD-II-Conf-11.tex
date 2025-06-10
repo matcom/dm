@@ -1,0 +1,275 @@
+\documentclass[a4paper,1pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage[rightcaption]{sidecap}
+\usepackage[pdf]{graphviz}
+
+\newtheorem*{pbo}{Principio del Buen Ordenamiento}
+
+\newtheorem*{pim}{Principio de Inducción Matemática}
+
+\newtheorem*{teo}{Teorema}
+
+\newtheorem*{cor}{Corolario}
+
+\newtheorem*{dem}{Demostración}
+
+\newtheorem*{dfn}{Definición}
+
+\newtheorem*{lem}{Lema}
+
+\newtheorem*{prp}{Propiedades}
+
+
+% Title Page
+\title{Conferencia 11 - Funciones Primitivo Recursivas}
+\author{}
+
+\begin{document}
+\maketitle
+
+\begin{dfn}
+ Sean \\
+ 
+ $K_0=\{0_1,0_2,dots\}$ la familia de funciones nulas donde $o_n(X)=0$ y $X=(x_1,x_2,\dots,x_n)$
+ 
+ $K_1=\{U^1_1, U^2_1,U^2_2,U^3_1,U^3_3,U^3_3,\dots\}$~(proyección) donde $U^n_k(x_1,x_2,\dot,x_n)=x_k$ es la familia de funciones proyectivas
+ 
+ $K_2-\{suc\}$, $suc:\mathbb{N}\rightarrow\mathbb{N}$, $suc(x)=x+1$, función sucesor\\
+ 
+ entonces $K_1\cup K_2\cup K_3$ se conoce como la familia de funciones iniciales
+\end{dfn}
+
+
+\textbf{Esquemas de Recursión}
+
+\begin{dfn}[Esquema de Composición]
+Sean
+
+$a_i:\mathbb{N}^n\rightarrow\mathbb{N}$  $1\leq i \leq R$
+
+$b:\mathbb{N}^r\rightarrow\mathbb{N}$
+
+$f:\mathbb{N}^n\rightarrow\mathbb{N}$\\
+
+entonces $f(x)=(a_1(X),a_2(x)),\dots,a_R(X)$ donde $X=(x_1,x_2,\dots,x_n)$
+ 
+\end{dfn}
+
+
+
+\begin{dfn}[Esquema de Recursión]
+Existen dos esquemas:
+
+ \begin{enumerate}
+  \item Sea $a$ constante y $b:\mathbb{N}^2\rightarrow\mathbb{N}$
+  es posible definir entonces $b:\mathbb{N}\rightarrow\mathbb{N}$ tal que
+  
+  $h(0)=a$ y $h(y+1)=b(y,h(y))$
+  \item Sea $n\geq 1$, $a:\mathbb{N}^n\rightarrow\mathbb{N}$ y $b:\mathbb{N}^{n+2}\rightarrow\mathbb{N}$
+  es posible definir entonces $b:\mathbb{N}^{n+1}\rightarrow\mathbb{N}$ tal que
+  
+  $h(x,0)=a(X)$ y $h(x,y+1)=b(x,y,h(x,y))$ donde $X=(x_1,x_2,\dots,x_n)$
+ \end{enumerate}
+
+\end{dfn}
+
+
+\begin{dfn}
+ Una función se llama primitivo-recursiva si es una función inicial o si es posible definirla en términos de funciones iniciales por un número finito de aplicaciones de los esquemas composición o recursión
+\end{dfn}
+
+\textbf{Ejemplos}
+
+\begin{enumerate}
+ \item \textbf{Suma}
+ 
+ $suma(x,y)$, $suma:\mathbb{N}^2\rightarrow\mathbb{N}$
+ 
+ se tienen $a,b$ tales que $a:\mathbb{N}\rightarrow\mathbb{N}$ y $b:\mathbb{N}^3\rightarrow\mathbb{N}$
+ 
+ se define entonces $suma(x,0)=a(x)=U^1_1(x)$
+ 
+ y $suma(x,y+1)=b(x,y,suma(x,y))=suc(U^3_3(x,y,suma(x,y)))$
+ 
+ \item \textbf{Producto}
+ 
+ $prod(x,y)$, $prod:\mathbb{N}^2\rightarrow\mathbb{N}$
+ 
+ se tienen $a,b$ tales que $a:\mathbb{N}\rightarrow\mathbb{N}$ y $b:\mathbb{N}^3\rightarrow\mathbb{N}$
+ 
+ se define entonces $prod(x,0)=a(x)=O_1(x)$
+ 
+ y $prod(x,y+1)=b(x,y,prod(x,y))=suma(U^3_1(x,y,z),U^3_3(x,y,z))$ donde $z=prod(x,y)$
+ 
+ \item \textbf{Potencia}
+ 
+ $pot(x,y)$, $pot:\mathbb{N}^2\rightarrow\mathbb{N}$
+ 
+ se tienen $a,b$ tales que $a:\mathbb{N}\rightarrow\mathbb{N}$ y $b:\mathbb{N}^3\rightarrow\mathbb{N}$
+ 
+ se define entonces $pot(x,0)=a(x)=suc(O_1(x))$
+ 
+ y $pot(x,y+1)=b(x,y,pot(x,y))=prod(U^3_1(x,y,z),U^3_3(x,y,z))$ donde $z=pot(x,y)$
+ 
+\end{enumerate}
+
+\begin{teo}
+La función constante $C^n_k(x_1,x_2,\dots,x_n)=k$ es primitivo-recursiva
+\end{teo}
+
+\begin{dem}
+ Demostremos por inducción en $k$.
+ 
+ \textbf{Caso base:} k=0
+ 
+ $C^n_0(x_1,x_2,\dots,x_n)=O_n(x_1,x_2,\dots,x_n)=0$\\
+ 
+ \textbf{Paso inductivo} Si se cumple para $C^n_k$ entonces se cumple para ¨$C^n_{k+1}$
+ 
+  $C^n_{k+1}(x_1,x_2,\dots,x_n)=suc(C^n_k(x_1,x_2,\dots,x_n))=k+1$
+\end{dem}
+
+\begin{teo}
+ Sean las funciones $f:\mathbb{N}^k\rightarrow\mathbb{N}$ y $h:\mathbb{N}^n\rightarrow\mathbb{N}$ y
+ 
+ $h(x_1,x_2,\dots,x_n)=f(x_{i_1},x_{i_2},\dots,x_{i_k})$ donde $x_{i_1},x_{i_2},\dots,x_{i_k}$ es un secuencia de variables con posible repetición tomada de $x_1,x_2,\dots,x_n$, entonces si $f$ es primitivo recursiva tam bién lo es $h$
+\end{teo}
+
+\begin{dem}
+
+
+\end{dem}
+ $h(x_1,x_2,\dots,x_n)=f(U^n_{i_1}(x_1,\dots,x_n),U^n_{i_2}(x_1,\dots,x_n),\dots,U^n_{i_k}(x_1,\dots,x_n))$
+ 
+ \begin{cor}
+  Si $f(x,y)$ es primitivo-recursiva entonces lo es $h$ tal que:
+  \begin{itemize}
+   \item $h(x,y)=f(y,x)$
+   \item $h(x)=f(x,x)$
+   \item $h(x,y,z) = f(y,z)$
+  \end{itemize}
+
+ \end{cor}
+ 
+ \begin{dfn}
+  Sea $P$ un predicado numérico $k$-ario ($x\in\mathbb{N}^k$) ,
+  
+  la función
+  
+  \begin{equation}
+C_P(x) = 
+\begin{cases}
+1 & \text{si } P(x) \text{se cumple} \\
+0   & \text{si } P(x) \text{no se cumple} 
+\end{cases}
+\end{equation}
+
+se llama función característica de $P$
+ \end{dfn}
+ 
+\begin{dfn}
+ Se dice que $P$ es un predicado primitivo-recursivo si su función característica es primitivo-recursiva
+\end{dfn}
+
+\begin{teo}
+ Si los predicados $P_1$ y $P_2$ son primitivo recursivos, entonces también lo son:
+ \begin{itemize}
+  \item $\neg P_1$
+  \item $P_1\vee P_2$
+  \item $P_1\wedge P_2$
+  \item $P_1\Rightarrow P_2$
+  \item $P_1\Leftrightarrow P_2$
+ \end{itemize}
+
+\end{teo}
+
+\begin{teo}
+ Sea $P_1,P_2,\dots,P_k$ predicados $n$-arios, considere la función
+ \begin{equation}
+f(x_1,x_2,\dots,x_n) = 
+\begin{cases}
+g_1(x_1,x_2,\dots,x_n) & \text{si } P_1(x_1,x_2,\dots,x_n) \\
+g_2(x_1,x_2,\dots,x_n) & \text{si } P_2(x_1,x_2,\dots,x_n) \\
+\dots\\
+g_k(x_1,x_2,\dots,x_n) & \text{si } P_k(x_1,x_2,\dots,x_n) 
+\end{cases}
+\end{equation}
+ si para todo $i$ $1\leq i \leq k$ $g_i$ es una función primitivo-recursiva y para cada $x_1,x_2,\dots,x_n$ se cumple exactamente uno de los predicados, entonces $f$ es primitivo recursiva.
+\end{teo}
+
+\begin{dfn}[Suma acotada]
+ Sea $x=(x_1,x_2,\dots,x_n)$ y $f:\mathbb{N}^{n+1}\rightarrow\mathbb{N}$, se llama suma acotada a la función $h:\mathbb{N}^{n+1}\rightarrow\mathbb{N}$ tal que 
+ 
+ $h(x,y)=\sum_{z<y}f(x,z)$ o sea
+ \begin{equation}
+h(z,y) = 
+\begin{cases}
+0 & y=0 \\
+f(x,0) + f(x,1) + \dots + f(x,y-1) & y>0 
+\end{cases}
+\end{equation}
+\end{dfn}
+
+\begin{dfn}[Producto acotado]
+ Sea $x=(x_1,x_2,\dots,x_n)$ y $f:\mathbb{N}^{n+1}\rightarrow\mathbb{N}$, se llama producto acotado a la función $h:\mathbb{N}^{n+1}\rightarrow\mathbb{N}$ tal que 
+ 
+ $h(x,y)=\prod_{z<y}f(x,z)$ o sea
+ \begin{equation}
+h(z,y) = 
+\begin{cases}
+1 & y=0 \\
+f(x,0)f(x,1)\dots f(x,y-1) & y>0 
+\end{cases}
+\end{equation}
+\end{dfn}
+
+\begin{teo}
+ Si $f:\mathbb{N}^{n+1}\rightarrow\mathbb{N}$ es primitivo recursiva entonces la suma acotada de $f$ y el producto acotado de $f$ son primitivo recursivos
+\end{teo}
+
+\begin{teo}
+ Sean $f:\mathbb{N}^{n+1}\rightarrow\mathbb{N}$ y $k:\mathbb{N}^{n+1}\rightarrow\mathbb{N}$ funciones primitivo recursivas entonces son primitivo recursivas las funciones 
+ 
+ $\sum_{z<k(x,y)}f(x,z)$ y $\prod_{z<k(x,y)}f(x,z)$
+\end{teo}
+
+\begin{teo}
+ Sean $f:\mathbb{N}^{n+1}\rightarrow\mathbb{N}$ una función primitivo recursiva y $g:\mathbb{N}^{n+1}\rightarrow\mathbb{N}$, entonces
+ 
+ \begin{equation}
+g(x,y) = \mu_{z<y}(f(x,z)=0) 
+\begin{cases}
+\text{el menor } z<y \text{ tal que }f(x,z)=0\\
+y
+\end{cases}
+\end{equation}
+
+es primitivo recursiva
+ 
+\end{teo}
+
+
+\begin{cor}
+ Si  $f:\mathbb{N}^{n+1}\rightarrow\mathbb{N}$ y $k:\mathbb{N}^{n+1}\rightarrow\mathbb{N}$ son primitivo-recursivas entonces también lo es $\mu_{z<k(x,y)}(f(x,z)=0) $
+\end{cor}
+
+\begin{teo}
+Sea $P(x,y)$ un predicado primitivo-recursivo, entonces la función 
+\begin{enumerate}
+ \item $f(x,y)=\mu_{z<y}(P(x,z))$
+ \item $\forall(z) z<y, P(x,z)$ y $\exists(z)z<y, P(x,z)$ son predicados primitivo-recursivos
+\end{enumerate}
+
+
+\end{teo}
+
+  
+\end{document} 
