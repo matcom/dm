@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usepackage{amsmath} 
+\usepackage{nopageno}
+
+\begin{document}
+
+\title{Clase pr\'actica 8}
+\maketitle
+
+\begin{enumerate}
+    \item En conferencia se estudio un resultado que garantiza que: en un digrafo $D$ existe un camino de longitud $\chi(D) - 1$, pero este no dice nada de que puedan haber caminos más largos. Demuestre que dicho resultado no se puede mejorar, dado un grafo $G$ se puede encontrar una orientación donde la longitud del camino más largo es exactamente $\chi(G) - 1$.
+    \item Sea $D$ un digrafo, $D$ es fuertemente conexo si y solo sí para toda partición de los nodos de $D$ en dos conjuntos no vacíos, propios, $S$ y $T$, existe un arco desde $S$ hacia $T$.
+    \item Un digrafo $D$ (sin lazos) tiene un conjunto independiente $S$ tal que para todo nodo de $D$ que no está en $S$, es alcanzable por un nodo de $S$ por un camino de longitud a lo sumo $2$.
+    \item Todo torneo tiene al menos un camino de Hamilton. Realice esta demostración de tres formas diferentes a las vistas en conferencia. Hints:
+    \begin{itemize}
+        \item Inducción fuerte.
+        \item Utilizando el teorema: en un digrafo $D$ existe un camino de longitud $\chi(D) - 1$.
+        \item Considerando una permutación de los nodos con cierta propiedad $P$.
+    \end{itemize}
+    \item En un torneo existe un camino de Hamilton donde el primer nodo es el que más gana (mayor $outdeg$).
+    \item El ejercicio 3 se puede mejorar para torneos, sea $T$ un torneo, se puede encontrar un solo nodo $v \in T$ que cumple para todo $w \in T: w \neq v$, $v$ le gana a $w$ o $v$ le gana a un $z \in T: z \neq w \land z \neq v$ tal que $z$ le gana a $w$. A este nodo se le llama rey.
+    \item Sea $T$ un torneo tal que $\forall v \in T: indeg(v) > 0$. Demuestre que:
+    \begin{itemize}
+        \item Si $x$ es un rey en $T$, entonces $T$ tiene otro rey en $N^-(x)$
+        \item $T$ tiene al menos $3$ reyes.
+    \end{itemize}
+\end{enumerate}
+\end{document}
