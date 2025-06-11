@@ -38,45 +38,59 @@
 \begin{dfn}
  Sean \\
  
- $K_0=\{0_1,0_2,dots\}$ la familia de funciones nulas donde $o_n(X)=0$ y $X=(x_1,x_2,\dots,x_n)$
+ $K_0=\{0_1,0_2, \dots \}$ la familia de funciones nulas donde $0_n(X)=0$ y $X=(x_1,x_2,\dots,x_n)$
  
- $K_1=\{U^1_1, U^2_1,U^2_2,U^3_1,U^3_3,U^3_3,\dots\}$~(proyección) donde $U^n_k(x_1,x_2,\dot,x_n)=x_k$ es la familia de funciones proyectivas
+ $K_1=\{U^1_1, U^2_1, U^2_2,U^3_1,U^3_2,U^3_3, \dots \}$ donde $U^n_k(x_1,x_2,\dot,x_n)=x_k$ con $n \geq k$ es la familia de funciones proyectivas
  
- $K_2-\{suc\}$, $suc:\mathbb{N}\rightarrow\mathbb{N}$, $suc(x)=x+1$, función sucesor\\
+ $K_2= \{suc\}$, $suc:\mathbb{N}\rightarrow\mathbb{N}$, $suc(x)=x+1$, función sucesor\\
  
- entonces $K_1\cup K_2\cup K_3$ se conoce como la familia de funciones iniciales
+entonces $K_1\cup K_2\cup K_3$ se conoce como la familia de funciones iniciales.\\
+
+Nota: Las funciones primitivas recursivas son funciones de $\mathbf{N}^n  \rightarrow \mathbf{N}$ y se obtienen a partir de un conjunto de reglas o pasos bien definidos como la composici\'on o la recursi\'on.
 \end{dfn}
 
 
-\textbf{Esquemas de Recursión}
+\textbf{Esquemas de Obtenci\'on de Funciones Primitivas Recursivas}
 
 \begin{dfn}[Esquema de Composición]
-Sean
+Sean las funciones primitivas recursivas:
 
-$a_i:\mathbb{N}^n\rightarrow\mathbb{N}$  $1\leq i \leq R$
+$a_i:\mathbb{N}^n\rightarrow\mathbb{N}$  $1\leq i \leq r$
 
 $b:\mathbb{N}^r\rightarrow\mathbb{N}$
 
-$f:\mathbb{N}^n\rightarrow\mathbb{N}$\\
 
-entonces $f(x)=(a_1(X),a_2(x)),\dots,a_R(X)$ donde $X=(x_1,x_2,\dots,x_n)$
+entonces $f(X)=b(a_1(X),a_2(X),\dots,a_r(X))$ donde $X=(x_1,x_2,\dots,x_n)$ es primitiva recursiva.
  
 \end{dfn}
 
 
 
 \begin{dfn}[Esquema de Recursión]
-Existen dos esquemas:
+Existen dos variantes:
 
  \begin{enumerate}
-  \item Sea $a$ constante y $b:\mathbb{N}^2\rightarrow\mathbb{N}$
-  es posible definir entonces $b:\mathbb{N}\rightarrow\mathbb{N}$ tal que
-  
-  $h(0)=a$ y $h(y+1)=b(y,h(y))$
-  \item Sea $n\geq 1$, $a:\mathbb{N}^n\rightarrow\mathbb{N}$ y $b:\mathbb{N}^{n+2}\rightarrow\mathbb{N}$
-  es posible definir entonces $b:\mathbb{N}^{n+1}\rightarrow\mathbb{N}$ tal que
-  
-  $h(x,0)=a(X)$ y $h(x,y+1)=b(x,y,h(x,y))$ donde $X=(x_1,x_2,\dots,x_n)$
+  \item Sean: \\
+  $a$: constante\\ 
+  $b:\mathbb{N}^2\rightarrow\mathbb{N}$, funci\'on primitiva recursiva \\
+
+  Entonces la funci\'on $h(X): \mathbb{N} \rightarrow \mathbb{N}$ definida como:\\
+  $h(0)=a$  \\
+  $h(y+1)=b(y,h(y))$\\ 
+  es primitiva recursiva.
+
+
+  \item Sean:\\
+  $a:\mathbb{N}^n\rightarrow\mathbb{N}$\\
+  $b:\mathbb{N}^{n+2}\rightarrow\mathbb{N}$
+
+  funciones primitivas recursivas con  $n\geq 1$.\\
+
+  Entonces la funci\'on $h:\mathbb{N}^{n+1}\rightarrow\mathbb{N}$ definida como:\\
+  $h(x,0)=a(X)$\\
+  $h(x,y+1)=b(x,y,h(x,y))$ donde $X=(x_1,x_2,\dots,x_n)$\\
+  es primitiva recursiva.
+
  \end{enumerate}
 
 \end{dfn}
@@ -93,31 +107,42 @@ Existen dos esquemas:
  
  $suma(x,y)$, $suma:\mathbb{N}^2\rightarrow\mathbb{N}$
  
- se tienen $a,b$ tales que $a:\mathbb{N}\rightarrow\mathbb{N}$ y $b:\mathbb{N}^3\rightarrow\mathbb{N}$
+ Se define entonces:\\
  
- se define entonces $suma(x,0)=a(x)=U^1_1(x)$
+  $suma(x,0)=a(x)=U^1_1(x)$ \textit{($x+0 = x$)}
+
+  $suma(x,y+1)=b(x,y,suma(x,y))=suc(U^3_3(x,y,suma(x,y)))$\\ 
+  
+  \textit{se tiene que, $x + (y +1) = sucesor(x+y)$, se deja que el esquema recursivo en cada iteraci\'on disminuya el valor de $y$ hasta que llegue a $0$ y caiga el el caso base, luego en cada retorno de la recursividad se realizan tantas operaciones $sucesor$ como sea el vaor de $y$ calcul\'andose el resultado esperado}
  
- y $suma(x,y+1)=b(x,y,suma(x,y))=suc(U^3_3(x,y,suma(x,y)))$
+  Finalmente la suma es el resultado de aplicar un esquema recursivo sobre las funciones primitivas recursivas $a,b$ tales que $a:\mathbb{N}\rightarrow\mathbb{N}$ y $b:\mathbb{N}^3\rightarrow\mathbb{N}$, de donde $suma(x,y)$ es primitiva recursiva.
+ 
+ 
  
  \item \textbf{Producto}
  
- $prod(x,y)$, $prod:\mathbb{N}^2\rightarrow\mathbb{N}$
+ $prod(x,y)$, $prod:\mathbb{N}^2\rightarrow\mathbb{N}$\\
+ Se define entonces: \\
  
- se tienen $a,b$ tales que $a:\mathbb{N}\rightarrow\mathbb{N}$ y $b:\mathbb{N}^3\rightarrow\mathbb{N}$
+ $prod(x,0)=a(x)=O_1(x)$ \textit{(x * 0 = 0)}\\
+ $prod(x,y+1)=b(x,y,prod(x,y))=suma(U^3_1(x,y,prod(x,y)),U^3_3(x,y,prod(x,y)))$\\
  
- se define entonces $prod(x,0)=a(x)=O_1(x)$
+ \textit{se tiene que $x * (y +1) = x + (x * y)$ de igual modo se deja que sea la propia recursividad la que en cada paso decremente $y$, por cada vez que decremente $y$ se suma $x$ al c\'alculo realizado}
+
+
+  Finalmente el producto es el resultado de aplicar un esquema recursivo sobre las funciones primitivas recursivas $a,b$ tales que $a:\mathbb{N}\rightarrow\mathbb{N}$ y $b:\mathbb{N}^3\rightarrow\mathbb{N}$, de donde $prod(x,y)$ es primitiva recursiva.
  
- y $prod(x,y+1)=b(x,y,prod(x,y))=suma(U^3_1(x,y,z),U^3_3(x,y,z))$ donde $z=prod(x,y)$
+ 
  
  \item \textbf{Potencia}
  
- $pot(x,y)$, $pot:\mathbb{N}^2\rightarrow\mathbb{N}$
+ $pot(x,y)$, $pot:\mathbb{N}^2\rightarrow\mathbb{N}$\\
+ Se define entonces:\\
+
+ $pot(x,0)=a(x)=suc(O_1(x))$  \textit{($x^0 =1$)}\\
+ $pot(x,y+1)=b(x,y,pot(x,y))=prod(U^3_1(x,y,pot(x,y)),U^3_3(x,y,pot(x,y)))$ \\
  
- se tienen $a,b$ tales que $a:\mathbb{N}\rightarrow\mathbb{N}$ y $b:\mathbb{N}^3\rightarrow\mathbb{N}$
- 
- se define entonces $pot(x,0)=a(x)=suc(O_1(x))$
- 
- y $pot(x,y+1)=b(x,y,pot(x,y))=prod(U^3_1(x,y,z),U^3_3(x,y,z))$ donde $z=pot(x,y)$
+  Finalmente la potencia es el resultado de aplicar un esquema recursivo sobre las funciones primitivas recursivas $a,b$ tales que $a:\mathbb{N}\rightarrow\mathbb{N}$ y $b:\mathbb{N}^3\rightarrow\mathbb{N}$, de donde $pot(x,y)$ es primitiva recursiva.
  
 \end{enumerate}
 
@@ -132,9 +157,11 @@ La función constante $C^n_k(x_1,x_2,\dots,x_n)=k$ es primitivo-recursiva
  
  $C^n_0(x_1,x_2,\dots,x_n)=O_n(x_1,x_2,\dots,x_n)=0$\\
  
- \textbf{Paso inductivo} Si se cumple para $C^n_k$ entonces se cumple para ¨$C^n_{k+1}$
+ \textbf{Paso inductivo} Si se cumple que $C^n_k$ entonces se cumple para $C^n_{k+1}$
  
-  $C^n_{k+1}(x_1,x_2,\dots,x_n)=suc(C^n_k(x_1,x_2,\dots,x_n))=k+1$
+  $C^n_{k+1}(x_1,x_2,\dots,x_n)=suc(C^n_k(x_1,x_2,\dots,x_n))=k+1$\\
+
+  Entones se tiene que $C_{k}^n$ es primitivo recursiva $\blacksquare$.
 \end{dem}
 
 \begin{teo}
@@ -202,7 +229,7 @@ g_2(x_1,x_2,\dots,x_n) & \text{si } P_2(x_1,x_2,\dots,x_n) \\
 g_k(x_1,x_2,\dots,x_n) & \text{si } P_k(x_1,x_2,\dots,x_n) 
 \end{cases}
 \end{equation}
- si para todo $i$ $1\leq i \leq k$ $g_i$ es una función primitivo-recursiva y para cada $x_1,x_2,\dots,x_n$ se cumple exactamente uno de los predicados, entonces $f$ es primitivo recursiva.
+ si para todo $i$, $1\leq i \leq k$, $g_i$ es una función primitivo-recursiva y para toda $ X = (x_1,x_2,\dots,x_n)$ se cumple exactamente uno de los predicados, entonces $f$ es primitivo recursiva.
 \end{teo}
 
 \begin{dfn}[Suma acotada]
@@ -210,7 +237,7 @@ g_k(x_1,x_2,\dots,x_n) & \text{si } P_k(x_1,x_2,\dots,x_n)
  
  $h(x,y)=\sum_{z<y}f(x,z)$ o sea
  \begin{equation}
-h(z,y) = 
+h(x,y) = 
 \begin{cases}
 0 & y=0 \\
 f(x,0) + f(x,1) + \dots + f(x,y-1) & y>0 
@@ -223,7 +250,7 @@ f(x,0) + f(x,1) + \dots + f(x,y-1) & y>0
  
  $h(x,y)=\prod_{z<y}f(x,z)$ o sea
  \begin{equation}
-h(z,y) = 
+h(x,y) = 
 \begin{cases}
 1 & y=0 \\
 f(x,0)f(x,1)\dots f(x,y-1) & y>0 
@@ -238,7 +265,7 @@ f(x,0)f(x,1)\dots f(x,y-1) & y>0
 \begin{teo}
  Sean $f:\mathbb{N}^{n+1}\rightarrow\mathbb{N}$ y $k:\mathbb{N}^{n+1}\rightarrow\mathbb{N}$ funciones primitivo recursivas entonces son primitivo recursivas las funciones 
  
- $\sum_{z<k(x,y)}f(x,z)$ y $\prod_{z<k(x,y)}f(x,z)$
+ $h(x,y) = \sum_{z<k(x,y)}f(x,z)$ y $g(x,y) = \prod_{z<k(x,y)}f(x,z)$
 \end{teo}
 
 \begin{teo}
