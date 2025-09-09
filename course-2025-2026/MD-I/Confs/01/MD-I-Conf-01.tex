@@ -68,7 +68,7 @@ Sea $A\subseteq\mathbb{N}$ un conjunto no vacío y supongamos que $A$ no tiene m
 Definamos el conjunto $S=\{n|n\in\mathbb{N}\wedge\forall(x)[x\in A\wedge n<x]\}$
 
 Por tanto $1\in S$ pues $A$ no contiene al 1~(sino sería el mínimo de $A$), además si $n\in S$
-entonces $n+1\in S$ porque sino $n+1$ sería el minimo de A y este no tiene. Luego, por PIM, $S=\mathbb{A}$ y por tanto $A$ es vacío ¡lo que es una contradicción! Luego $A$ tiene un mínimo.\\
+entonces $n+1\in S$ porque sino $n+1$ sería el minimo de A y este no tiene. Luego, por PIM, $S=\mathbb{N}$ y por tanto $A$ es vacío ¡lo que es una contradicción! Luego $A$ tiene un mínimo.\\
 
 \textbf{Ejemplo}
 Demuestre, utilizando el \textbf{Principio del Buen Ordenamiento}, que para toda $n$, $n\in\mathbb{Z}$, $n\geq 1$ se cumple que $\sum^n_{k=1}(2k-1)=n^2$
@@ -139,7 +139,7 @@ $a-sb=a-ab-b$
 
 $a-sb=a(1-b)+b$
 
-Como $a<0$ y $1-b<0$~(pues $b>0$) entonces $a(1-b)$ es mayor que 0 y, por tanto, $a(1-b)+b$ también lo es.
+Como $a<0$ y $1-b<0$~(pues $b>0$ y $b\nmid a$) entonces $a(1-b)$ es mayor que 0 y, por tanto, $a(1-b)+b$ también lo es.
 
 Luego, sea $r$ el elemento mínimo de $S$ y sea $s=q$ se tiene que $a-bq=r$ entonces $a=bq+r$
 
@@ -193,7 +193,7 @@ Si $n$ no es primo es compuesto, entonces $n=ab$, $1<a,b<n$
 
 Si $a$ es primo o $b$ es primo ya queda demostrado.
 
-Sino $a$ es compuesto y es de la forma $a=a_1b_1$, $1<a_1,b_1<n$
+Sino $a$ es compuesto y es de la forma $a=a_1b_1$, $1<a_1,b_1<a$
 
 \dots
 
@@ -216,7 +216,7 @@ Si $a$ es primo se cumple sino $a$ es compuesto y como $a<n$ entonces tiene divi
 Si $n$ es primo, ya está demostrado.
 Sino, se tiene $D=\{d|\, d|n, 1<d<n\}$ y sea $m$ el mínimo elemento de $D$. 
 
-Supongamos que $m$ es compuesto, luego existe $p$ primo tal que $p|m$, entonces por transitividad $p|n$ y $p<m$, y esto es un contradicción. Luego $m$ es primo.
+Supongamos que $m$ es compuesto, luego existe $p<m$ tal que $p|m$, entonces por transitividad $p|n$ y $p<m$, y esto es un contradicción. Luego $m$ es primo.
 
 \begin{teo}
  Hay una infinita cantidad de números primos
