@@ -121,7 +121,7 @@ Entonces, como $d\leq s \leq d$ se tiene que $s=d$
 \end{cor}
 
 \begin{cor}
- Sean $a,b$, $a\in\mathbb{Z}$, $b\in\mathbb{Z}$, no simultáneamente nulos, entonces $\frac{a}{mcd(a.b)}$ y  $\frac{b}{mcd(a.b)}$ son \textbf{primos relativos}. O sea, $mcd(\frac{a}{(a.b)},\frac{b}{(a.b)})=1$
+ Sean $a,b$, $a\in\mathbb{Z}$, $b\in\mathbb{Z}$, no simultáneamente nulos, entonces $\frac{a}{mcd(a, b)}$ y  $\frac{b}{mcd(a, b)}$ son \textbf{primos relativos}. O sea, $mcd(\frac{a}{(a, b)},\frac{b}{(a, b)})=1$
 \end{cor}
 
 \begin{teo}
@@ -184,7 +184,7 @@ Demostremos ahora que si $mcd(a,b)|c$ entonces $ax+by=c$ tiene solución.
 
 Si $mcd(a,b)|c$ entonces existe $k,\, k\in\mathbb{Z}$ tal que $c=k(a,b)$.
 
-Ahora, sabemos que existe $x_0,y_o\in\mathbb{Z}$ tal que
+Ahora, sabemos que existe $x_0,y_0\in\mathbb{Z}$ tal que
 
 $ax_0+by_0=(a,b)$
 
@@ -270,18 +270,9 @@ Esto implica que
 
 $\frac{b}{(a,b)}|\frac{a}{(a,b)}(x_0-x_1)$
 
-pero como se sabe que $(\frac{a}{(a,b)},\frac{b}{(a,b)})=1$ entoces $\frac{b}{(a,b)}|x_0-x_1$
+pero como se sabe que $(\frac{a}{(a,b)},\frac{b}{(a,b)})=1$ entonces $\frac{b}{(a,b)}|x_0-x_1$
 
-por tanto existe $k\in\mathbb{Z}$ tal que $x_1=x_0 + k\frac{b}{(a,b)}$ luego
-
-$\frac{a}{(a,b)}(x_0-x_1)=\frac{b}{(a,b)}(y_1-y_0)$
-
-
-$\frac{a}{(a,b)}(x_0- x_0 - k\frac{b}{(a,b)} )=\frac{b}{(a,b)}(y_1-y_0)$
-
-$\frac{a}{(a,b)}(- k\frac{b}{(a,b)} )=\frac{b}{(a,b)}(y_1-y_0)$
-
-$-k\frac{a}{(a,b)}=y_1-y_0$
+por tanto existe $k\in\mathbb{Z}$ tal que $x_1=x_0 + k\frac{b}{(a,b)}$ luego sustituyendo en la ecuación inicial se obtiene:
 
 $y_1=y_0-k\frac{a}{(a,b)}$
 
