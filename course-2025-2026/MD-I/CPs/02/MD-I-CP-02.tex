@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usepackage{amsmath} 
+\usepackage{nopageno}
+
+\begin{document}
+
+\title{Clase pr\'actica 2}
+\maketitle
+
+\begin{enumerate}
+    \item Implemente un m\'etodo que dados $a,b,c \in \mathbf{Z}$ y $a,b \neq 0$ diga si $ax + by =c$ tiene soluci\'on en los enteros, es decir que existan $x_0, y_0 \in \mathbf{Z}$ tales que $ax_0 + by_0 = c$, en caso de existir encuentre una y dé una forma de generar otras $n$.
+    \item Sean $a_1, a_2 ... a_n$ n\'umeros naturales. Demuestre que $(a_i, a_j) = 1$ para todo par $1 \leq i < j \leq n$ si y solo si $mcm(a_1, a_2,...,a_n) = a_1a_2...a_n$.
+    \item Una inmobiliaria renta apartamentos del tipo A cuyo alquiler es \$188.00 y apartamentos de tipo B cuyo alquiler es \$508.00. Cuando todos los apartamentos de tipo A y B hayan sido rentados, la inmobiliaria recibir\'a un total de \$1580.00. Cu\'antos apartamentos de cada tipo posee ?
+    \item Sean $a,b$ naturales, cu\'antos n\'umeros de la secuencia $a, 2a, ..., ba$ son divisibles por $b$.
+    \item Sea $a,b,c,k,n \in \mathbf{N}$, calcule o demuestre (seg\'un sea el caso) que:
+    \begin{enumerate}
+        \item $(ka, kb) = k (a,b)$
+        \item Si $(a,b) = 1$
+        \begin{itemize}
+            \item $(a+b, a)$
+            \item $(a+b, ab)$
+            \item $(a+b, a-b)$
+            \item $(n^2 +1, (n+1)^2 +1)$
+        \end{itemize}
+        \item $(a,b,c) = \frac{abc}{(ab,bc,ca)}$
+    \end{enumerate}
+    \item Las soluciones de la ecuación lineal diofantina $ax + by = c$ son interpretadas geométricamente como, aquellos puntos con coordenadas enteras sobre la recta que representa dicha equación. Prueba que si $(a, b) = 1$, entonces cualquier segmento de longitud mayor o igual a $(a^2 + b^2) ^ {\frac{1}{2}}$ sobre la línea $ax + by = c$ contiene al menos uno de los puntos solución de la ecuación.
+    \item Demuestre que si $a | bc$ entonces $a | mcd(a,b) * mcd(a,c)$.
+    \item Demuestre que si $a^n | b^n$ entonces $a | b$.
+\end{enumerate}
+\end{document}
