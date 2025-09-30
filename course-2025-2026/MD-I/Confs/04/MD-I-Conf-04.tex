@@ -1,0 +1,296 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem*{pbo}{Principio del Buen Ordenamiento}
+
+\newtheorem*{pim}{Principio de Inducción Matemática}
+
+\newtheorem*{teo}{Teorema}
+
+\newtheorem*{cor}{Corolario}
+
+\newtheorem*{dem}{Demostración}
+
+\newtheorem*{dfn}{Definición}
+
+\newtheorem*{lem}{Lema}
+
+\newtheorem*{prp}{Propiedades}
+
+\newtheorem*{pro}{Proposición}
+
+% Title Page
+\title{Conferencia 4 - Congruencia}
+\author{}
+
+
+
+\begin{document}
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+\begin{dfn}
+ Sea $n\in \mathbb{Z}_+$, $a\in \mathbb{Z}$, $b\in \mathbb{Z}$, se dice que $a$ es congruente con $b$ módulo $n$ si $a$ y $b$ tienen el mismo resto al ser divididos por $n$ y esto se denota $ a\equiv b \ (\textrm{mod}\ n)$ o $a\equiv b\, (n)$
+\end{dfn}
+
+\begin{teo}
+ Sea $n\in \mathbb{Z}_+$, $a\in \mathbb{Z}$, $b\in \mathbb{Z}$, se dice que $a \equiv b \, (n)$ si y solo si $n|a-b$
+\end{teo}
+
+\textbf{Demostración}
+
+Demostremos que si $a\equiv b\, (n)$ entonces $n|a-b$
+
+Como $a\equiv b\, (n)$, por definición, $a=kn+r$ y $b=qn+r$  luego 
+
+$a-kn=b-qn$ 
+
+$a-b=kn-qn$
+
+$a-b=(k-q)n$
+
+por lo que $n|a-b$
+\\
+
+Demostremos ahora que si $n|a-b$ entonces $a\equiv b\, (n)$
+
+Tenemos que 
+
+$a=nq_1+r_1$ y $b=nq_2+r_2$
+
+luego $a-b=n(q_1-q_2) + r_1 - r_2$
+
+Ahora, como $n|a-b$ y $n|n(q_1-q_2)$
+
+entonces $n|r_1-r_2$ y $n||r_1-r_2|$
+
+pero $|r_1-r_2|<n$ por lo que $r_1-r_2=0$
+
+entonces $r_1=r_2$ y, por tanto, $a\equiv b\, (n)$
+
+\begin{teo}
+ La relación de congruencia módulo $n$ es una relación de equivalencia
+\end{teo}
+
+
+\textbf{Propiedades básicas de la congruencia}
+\begin{enumerate}
+ \item Para todo $a$, $a \equiv a \, (n)$
+ 
+ \textbf{Demostración}
+ 
+ Como $a-a = 0 = n*0$ entonces $n|a-a$
+ 
+ \item Si $a \equiv b \, (n)$ si y solo si $b \equiv a \, (n)$
+ 
+ \textbf{Demostración}
+ 
+ Si $a-b=kn$ para algún $k$ luego $b-a=-kn$
+ 
+ \item Si $a \equiv b \, (n)$ y $b \equiv c \, (n)$ entonces $a \equiv c \, (n)$
+ 
+ \textbf{Demostración}
+ 
+ Si $a-b=kn$ y $b-c=ln$ para $k,l$ enteros entonces $a-c=(k+l)n$
+ 
+ \item Si $a \equiv b \, (n)$ y $c \equiv d \, (n)$ entonces $a\pm c \equiv b\pm d \, (n)$
+ 
+ \textbf{Demostración}
+ 
+ Si $a-b=kn$ y $c-d=ln$ para $k,l$ enteros entonces 
+ 
+ $(a+c)-(b+d)=(k+l)n$ y $(a-c)-(b-d)=(k-l)n$
+ 
+ \item Si $a \equiv b \, (n)$ y $k\in\mathbb{Z}_+$ entonces  $ak \equiv bk \, (n)$
+ 
+ \textbf{Demostración}
+ 
+ Se suma $k$ veces $a \equiv b \, (n)$
+ 
+ \item Si $a \equiv b \, (n)$ y $c \equiv d \, (n)$ entonces $ac \equiv bd \, (n)$
+ 
+ \textbf{Demostración}
+ 
+ Para ello se debe demostrar que $ac - bd$ es múltiplo de $n$. Entonces 
+ 
+ $ac - bd = ac - bc + bc - bd = c(a-b) + b(c-d)$
+ 
+ y como $a-b$ y $c-d$ son múltiplos de $n$ entonces $ac - bd$ también lo es
+ 
+ 
+ \item Si $a \equiv b \, (n)$ y $k\in\mathbb{Z}_+$ entonces $a^k \equiv b^k \, (n)$
+ 
+  \textbf{Demostración}
+ 
+ Se multiplica $k$ veces $a \equiv b \, (n)$
+ 
+ \item Si $a \equiv b \, (n)$ entonces $a+c \equiv b+c \, (n)$
+ 
+ \textbf{Demostración}
+ 
+Se tiene que $a \equiv b \, (n)$ y también que $c \equiv c \, (n)$ luego $a+c \equiv b+c \, (n)$
+
+ 
+ \item Si $c$ es divisor común de $a,b,n$ luego, si $a \equiv b \, (n)$ entonces $\frac{a}{c} \equiv \frac{b}{c} \, (\frac{n}{c})$
+ 
+\textbf{Demostración}
+ 
+ Como $c$ es divisor común de $a,b,n$ entonces para $a_1,b_1,n_1$ enteros se tiene que $a=ca_1$, $b=cb_1$ y $n=cn_1$ y, entonces, $ca_1 \equiv cb_1 \, (cn_1)$ luego $ca_1-cb_1=kcn_1$ para $k$ entero, lo que es lo mismo que $a_1-b_1=kn_1$, por lo que $a_1 \equiv b_1 \, (n_1)$ por tanto $\frac{a}{c} \equiv \frac{b}{c} \, (\frac{n}{c})$
+ 
+ \item Si $c|n$ y $a \equiv b \, (n)$ entonces $a \equiv b \, (c)$
+
+ \textbf{Demostración}
+ 
+ Como $c|n$ entonces $n=qc$ con $q$ entero y como $a \equiv b \, (n)$ entonces $a-b=kn$ con $k$ entero, luego $a-b=kqc$ y como $kq$ es un entero entonces $a \equiv b \, (c)$
+ 
+ 
+\end{enumerate}
+
+
+\begin{teo}
+ Si $ca \equiv cb \, (n)$ entonces $a \equiv b \, (\frac{n}{d})$ donde $d=mcd(c,n)$ 
+\end{teo}
+
+\textbf{Demostración}
+
+Como $ca \equiv cb \, (n)$ entonces $ca-cb=c(a-b)=kn$, ahora si se tiene que $d=mcd(c,n)$  
+entonces existen $s$ y $r$, $(r,s)=1$ tales que $c=dr$ y $n=ds$, si se sustituye en la igualdad previa se tiene que $dr(a-b)=kds$ y si se simplifica queda que $r(a-b)=ks$. 
+
+A partir de esto se tiene que $s|r(a-b)$ y, como $r$ y $s$ son primos relativos, entonces  $s|a-b$ y, por tanto $a\equiv b \, (s)$ lo que es lo mismo que $a\equiv b \, (\frac{n}{d})$
+
+
+\begin{cor}
+ Si $ca \equiv cb \, (n)$ y $mcd(c,n)=1$ entonces $a \equiv b \, (n)$
+\end{cor}
+
+\textbf{Demostración}
+
+Para $d=1$ se tiene entonces, a partir del teorema anterior que $a\equiv b \, (\frac{n}{1})$
+
+\begin{cor}
+ Si $ca \equiv cb \, (p)$ y $p\nmid c$ donde $p$ es primo, entonces $a \equiv b \, (p)$
+\end{cor}
+
+\textbf{Demostración}
+
+Como $p\nmid c$ y $p$ es primo, entonces $mcd(c,p)=1$, y entonces se tienen el corolario anterior
+
+
+\textbf{Propiedades fuertes de la congruencia}
+\begin{enumerate}
+ \item Si $a \equiv b \, (m)$ y $a \equiv b \, (n)$ entonces $a \equiv b \, (mcm(m,n))$
+ 
+ \textbf{Demostración}
+ 
+ Por el \textbf{Teorema Fundamental de la Aritmética} 
+ 
+ $m=\prod_pp^{m_p}$, $n=\prod_pp^{n_p}$ y $mcm(m,n)=\prod_pp^{max(m_p,n_p)}$
+ 
+ donde $p$ son números primos, $m_p\geq 0$ y $n_p\geq 0$.
+ 
+ Entonces, si $a \equiv b \, (m)$ y $a \equiv b \, (n)$ esto significa que $p^{m_p}|a-b$ y que $p^{n_p}|a-b$ y, por tanto, $p^{max(m_p,n_p)}|a-b$.
+ 
+ Ahora como $a-b=\prod_pp^{c_p}$ donde $c_p\geq max(m_p,n_p)$ entonces 
+ 
+ $mcm(m,n)|a-b$ y, por tanto, 
+ $a\equiv b \, (mcm(m,n))$
+ 
+ \item Si $a \equiv b \, (n)$ entonces $mcd(a,n)=mcd(b,n)$
+ 
+  \textbf{Demostración}
+  
+  Si $a \equiv b \, (n)$ entonces $a-b=kn$ para $k$ entero, luego $a=k*n+b$ y por tanto $mcd(a,n)=mcd(n,b)$
+ 
+ \item Si $ac \equiv bd \, (n)$, $c \equiv d \, (n)$ y $mcd(c,n)=1$ entonces $a \equiv b \, (n)$
+ 
+ \textbf{Demostración}
+ 
+ Como $c \equiv d \, (n)$ entonces $mcd(d,n)=mcd(c,n)=1$ y  $c-d=qn$, lo que es lo mismo que $c=qn+d$
+ 
+ Ahora, como $ac \equiv bd \, (n)$ entonces $ac-bd=kn$ y sustituyendo $c$ se tiene que 
+ 
+ $a(qn+d)-bd=kn$
+ 
+ $aqn+ad-bd=kn$
+ 
+ $ad-bd=kn-aqn$
+ 
+ $ad-bd=(k-aq)n$
+ 
+ entonces $da\equiv db \, (n)$ y como $mcd(d,n)=1$ entonces $a\equiv b\, (n)$
+ 
+ \item Sea $f(x)$ un polinomio con coeficientes enteros $a \equiv b \, (n)$ entonces 
+ $f(a) \equiv f(b) \, (n)$
+ 
+  \textbf{Demostración}
+  
+  $f(x)$ de manera general se puede definir como $f(x)=\sum^{m}_{k=0}c_kx^k$
+  
+  Como $a \equiv b \, (n)$ entonces se puede tener $a^k \equiv b^k \, (n)$ luego se pueden multiplicar por un entero tal que $c_ka^k \equiv c_kb^k \, (n)$ y estas se pueden sumar varias veces de modo que $\sum^{m}_{k=0}c_ka^k \equiv \sum^{m}_{k=0}c_kb^k \, (n)$ y como $f(a)=\sum^{m}_{k=0}c_ka^k$ y $f(b)=\sum^{m}_{k=0}c_kb^k$ entonces $f(a)\equiv f(b) \, (n)$
+  
+  
+\end{enumerate}
+
+\begin{dfn}
+ Si $f(x)$ es un polinomio con coeficientes enteros se dice que $a$ es solución de $f(x)\equiv 0 \, (n)$ si $f(a)\equiv 0 \, (n)$
+\end{dfn}
+
+
+\begin{teo}
+ Sea $f(x)$ un polinomio con coeficientes enteros tal que $a$ es solución de  $f(x)\equiv 0 \, (n)$  y $a \equiv b \, (n)$, entonces $b$ también es solución
+\end{teo}
+
+\textbf{Demostración}
+
+Por el teorema anterior se tiene que $f(a)\equiv f(b) \, (n)$ entonces se tiene que $f(b)\equiv f(a) \equiv 0\, (n)$ y, por tanto, $b$ es solución
+
+
+
+
+\begin{teo}
+ \textbf{Pequeño Teorema de Fermat}. Sea $p$ primo y $a\in\mathbb{Z}$, luego si $p\nmid a$ entonces $a^{p-1} \equiv 1 \, (p)$
+\end{teo}
+
+\textbf{Demostración}
+
+Si se tienen los primeros $p-1$ múltiplos positivos de $a$, que serían $a,2a,3a,\dots,(p-1)a$, ninguno de ellos es congruente con otro módulo $p$ pues si eso pasara entonces se tendría $ra\equiv sa \, (p)$, $1\leq r < s \leq p-1$, lo que resultaría en que $r\equiv s \, (p)$ lo que es falso.
+
+Entonces el conjunto de múltiplos debe ser cogruente módulo $p$ con $1,2,3,\dots,p-1$, en algún orden. Luego, si múltiplicamos todas estas congruencias se tiene:
+
+$a*2a*3a*\dots *(p-1)a \equiv 1*2*3*\dots *(p-1) \, (p)$
+
+Lo que es lo mismo que:
+
+$(p-1)!a^{p-1} \equiv (p-1)!\, (p)$
+
+luego $a^{p-1} \equiv 1\, (p)$
+
+
+% \begin{pro}
+%  Sea $n\in \mathbb{Z}$, si $a$ es primo relativo con $n$ (o sea, $mcd(a,n)=1$) entonces existe un entero $b$ tal que $ab \equiv 1\, (n)$ (Se dice que $a$ es \textbf{invertible} y que $b$ es un \textbf{inverso} de $a$ módulo $n$). Recíprocamente, si $a$ y $b$ son enteros tales que $a \equiv 1 \, (n)$ entonces $a$ y $n$ no tienen factores en común (o sea, $mcd(a,n)=1$)
+% \end{pro}
+% 
+% 
+% 
+% \begin{teo}
+%  \textbf{Teorema de Wilson}. Sea $p$ entero mayor que 1, $p$ es primo si y solo si $(p-1)!\equiv -1\, (p)$
+% \end{teo}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}          
