@@ -101,7 +101,7 @@ luego si se tiene la compuesta $g\circ f: N_n\rightarrow B$ esta es biyectiva pu
  
 \begin{teo}
  Si $A_1$, $A_2$, $\dots$, $A_n$ son conjuntos finitos disjuntos por pares entonces
- $|\cup^n_{i=1}A_i|=|A_1\cup A_2\cup \dots \cup A_n|=\sum^n_{i=1}A_i$
+ $|\cup^n_{i=1}A_i|=|A_1\cup A_2\cup \dots \cup A_n|=\sum^n_{i=1}|A_i|$
 \end{teo}
 
 \textbf{Ejemplo:}
@@ -143,7 +143,7 @@ También nótese la biyección con las cadenas binarias de longitud $|A|$ donde 
 
 \textbf{Demostración}
 
-Una permutación de $n$ objetos se puede ver como las diferentes maneras de escoger $n$ objetos. El primer objeto a seleccionar se puede escoger de $n$  posibles objetos. El segundo objeto se escoge de los $n-1$ restantes, el tercero de los $n-2$ y así sucesivamente hasta que quede el último objeto. Entonces, por el Principio del Producto, las distintas maneras de escoger estos $n$ objetos sería $n*(n-1)*(n-2)*\dots *2*1$ que es $n!$.\\
+Una permutación de $n$ objetos se puede ver como las diferentes maneras de poner en fila $n$ objetos. El primer objeto a seleccionar se puede escoger de $n$  posibles objetos. El segundo objeto se escoge de los $n-1$ restantes, el tercero de los $n-2$ y así sucesivamente hasta que quede el último objeto. Entonces, por el Principio del Producto, las distintas maneras de escoger estos $n$ objetos sería $n*(n-1)*(n-2)*\dots *2*1$ que es $n!$.\\
 
 \textbf{Ejemplo}
  Si se va a formar un comité que involucra presidente, tesorero y secretario, habiendo 3 candidatos a, b, c ; cuando se elige por sorteo los cargos sucesivamente, hay $3!=6$ posibilidades u ordenaciones: abc, acb, bac, bca, cab, cba.
@@ -158,7 +158,7 @@ Una permutación de $n$ objetos se puede ver como las diferentes maneras de esco
 
 \textbf{Demostración}
 
-Similar a la demostración anterior, hay que escoger $k$ objetos de $n$ posibles ($k\leq n$), entonces el primer objeto se puede escoger de $n$ posibles objetos, el segundo de $n-1$ posibles, el tercero de $n-2$ posibles y así sucesivamente hasta que el $k$-ésimo se puede escoger de entre $n-(k-1)$ posibles objetos. Entonces, por el Principio del Producto serían $n*(n-1)*(n-2)*\dots *(n-(k-1))$.  
+Similar a la demostración anterior, hay que poner en fila $k$ objetos de $n$ posibles ($k\leq n$), entonces el primer objeto se puede escoger de $n$ posibles objetos, el segundo de $n-1$ posibles, el tercero de $n-2$ posibles y así sucesivamente hasta que el $k$-ésimo se puede escoger de entre $n-(k-1)$ posibles objetos. Entonces, por el Principio del Producto serían $n*(n-1)*(n-2)*\dots *(n-(k-1))$.  
 
 Por tanto $V^n_k=n*(n-1)*(n-2)*\dots *(n-(k-1))$
 
