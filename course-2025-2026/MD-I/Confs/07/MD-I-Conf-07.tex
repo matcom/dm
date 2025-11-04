@@ -1,0 +1,252 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{float}
+
+\newtheorem*{pbo}{Principio del Buen Ordenamiento}
+\newtheorem*{pim}{Principio de Inducción Matemática}
+\newtheorem*{psm}{Principio de la Suma}
+\newtheorem*{gpsm}{Generalización del Principio de la Suma}
+\newtheorem*{ppr}{Principio del Producto}
+\newtheorem*{gppr}{Genralizacion del Principio del Producto}
+\newtheorem*{pie}{Principio de Inclusión - Exclusión}
+
+\newtheorem*{teo}{Teorema}
+
+\newtheorem*{cor}{Corolario}
+
+\newtheorem*{dem}{Demostración}
+
+\newtheorem*{dfn}{Definición}
+
+\newtheorem*{lem}{Lema}
+
+\newtheorem*{prp}{Propiedades}
+
+\newtheorem*{pro}{Proposición}
+
+% Title Page
+\title{Conferencia 7 - Combinatoria}
+\author{}
+
+
+
+\begin{document}
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+
+\textbf{Consideremos funciones totales, en caso de no serlo se especificar\'a. Consideramos conjuntos finitos y operaciones finitas, en caso de no serlo se especificar\'a.}
+
+\begin{dfn}
+  Sea $N_n$ el conjunto $N_n=\{1,2,\dots,n\}$.
+\end{dfn}
+  
+\begin{dfn}
+    Si $A$ es el conjunto vacío o tiene $n \in \mathbb{N}$ elementos se dice que es un conjunto finito
+\end{dfn}
+
+\begin{dfn}
+  Se dice que $A$ tiene $n \in \mathbb{N}$ elementos si existe $f:N_n\rightarrow A$ biyectiva. 
+\end{dfn}
+
+\begin{dfn}
+ Dos conjuntos $A$ y $B$ son coordinables y se denota $A \sim B$ si existe $f:A\rightarrow B$ biyectiva
+\end{dfn}
+
+\begin{teo}
+ Si $A$ es coordinable con $B$ y $A$ es finito, entonces $|A|=|B|$
+\end{teo}
+
+
+\textbf{Demostración}
+
+Si $|A|=n$ 
+
+como $A$ finito entonces existe $f:N_n\rightarrow A$ biyectiva
+
+y como es $A$ es coordinable con $B$ existe $g:A\rightarrow B$ biyectiva
+
+luego si se tiene la compuesta $g\circ f: N_n\rightarrow B$ esta es biyectiva pues $f$ y $g$  son biyectvas por lo que $B$ es coordinable con $N_n$ y tiene cardinalidad $n$ por tanto $|B|=n$\\
+
+\textbf{Ejemplo}
+ 
+ En un torneo con ganador único donde comienzan $n$ jugadores ¿cuántos partidos se realizan si se descalifica al que pierde un partido?
+ 
+ Se tiene $A$ como el conjunto de los juegos que se efectúan
+ 
+ y se tiene $B$ como el conjunto de los jugadores descalificados
+ 
+ Se tiene  $f:A\rightarrow B$ donde $<x,y>\in f$ si $y$ pierde en el partido $x$
+ 
+ Es fácil ver que $f$ es biyectiva y, por tanto, $A$ es coordinable con $B$:
+ 
+ $f$ es inyectiva porque para dos partidos diferentes son descalificados judadores diferentes
+ 
+ $f$ es sobrectiva porque todos los jugadores descalificados fue producto de un partido
+ 
+ Como son $n$ jugadores y hay un solo ganador entonces hay $n-1$ jugadores descalificados
+ 
+ Luego $|B|=n-1$ y por tanto como $|A|=|B|$ entonces$|A|=n-1$
+
+ 
+\begin{psm}
+  Sean $A$ y $B$ conjuntos finitos, si $A \cap B = \varnothing$ entonces \\$|A\cup B|=|A|+|B|$
+\end{psm}
+ 
+\begin{teo}
+ Si $A_1$, $A_2$, $\dots$, $A_n$ son conjuntos finitos disjuntos por pares entonces
+ $|\cup^n_{i=1}A_i|=|A_1\cup A_2\cup \dots \cup A_n|=\sum^n_{i=1}A_i$
+\end{teo}
+
+\textbf{Ejemplo:}
+Cuántos pares ordenados de enteros $(x,y)$ hay tales que $x^2 + y^2 \leq 5$.
+Separemos el problema en todos los casos posibles. Dado que $x^2 + y^2 \geq 0$, podemos particionar el problema en problemas disjuntos dos a dos. Sea $S_i = \{(x,y): x^2 + y^2 = i\}$ para $i=0,1,2,3,4,5$. 
+
+$$S_0 = \{(0,0)\}$$
+$$S_1 = \{(1,0), (-1, 0), (0, 1), (0, - 1)\}$$
+$$S_2 = \{(1,1), (1, -1), (-1, 1), (-1, -1)\}$$
+$$S_3 = \emptyset$$
+$$S_4 = \{(0,2), (0, -2), (2, 0), (-2, 0)\}$$
+$$S_5 = \{(1,2), (1, - 2), (2, 1), (2, - 1), (-1, 2), (-1, -2), (-2, 1), (-2,-1)\}$$
+
+Por tanto hay 21 pares.
+
+\begin{ppr}
+ Si $A$ y $B$ son conjuntos finitos entonces la cardinalidad del conjunto producto es $|A\times B|=|A|*|B|$
+\end{ppr}
+
+\begin{teo}
+ Si $A_1$, $A_2$, $\dots$, $A_n$ son conjuntos finitos entonces la cardinalidad del conjunto producto de todos ellos es 
+ 
+ $|\prod^n_{i=1}A_i|=|A_1\times A_2\times \dots\times A_n|=\prod^n_{i=1}|A_i|$
+\end{teo}
+
+\textbf{Ejemplo}
+    ¿Cuántos elementos tiene el conjunto potencia de $|A|$? \\
+Cómo hay $|A|$ elementos entonces cada uno de estos puede aparecer o no en cada subconjunto de $A$, que son los elementos de $2^A$, luego la cantidad de subconjuntos sería $2*2*...*2$ donde se múltiplican $|A|$ veces, por tanto $|2^A|=2^{|A|}$
+
+También nótese la biyección con las cadenas binarias de longitud $|A|$ donde cada bit indica si el elemento correspondiente está o no en el subconjunto.
+
+\begin{dfn}
+ Una \textbf{permutación} de $n$ objetos es una ordenación de estos en fila. Se denota por $P(n)$ o por $P_n$  
+\end{dfn}
+
+\begin{teo}
+ Si se tienen $n$ objetos diferentes entonces $P_n = n!$
+\end{teo}
+
+\textbf{Demostración}
+
+Una permutación de $n$ objetos se puede ver como las diferentes maneras de escoger $n$ objetos. El primer objeto a seleccionar se puede escoger de $n$  posibles objetos. El segundo objeto se escoge de los $n-1$ restantes, el tercero de los $n-2$ y así sucesivamente hasta que quede el último objeto. Entonces, por el Principio del Producto, las distintas maneras de escoger estos $n$ objetos sería $n*(n-1)*(n-2)*\dots *2*1$ que es $n!$.\\
+
+\textbf{Ejemplo}
+ Si se va a formar un comité que involucra presidente, tesorero y secretario, habiendo 3 candidatos a, b, c ; cuando se elige por sorteo los cargos sucesivamente, hay $3!=6$ posibilidades u ordenaciones: abc, acb, bac, bca, cab, cba.
+
+\begin{dfn}
+ Una \textbf{$k$-permutación}~(conocido como variaciones) de un conjunto $S$ es una secuencia de $k$ elementos distintos de $S$. Se denota $P(n,k)$, o por $V^n_k$ 
+\end{dfn}
+
+\begin{teo}
+ $V^n_k=\frac{n!}{(n-k)!}$
+\end{teo}
+
+\textbf{Demostración}
+
+Similar a la demostración anterior, hay que escoger $k$ objetos de $n$ posibles ($k\leq n$), entonces el primer objeto se puede escoger de $n$ posibles objetos, el segundo de $n-1$ posibles, el tercero de $n-2$ posibles y así sucesivamente hasta que el $k$-ésimo se puede escoger de entre $n-(k-1)$ posibles objetos. Entonces, por el Principio del Producto serían $n*(n-1)*(n-2)*\dots *(n-(k-1))$.  
+
+Por tanto $V^n_k=n*(n-1)*(n-2)*\dots *(n-(k-1))$
+
+Ahora, si se multiplica y se divide por $(n-k)!$ se tiene
+
+$V^n_k=\frac{n*(n-1)*(n-2)*\dots *(n-(k-1))*(n-k)!}{(n-k)!}=\frac{n!}{(n-k)!}$\\
+
+\textbf{Ejemplo}
+ Si se va a formar un comité que involucra presidente, tesorero y secretario, habiendo 10 candidatos; cuando se elige por sorteo los cargos sucesivamente, hay $\frac{10!}{(10-3)!}=\frac{10!}{7!}=10*9*8=720$ posibilidades u ordenaciones
+
+
+\begin{dfn}
+ Sean $n$ objetos, una combinación de $n$ en $k$ es un subconjunto de $k$ objetos tomados de los $n$. Se denota por $C(n,k)$ o $C^n_k$ o ${n}\choose{k}$  
+\end{dfn}
+
+\begin{teo}
+ ${n}\choose{k}$$=\frac{n!}{k!(n-k)!}$  
+\end{teo}
+
+\textbf{Demostración}
+
+Con las variaciones de $n$ en $k$ se tendrían todas las formas ordenadas de elegir $k$ objetos, lo que sería 
+$\frac{n!}{(n-k)!}$. Pero aquí se están contando varias veces las variaciones donde aparecen los mismos objetos pero que están ordenados de distinta forma. Cada subconjunto se está repitiendo la cantidad de ordenaciones diferentes. Pero todos los posibles ordenamientos de $k$ objetos no es más que sus posibles permutaciones que es $k!$. 
+Entonces se tiene  $k!*$${n}\choose{k}$$=\frac{n!}{(n-k)!}$. Por tanto ${n}\choose{k}$$=\frac{n!}{k!(n-k)!}$
+
+
+\textbf{Ejemplo}
+
+¿Cuántos rectángulos hay en un tablero de $m\times n$?
+
+Son $n+1$ líneas verticales y $m+1$ líneas horizontales
+
+Entonces hay que escojer dos líneas verticales y dos líneas horizontales por cada posible rectángulo. En estos casos no importa el orden, por tanto son combinaciones de 2.
+
+Entonces sería ${n+1}\choose{2}$${m+1}\choose{2}$\\
+
+En Física se llama \textbf{Principio de invariancia} a cualquier principio que afirme la invariabilidad de una magnitud o una ley física bajo ciertas transformaciones. En matemática esta noción tiene también una gran importancia. 
+
+Se tiene el juego 8-puzzle, (tablero de 3x3 con 8 fichas, enumeradas 1,2...,8 y se quieren ordenar) y se quiere saber si se puede llegar de un tablero a otro realizando jugadas válidas. Una jugada válida corresponde a mover un número hacia el hueco.
+
+\begin{figure}[H]
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \textbf{Tablero Inicial} \\
+        \vspace{0.5em}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            1 & 2 & 3 \\ \hline
+            4 & 6 & 5 \\ \hline
+            7 & 8 & x \\ \hline
+        \end{tabular}
+    \end{minipage}
+    \hfill % Espacio horizontal entre las dos minipáginas
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \textbf{Tablero Objetivo} \\
+        \vspace{0.5em}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            1 & 2 & 3 \\ \hline
+            4 & 5 & 6 \\ \hline
+            7 & 8 & x \\ \hline
+        \end{tabular}
+    \end{minipage}
+    \label{fig:tableros}
+\end{figure}
+
+
+\begin{dfn}
+    Una inversión en una permutación P es un par $i, j$ tal que $i < j$ y $P_i > P_j$.
+\end{dfn}
+
+Notemos que si ponemos la matriz como una lista empezando desde la esquina superior izquierda y la recorremos siempre que se pueda yendo a la derecha y cuando no se pueda bajamos una fila y empezamos desde más a la izquierda. Tendremos una permutación de los numeros 1,2..8 y x.
+
+Entonces podemos contar la cantidad de inversiones en esta permutación ignorando la x.
+
+Veamos que los movimientos válidos no cambian la paridad de la cantidad de inversiones totales en las permutaciones.
+
+Por tanto no se puede llegar de un estado a otro.\\
+
+
+\textbf{Otros ejemplos:}
+\begin{enumerate}
+    \item De cuántas formas se pueden seleccionar 5 días del mes de enero sin que hayan dos días consecutivos seleccionados?
+    \item Cuántos pares ordenados de subconjuntos $(A,B)$ del conjunto $N_n$ hay tales que $A \subseteq B$.
+    \item Si se tiene una matriz con $n$ filas y $m$ columnas, y se tiene una ficha en la casilla $(1, 1)$ de cuántas formas se puede llegar a la casilla $(n, m)$, si solo se permiten movimientos de la forma $(x, y) \rightarrow (x+1, y)$ y $(x, y) \rightarrow (x, y+1)$.
+    \item En cada uno de los 10 escalones de una escalera hay una rana. Cada rana puede dar un salto para llegar a cualquiera de los otros escalones, pero cuando lo hace, al mismo tiempo otra rana salta la misma cantidad de escalones pero en sentido contrario (una rana sube y la otra baja). ¿Podrán, en algún momento, quedar todas las ranas juntas en un mismo escalón?
+    \item Sea $S$ el conjunto de los números naturales que sus dígitos solo pueden ser $\{1,3,5,7\}$ no necesariamente todos, y ninguno repetido. Calcule $|S|$ y $\sum_{n \in S}n$.
+\end{enumerate}
+
+\end{document}          
