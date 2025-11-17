@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{nopageno}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+	basicstyle=\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny,
+    stepnumber=1,
+    numbersep=5pt,
+    backgroundcolor=\color{gray!10},
+    frame=single,
+    tabsize=4,
+    breaklines=true
+}
+
+\title{Clase pr\'actica 8}
+
+\begin{document}
+
+\maketitle
+\begin{enumerate}
+    \item Se tiene $2n+1$ caramelos de un mismo tipo y se quieren repartir a $3$ niños. Sin embargo se quiere que ningún niño tenga más caramelos que la suma de los caramelos que tienen los otros dos. De cuántas formas se puede lograr?
+	\item Calcule el n\'umero de soluciones $x_1 + x_2 + x_3 + x_4 = 50$ donde los $x_i$ son todos impares.
+	\item Cuántos números de $10$ cifras son divisibles por $9$ y sus dígitos solo pueden ser $1,2$ o $3$, además tienen que tener exactamente dos $3$. 
+	\item Demuestre que:
+	\item[] 
+	\begin{itemize}
+		\item $\sum_{k=0}^{n} (-1)^k \binom{n}{k} = 0$
+		\item $\sum_{k=0}^{n} \binom{n}{k}^2 = \binom{2n}{n}$
+		\item $\sum_{k=0}^{n} k \binom{n}{k} =n2^{n-1}$
+	\end{itemize}
+    \item De una forma cerrada para las siguientes expresiones:
+    \begin{itemize}
+        \item $\sum_{k=1}^{n}\sum_{i=1}^{k}i$
+        \item $1^2 + 2^2 + 3^2 + \cdots + n^2$
+    \end{itemize} 
+	\item Calcule el n\'umero de subconjuntos $X$ de tama\~no k del conjunto $\{1,2,\dots,n\}$ tal que $\forall a,b \in X$ se cumple que $|a-b| \geq 3$.
+	\item Calcule el n\'umero de arreglos de tama\~no $n$ ordenados de menor a mayor donde cada elemento es un n\'umero de 1 a $n$.
+	\item Hay 12 bombillos alineados en una fila, enumerados desde el 1 al 12 y ordenados seg\'un su n\'umero de menor a mayor. Se sabe que los bombillos con los n\'umeros 3, 7 y 11 est\'an encendidos. En cada paso se enciende un bombillo, pero solo si est\'a junto a uno ya encendido. Calcule de cu\'antas formas distintas se pueden encender todos.
+	\item ¿De cu\'antas formas se puede particionar un conjunto de n elementos en $j_1$ subconjuntos de tama\~no 1, $j_2$ de tama\~no 2 y as\'i hasta $j_k$ de tama\~no k?
+	\item Obtenga una expresi\'on para $(x_1 + ... + x_k) ^ n$
+\end{enumerate}
+\end{document}
