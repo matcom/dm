@@ -1,0 +1,185 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newtheorem*{pbo}{Principio del Buen Ordenamiento}
+\newtheorem*{pim}{Principio de Inducción Matemática}
+\newtheorem*{psm}{Principio de la Suma}
+\newtheorem*{ppr}{Principio del Producto}
+\newtheorem*{pie}{Principio de Inclusión - Exclusión}
+\newtheorem*{ppa}{Principio del Palomar}
+\newtheorem*{pin}{Principio Inyectivo}
+\newtheorem*{pso}{Principio Sobreyectivo}
+
+\newtheorem*{teo}{Teorema}
+
+\newtheorem*{cor}{Corolario}
+
+\newtheorem*{dem}{Demostración}
+
+\newtheorem*{dfn}{Definición}
+
+\newtheorem*{lem}{Lema}
+
+\newtheorem*{prp}{Propiedades}
+
+\newtheorem*{pro}{Proposición}
+
+% Title Page
+\title{Conferencia 9 - Combinatoria}
+\author{}
+
+
+
+\begin{document}
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+\begin{pie}
+Permite calcular la cardinalidad de la unión de varios conjuntos\\
+ $$|\bigcup^n_{i=1}A_i|=\sum^n_{k=1}(-1)^{k+1} \underset{\underset{|I|=k}{i\in I\subseteq\{1,2,\dots,n\}}}{|\cap A_i|}$$
+\end{pie}
+
+\textbf{Ejemplo}
+
+De 200 estudiantes 50 toman el curso de matemáticas discretas, 140 el curso de economía y 24 ambos. Como ambos cursos programaron exámenes para el día siguiente, sólo los estudiantes que no est\'en en ninguno de estos curso podrán ir a la fiesta de la noche. Se quiere ver cuántos estudiantes iran a la fiesta.
+
+Si $A_1$ es el conjunto que estudia discreta y $A_2$ el de los que estudian economía entonces $|A_1\cup A_2|=50+140-24=166$ por lo que irán a la fiesta $200-166=34$\\
+
+
+\textbf{Demostración}
+
+Sea un elemento $x$ del universo
+
+Si $x$ no cumple ninguna propiedad entre $A_1,A_2,\dots,A_n$ entonces no se cuenta nunca en la suma.
+
+Ahora, verifiquemos que si aparece entonces solamente se cuenta una vez.
+
+Si $x$ cumple exactamente una propiedad, o sea, $\exists \, i$ tal que  $x\in A_i$ pero $\forall \, j$, $j\neq i$ implica que $x\not \in A_j$, $x$ se cuenta solo una vez
+
+Si $x$ cumple $k$ propiedades al mismo tiempo entonces:
+
+se cuenta $k$ en $\sum_{1\leq i \leq n}|A_i|$
+
+se cuenta ${k}\choose{2}$ en $\sum_{1\leq i < j\leq n}|A_i\cap A_j|$
+
+$\dots$
+
+$\dots$
+
+se cuenta ${k}\choose{k}$ en la intersección de $k$ propiedades
+
+No tiene sentido verificar cuántas veces se cuenta $x$ en la intersección de más de $k$ propiedades porque solo aparece en $k$ conjuntos
+
+Entonces $x$ se cuenta:
+
+$k$ - $k\choose 2$ + $k\choose 3$ - $\dots$ + $(-1)^{k+1}$$k\choose k$
+
+=$k\choose 0$ + [-$k\choose 0$ + $k\choose 1$ - $k\choose 2$ + $k\choose 3$ - $\dots$ + $(-1)^{k+1}$$k\choose k$]
+
+=$k\choose 0$$=1$
+
+
+
+
+\begin{dfn}
+Sea un universo tal que existen $m$ posibles propiedades $P_1,P_2,\dots,P_m$. Si $\{P_{i_i},P_{i_2},\dots,P_{i_k}\}$ es un subconjunto de las $m$ posibles propiedades se denota 
+$N_{i_i,i_2,\dots,i_k}$ a la cantidad de elementos que cumplen las propiedades 
+$P_{i_1},P_{i_2},\dots,P_{i_k}$. 
+
+$s_k$ es la cantidad de veces que se cumplen $k$ propiedades
+ 
+Entonces se define $S_0=n$ donde $n=|U|$ y 
+$S_k=\sum_{1\leq i_1 < i_2 < \dots i_k \leq m} N_{i_i,i_2,\dots,i_k}$ con $1\leq k \leq m$
+
+\end{dfn}
+
+
+Entonces el Principio de \textbf{Inclusión - Exclusión} puede escribirse:
+
+$|A_1\cup A_2\cup \dots \cup A_m| = S_1 - S_2 + S_3 - \dots (-1)^{m+1}S_m$
+
+$|A_1^c\cap A_2^c\cap \dots \cap A_m^c| = S_0 - S_1 + S_2 - \dots (-1)^{m}S_m$
+
+\begin{teo}
+ \textbf{Generalización del Principio de Inclusión - Exclusión}. Sea $U$ un conjunto finito y $P$ un conjunto arbitrario de $m$ propiedades, el número de elementos de $U$ que poseen exactamente $R$ propiedades y $0\leq R \leq m$ es
+ $N(R) = \sum^{m-R}_{k=0}\, (-1)^k$${k+R}\choose{k}$$S_{k+R}$
+\end{teo}
+
+\textbf{Demostración}
+
+Sea $x$ un elemento del universo que cumple $t$ propiedades
+
+Si $t<R$ se cuenta 0 veces
+
+Se puede notar que la fórmula comienza por $S_R$ lo que implica que $x$ no aparece en la interesección de más de $t$ elementos
+
+Si $t=R$ se cuenta 1 vez, solo se cuenta en $S_R$
+
+Si $t>R$ entonces $N(R) = \sum^{t-R}_{k=0}\, (-1)^k$${k+R}\choose{k}$$S_{k+R}$ porque no se va a contar en intersecciones de más de $t$
+
+Ahora $k+R\leq t$ por tanto el elemento se cuenta $t\choose{k+R}$ veces en $S_{k+R}$ 
+
+por tanto $x$ se cuenta en $N(R)$
+ 
+$\sum^{t-R}_{k=0}\, (-1)^k$${k+R}\choose{k}$${t}\choose{k+R}$
+
+ahora ${k+R}\choose{k}$${t}\choose{k+R}$$=$${t}\choose{R}$${t-R}\choose{k}$ (razonamiento combinatorio)
+
+luego $\sum^{t-R}_{k=0}\, (-1)^k$${k+R}\choose{k}$${t}\choose{k+R}$$=$$\sum^{t-R}_{k=0}\, (-1)^k$${t}\choose{R}$${t-R}\choose{k}$
+
+$=$${t}\choose{R}$$\sum^{t-R}_{k=0}\, (-1)^k$${t-R}\choose{k}$$=0$
+
+\begin{teo}
+  Sea $U$ un conjunto finito de elementos y $P$ un conjunto arbitrario de $m$ propiedades, el número de elementos de $U$ que satisfacen al menos $R$ propiedades y $0\leq R \leq m$ es
+ $\bar{N}(R) = \sum^{m-R}_{k=0}\, (-1)^k$${k+R-1}\choose{R-1}$$S_{k+R}$
+\end{teo}
+
+\textbf{Ejemplo 1}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{tabla.png}
+\end{figure}
+
+Cuántos caminos hay desde O hasta P que sean mínimos y que pasen por exactamente dos segmentos sombreados?
+
+\begin{ppa}
+ Si se tiene un palomar con $n$ agujeros o casillas y $m$, $m>n$, palomas, entonces existe una casilla que contiene más de una paloma. De manera general, existe una casilla que tiene al menos $\lceil {\frac{m}{n}} \rceil$ palomas.
+\end{ppa}
+
+\textbf{Ejemplo 1}
+
+ En todo conjunto de $n$ números enteros es posible encontrar un subconjunto tal que la suma de los elementos del subconjunto es divisible por $n$.\\
+
+ Tomando los subconjuntos $A_1,A_2,\dots,A_n$ tal que $A_1\subset A_2 \subset\dots\subset A_n$:\\
+ $A_1=\{a_1\}$\\
+ $A_2=\{a_1,a_2\}$\\  
+ $A_3=\{a_1,a_2,a_3\}$\\
+ $\dots$\\
+ $\dots$\\
+ $A_n=\{a_1,a_2,\dots,a_n\}$
+ 
+ Si hay algún $A_i$ tal que la suma de sus elementos ($S(A_i)$) cumple que $S(A_i)\equiv 0 \, (n)$ entonces ya queda demostrado.
+ 
+ Si esto no ocurre entonces para estos conjuntos en sus sumas hay $n-1$ posibles restos entonces, por el \textbf{Principio del Palomar}, hay dos que dejan el mismo resto, o sea,
+ existen $i,j$ $i\neq j$ tal que $S(A_i)\equiv S(A_j) \, (n)$ luego $S(A_i) - S(A_j)\equiv 0 \, (n)$
+ 
+ Entonces se toma el conjunto $A_i - A_j = A_{i-j}$ asumiendo, sin perdida de generalidad, que $|A_i|>|A_j|$, luego $S(A_{i-j})\equiv 0 \, (n)$
+ 
+\textbf{Ejemplo 2}
+
+Si tenemos $n$ personas en una habitación, entonces al menos dos de ellas tienen el mismo número de conocidos dentro del grupo. (Se asume que nadie se conoce a sí mismo y que si A conoce a B entonces B conoce a A).
+ 
+\textbf{Ejemplo 3}
+
+ Sea la relación de conocerse una relación mutua, entonces en un grupo de 6 personas hay al menos 3 personas que se conocen entre ellos o al menos 3 que no se conocen entre ellos.
+ 
+
+\end{document}          
