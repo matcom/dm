@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{nopageno}
+% \usepackage{listings}
+% \usepackage{xcolor}
+
+% \lstset{
+% 	basicstyle=\ttfamily,
+%     keywordstyle=\color{blue},
+%     commentstyle=\color{green},
+%     stringstyle=\color{red},
+%     numbers=left,
+%     numberstyle=\tiny,
+%     stepnumber=1,
+%     numbersep=5pt,
+%     backgroundcolor=\color{gray!10},
+%     frame=single,
+%     tabsize=4,
+%     breaklines=true
+% }
+
+\title{Clase pr\'actica 10}
+
+\begin{document}
+
+\maketitle
+\date{}
+\begin{enumerate}
+    \item Exprese de forma cerrada las siguientes recurrencias:
+        \begin{enumerate}
+            \item $a_n=5a_{n-1}+8-6a_{n-2}$ con $a_0 = 1$, $a_1=2$
+            \item $a_n = 2a_{n-1} - a_{n-2} + 4*3^n + 4$ con $a_0=10$, $a_1 = 35$. 
+            \item $a_n = 5a_{n-1} - 6a_{n-2} + 2^n + 3n$ con $a_0 = x, a_1 = y$.
+        \end{enumerate}
+    \item Calcule la cantidad de cadenas de longitud $n$ sobre el alfabeto $\{a,b,c,d\}$ tal que todas las $a$ aparezcan antes que todas las $b$.
+    \item Consideremos una matriz de $n*n$, incialmente nos encontramos en la esquina inferior izquierda y queremos llegar a la esquina superior derecha, solo podemos viajar un segmento a la derecha o un segmento hacia arriba en cada paso.
+        \begin{enumerate}
+            \item De cu\'antas formas se puede llegar.
+            \item De cu\'antas formas se puede llegar si solo se permite tocar pero no ir por arriba de una recta diagonal que va desde la esquina inferior izquierda hacian la esquina superior derecha. 
+            \item Plantee una relaci\'on de recurrencia para el \'ultimo problema
+            \item Note que relaci\'on hay entre este problema y la cantidad de cadenas de par\'entesis balanceados de tamaño $2*n$.
+        \end{enumerate}
+    \item Pruebe que para $a \in \mathbb{Z}, b, n \in \mathbb{Z^+}$ se cumple que la siguiente expresión es entera siempre que $b$ sea congruente $a^2$. La expresión es: $$\frac{1}{\sqrt{b}}[(\frac{a + \sqrt{b}}{2})^2 - (\frac{a - \sqrt{b}}{2})^2]$$
+\end{enumerate}
+\end{document}
