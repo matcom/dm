@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{nopageno}
+% \usepackage{listings}
+% \usepackage{xcolor}
+
+% \lstset{
+% 	basicstyle=\ttfamily,
+%     keywordstyle=\color{blue},
+%     commentstyle=\color{green},
+%     stringstyle=\color{red},
+%     numbers=left,
+%     numberstyle=\tiny,
+%     stepnumber=1,
+%     numbersep=5pt,
+%     backgroundcolor=\color{gray!10},
+%     frame=single,
+%     tabsize=4,
+%     breaklines=true
+% }
+
+\title{Clase pr\'actica 9}
+
+\begin{document}
+
+\maketitle
+\begin{enumerate}
+	\item Sea $S(n, m)$ (número de Stirling de $2^{\text{do}}$ tipo) la cantidad de formas de repartir $n$ objetos distintos en $m$ cajas idénticas tal que ninguna caja quede vacía.
+    \begin{enumerate}
+        \item De una expresión para calcular $S(n, m)$.
+        \item Demuestre que si $n < m$ se cumple que $\sum_{k=0}^{m}(-1)^k \binom{m}{k} (m-k)^n = 0$
+        \item Demuestre que $\sum_{k=0}^{n} (-1) ^ k \binom{n}{k} (n-k)^n = n!$.
+    \end{enumerate}
+	\item Sea $A = \{1,2, \dots , 2n\}$ y $S$ un subconjunto de $A$ de tama\~no $n+1$. Prueba que existen dos elementos $a,b \in S$ tal que $a$ divide a $b$.
+	\item Se dice que una permutación $a_1,a_2,...,a_n$ tiene un punto fijo i si $a_i = i$. Sea $D(n, r, k)$ la cantidad de r-permutaciones del conjunto $N_n$ tales que tienen $k$ puntos fijos.
+	\begin{enumerate}
+        \item De una expresión para calcular $D(n, r, k)$.
+        \item Demuestre que $D(n, r, k) = \binom{r}{k} D(n-k, r-k, 0)$.
+        \item Si $D(n, n, 0)$ es la cantidad de desarreglos de tamaño $n$, demuestre que $D_n = (n-1)(D_{n-1} + D_{n-2})$.
+    \end{enumerate}
+	\item Determine el n\'umero de soluciones enteras de $x_1 + x_2 + x_3 + x_4 = 21$ con:
+	\item[] 
+	\begin{itemize}
+		\item $2 \leq x_1 \leq 5$
+		\item $3 \leq x_2 \leq 7$
+		\item $0 \leq x_3 \leq 6$
+		\item $2 \leq x_4 \leq 10$
+	\end{itemize}
+	\item Sea $X \subset \{1, 2, ..., 99\}$ tal que $|X| = 10$. Demuestre que siempre se puede seleccionar dos subconjuntos propios, disjuntos, no vacíos $(Y, Z)$ de $X$ tales que $\sum_{y_i \in Y}y_i = \sum_{z_i \in Z}z_i$
+	\item Sea $A$ una lista de tamaño $n^2 + 1$ sin elementos repetidos. Demuestre que siempre se puede seleccionar una sublista de $A$ creciente o decreciente de tamaño $n+1$.
+	\item El señor y la señora Smith invitan a 4 parejas a una fiesta en su casa. Algunos de los invitados son amigos del señor Smith y algunos son amigos de la señora Smith. A medida que van llegando los invitados se saludan entre sí, si se conocian se dan un beso, sino se dan la mano. Después de que todos llegan el señor Smith se da cuenta que entre las demás personas (sin contarse a el mismo) no hay dos personas que dieron la misma cantidad de besos. Cuántos besos dió la señora Smith?.
+\end{enumerate}
+\end{document}

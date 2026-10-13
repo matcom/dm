@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{nopageno}
+% \usepackage{listings}
+% \usepackage{xcolor}
+
+% \lstset{
+% 	basicstyle=\ttfamily,
+%     keywordstyle=\color{blue},
+%     commentstyle=\color{green},
+%     stringstyle=\color{red},
+%     numbers=left,
+%     numberstyle=\tiny,
+%     stepnumber=1,
+%     numbersep=5pt,
+%     backgroundcolor=\color{gray!10},
+%     frame=single,
+%     tabsize=4,
+%     breaklines=true
+% }
+
+\title{Clase pr\'actica 10}
+
+\begin{document}
+
+\maketitle
+\date{}
+\begin{enumerate}
+	\item Encuentre una relaci\'on de recurrencia y resuelva (hallar su forma cerrada) en caso de que se pueda con los m\'etodos estudiados:
+        \begin{enumerate}
+            \item Cantidad de palabras de longitud $n$ que no contengan dos letras $a$ juntas (asuma que el alfabeto tiene $26$ letras).
+            \item Cantidad de cadenas ternarias de longitud $n$ con una cantidad par de $0$s. 
+            \item Cantidad de formas de descomponer a $n$ en sumandos positivos donde el orden de los sumandos es importante.
+            \item Cantidad de formas de descomponer a $n$ en sumandos positivos donde el orden de los sumandos es importante y cada sumando es mayor que $1$.
+            \item Una permutaci\'on se dice especial si $\forall i: 1 \leq i \leq n-1, \exists j: j > i$ tal que $|p_i - p_j| = 1$. Calcule el n\'umero de permutaciones especiales del conjunto $\{1,2,...,n\}$.
+            \item Cantidad de cadenas ternarias de longitud $n$ que no tienen dos $0$ juntos ni dos $1$ juntos.
+            \item Cantidad de desarreglos de tamaño $n$.
+        \end{enumerate}
+    \item Demuestre que $F_{n+m} = F_{n+1}F_m + F_nF{m-1}$, donde $F_n$ representa el n-ésimo número de la sucesión de fibonacci.
+    \item Demuestre que $\sum_{k=0}^{n}F_k = F_{n+2} - 1$.
+    \item La sucesión de Lucas $\{L_n\}$ está definida de la siguiente forma: $L_n = L_{n-1} + L_{n-2}$ con $L_0 = 2$ y $L_1 = 1$. Pruebe que para $n \geq 1$ se cumple que $L_n = F_{n-1} + F_{n+1}$.
+\end{enumerate}
+\end{document}

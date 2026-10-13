@@ -1,0 +1,216 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newtheorem*{pbo}{Principio del Buen Ordenamiento}
+\newtheorem*{pim}{Principio de Inducción Matemática}
+\newtheorem*{psm}{Principio de la Suma}
+\newtheorem*{ppr}{Principio del Producto}
+\newtheorem*{pie}{Principio de Inclusión - Exclusión}
+\newtheorem*{ppa}{Principio del Palomar}
+\newtheorem*{pin}{Principio Inyectivo}
+\newtheorem*{pso}{Principio Sobreyectivo}
+
+\newtheorem*{teo}{Teorema}
+
+\newtheorem*{cor}{Corolario}
+
+\newtheorem*{dem}{Demostración}
+
+\newtheorem*{dfn}{Definición}
+
+\newtheorem*{lem}{Lema}
+
+\newtheorem*{prp}{Propiedades}
+
+\newtheorem*{pro}{Proposición}
+
+% Title Page
+\title{Conferencia 10 - Relaciones de Recurrencia}
+\author{}
+
+
+
+\begin{document}
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+
+\begin{dfn}
+ Una relación de recurrencia para la sucesión $a_1, a_2,\dots, a_n$ es una ecuación que relaciona el término n-ésimo con alguno(s) de sus predecesores
+\end{dfn}
+
+\textbf{Ejemplos}
+
+\begin{enumerate}
+ \item Progresión Artmética: $a_n=a_{n-1}+d$
+ \item Progresión Geométrica: $a_n=q*a_{n-1}$
+ \item Torres de Hanoi: $a_n = 2a_{n-1}+1,a_0=0$
+\end{enumerate}
+
+
+\textbf{Ejemplos:}
+\begin{itemize}
+   \item Se tiene un tablero de $1 \times n$. De cuántas formas se puede llenar el tablero utilizando fichas de tamaño $1 \times 2$ o de $1 \times 1$?
+   
+   Definimos $a_n$ como la cantidad de formas de rellenar un tablero de $1 \times n$ con las fichas de tamaño $1 \times 2$ y $1 \times 1$. Sea $A$ una distribución de fichas para rellenar el tablero, considere la ficha que llena la casilla ubicada en la posición $n$, solo hay dos posibilidades para esta ficha o bien es de $1 \times 1$ o es de $1 \times 2$. Entonces podemos asegurar por princpio de la suma que $a_n$ sería igual a la suma de las formas en que se rellena el tablero siendo la última ficha de $1 \times 1$ y las formas en que se rellena siendo la última de $1 \times 2$. Nótese que de estas formas que se hablan son precisamente $a_{n-1}$ y $a_{n-2}$. Finalmente para calcular $a_n$ necesitamos de unos casos iniciales por ejemplo $a_1 = 1$ y $a_2 = 2$. Aunque también podriamos iniciar con $a_0 = 1$ y $a_1 = 1$. Solo necesitamos dos casos iniciales porque todos los demás $a_n$ se calculan de forma recurrente.
+   
+   \item Una compañía tiene 2 oficinas, A y B, y su negocio es rentar carros para recorridos locales. Al final de cada mes la mitad de los carros de la oficina A terminan en B y un tercio de los carros de B terminan en A. Si se conocen los valores iniciales de los carros que hay en A($c_A$) y en B($c_B$), al transcurrir $n$ meses cuántos carros hay en A y en B respectivamente.
+   $$A_n=\frac{A_{n-1}}{2}+\frac{B_{n-1}}{3}$$
+   
+   $$B_n=\frac{2B_{n-1}}{3}+\frac{A_{n-1}}{2}$$
+   
+   donde $A_1=c_A$ y $B_1=c_B$.\\
+
+   Es importante resaltar que se tienen dos relaciones pero no cumplen con nuestra definición de relación de recurrencia pues el término n-ésimo depende de valores que no son sus predecesores. Se tiene que realizar un trabajo algebráico para dejar $A_n$ en función de solo términos anteriores de $A$ y similar con $B_n$.
+
+   \item Problema de Josephus.
+
+   Hay gente de pie en un círculo a la espera de ser ejecutada. La cuenta empieza en un punto y dirección específica del círculo. Después de que se haya saltado un número específico de personas, la siguiente persona es ejecutada. El procedimiento se repite con las personas restantes, a partir de la siguiente persona, que va en la misma dirección y omitiendo el mismo número de personas, hasta que solo una persona permanece y se libra de la ejecución.
+
+   Si hay $n$ personas y se ejecutan alternadamente ¿cuál sobrevive, empezando el conteo por la persona 1 suponiendo que están enumeradas?
+
+   Tomemos $a_n$ como la persona sobreviviente.
+
+   $n$ es par, si el número inicial de personas es par, entonces la persona en la posición $x$ durante la segunda vuelta alrededor del círculo estaba en la posición $2x-1$~(para cualquier valor de $x$). Entonces, si $n=2j$ la persona en $a_j$ que ahora sobrevive, inicialmente estaba en la posición $2a_j-1$. Luego tiene como recurrencia a $a_{2n}=2a_{n}-1$
+
+   Si el número de personas inicial es impar, entonces pensamos que las personas en la primera posición morirán al final de la primera vuelta alrededor del círculo. En este caso, la persona en la posición $x$ estaba originalmente en la posición $2x+1$. Esto da la recurrencia $a_{2n+1}=2a_n+1$.
+
+   El caso base es siempre $a_1=1$.
+
+   \item Números de Stirling de segundo tipo.
+   
+   $S(n, m)$ cuenta el número de formas de distribuir $n$ objetos diferentes en $m$ cajas iguales (Cantidad de particiones del conjunto $\{a_1,a_2,...,a_n\}$ en $m$ conjuntos).
+
+   Fijemos un elemento dado digamos $a_1$. En cualquier distribución de los $n$ objetos podemos diferencias dos casos $a_1$ es el único elemento en una caja o esta junto con otros elementos.
+
+   En el caso en que $a_1$ es el único en una caja entonces el problema se reduce a distribuir $n-1$ elementos diferentes en $m-1$ cajas iguales o sea $S(n-1, m-1)$.
+
+   En el caso en que $a_1$ no es el único en una caja entonces simplemente repartimos primero los $n-1$ objetos en $m$ cajas garantizando que cada caja tiene al menos uno o sea $S(n-1, m)$, luego podemos agregar a $a_1$ en cualquier caja por tanto $m * S(n-1, m)$.
+
+   Por tanto $S(n, m) = S(n, m-1) + m * S(n-1, m)$.
+
+   Aquí necesitamos una cantidad de casos bases que depende de $n$ y de $m$. De forma general $S(0, 0) = 1$,
+   $S(n ,0) = 0$ para $n > 0$, $S(0, m) = 0$ para $m > 0$.
+\end{itemize}
+
+\textbf{Clasificación de la Relaciones de Recurrencia}
+ 
+\begin{itemize}
+   \item \textbf{Según el orden}
+   
+   Ejemplo de recurrencia de orden K: $a_n=a_{n-1}+a_{n-2}+\dots+a_{n-k}$
+   \item  \textbf{Según los coeficientes}
+   
+      Ejemplo de coeficientes constantes: $a_n=2a_{n-1}+3a_{n-2}$
+
+      Ejemplo de coeficientes variables: $a_n=(n-1)a_{n-1}$
+
+      \item \textbf{Según la linealidad}
+      
+      Ejemplo de recurrencia lineal: $a_n=2a_{n-1}$
+
+      Ejemplo de recurrencia no lineal: $a_n=2a_{n-1}^2$
+
+      \item \textbf{Según homogeneidad} (Además de depender de términos anteriores puede depender o no de una función de $n$ no nula)
+      
+      Ejemplo de Homogénea: $a_n=a_{n-1}+a_{n-2}$, $f(n) = 0$
+
+      Ejemplo de no Homogénea: $a_n=a_{n-1}+a_{n-2} + n*2$, $f(n) = n * 2 \neq 0$
+\end{itemize}
+ 
+ 
+ \begin{dfn}
+  Resolver una relación de recurrencia es expresarla en su forma cerrada, es decir, expresarla en una fórmula que solo necesite el valor de $n$ para computarla.
+ \end{dfn}
+
+ 
+ \begin{teo}
+  Sea $f$ tal que $f:\mathbb{R}^k\rightarrow \mathbb{R}$ y sean $c_0,c_1,c_2,\dots,c_{k-1}\in\mathbb{R}$ valores dados, entonces existe una y solo una secuencia $a_0,a_1,\dots,a_n,\dots$ que satisface que $a_n=f(a_{n-1},a_{n-2},\dots,a_{n-k})$ con $n\geq k$ y donde $a_0=c_0$, $a_1=c_1$, $a_2=c_2$, $\dots$, $a_{k-1}=c_{k-1}$
+ \end{teo}
+
+ \begin{teo}
+  Sea $q\in \mathbb{R}$, $q \neq 0$, la sucesión $\{q^n\}$ satisface la ecuación de recurrencia $a_n=c_1a_{n-1}+c_2a_{n-2}$ si y solo si $q$ es raíz de la ecuación 
+  
+  $x^2-c_1x-c_2=0$
+ \end{teo}
+ 
+  $x^2-c_1x-c_2=0$ se conoce como polinomio o ecuación característica de $a_n=c_1a_{n-1}+c_2a_{n-2}$ \\
+
+  
+   \textbf{Demostración}
+
+   Como $\{q^n\}$ satisface $a_n=c_1a_{n-1}+c_2a_{n-2}$ entonces $q^n=c_1q^{n-1}+c_2q^{n-2}$, por tanto
+   $q^2=c_1q+c_2$ luego $q^2-c_1q-c_2=0$ entonces $p(x)=x^2-c_1x-c_2=0$ tiene como raíz a $q$.\\
+   
+   Por otra parte, si $p(q)=0$ se tiene que $p(q)=q^2-c_1q-c_2=0$ por lo que $q^2-c_1q-c_2=0$, luego, multiplicando por $q^{n-2}$ y despejando, se tiene que 
+   $q^n=c_1q^{n-1}+c_2q^{n-2}$ y, por tanto, $\{q^n\}$ satisface $a_n=c_1a_{n-1}+c_2a_{n-2}$
+   
+\begin{teo}
+ Sean $\{x_n\}$ y $\{y_n\}$ soluciones de la relación de recurrencia\\ 
+ $a_n=c_1a_{n-1}+c_2a_{n-2}$, entonces $Ax_n + By_n$  $(A,B\in\mathbb{R})$ es solución de la ecuación de recurrencia dada.
+\end{teo}
+
+\textbf{Demostración}
+
+Como $\{x_n\}$ es solución entonces $x_n=c_1x_{n-1}+c_2x_{n-2}$ y
+
+$Ax_n=Ac_1x_{n-1}+Ac_2x_{n-2}$
+
+Como $\{y_n\}$ es solución entonces $y_n=c_1y_{n-1}+c_2y_{n-2}$ y
+
+$By_n=Bc_1y_{n-1}+Bc_2y_{n-2}$
+
+Entonces $Ax_n+By_n=c_1(Ax_{n-1}+By_{n-1})+c_2(Ax_{n-2}+By_{n-2})$
+
+luego $Ax_n+By_n$ es solución
+
+\begin{teo}
+ Sean $q_1$ y $q_2$ soluciones de la ecuación $x^2-c_1x-c_2=0$ tal que $q_1\neq q_2 \neq 0$, entonces $x_n$ es solución de la relación $a_n=c_1a_{n-1}+c_2a_{n-2}$ si es de la forma $x_n=Aq^n_1+Bq^n_2$
+\end{teo}
+
+\textbf{Demostración}
+
+Por el Teorema previo se tiene entonces que las sucesiones de la forma $x_n$ son solución
+
+Ahora se debe demostrar que cualquier solución es de esta forma, que es equivalente a demostrar que el sistema siguiente tiene una única solución
+
+$Aq_1+Bq_2=a_1$
+
+$Aq^2_1+Bq^2_2=a_2$
+
+para ello el determinante debe ser distinto de 0 y se cumple pues
+
+$q_1q^2_2-q_2q^2_1=q_1q_2(q_2-q_1)\neq0$
+
+
+
+
+\begin{teo}
+ Sea $q\in\mathbb{R}$, $q\neq 0$ única raíz de la ecuación $x^2-c_1x-c_2=0$, entonces la sucesión $nq^n$  es solución de la relación de recurrencia $a_n=c_1a_{n-1}+c_2a_{n-2}$
+\end{teo}
+
+\textbf{Demostración}
+
+$q$ es raíz de $x^2-c_1x-c_2$ luego $q^2-c_1q-c_2=0$
+
+como $q$ es raíz única por Vieta se tiene que $2q=c_1$ y $q^2=-c_2$
+
+entonces $a_n=2qa_{n-1}-q^2a_{n-2}$
+
+Luego 
+
+$nq^n=2q(n-1)q^{n-1}-q^2(n-2)q^{n-2}$
+
+$nq^n=2(n-1)q^{n}-(n-2)q^{n}$
+
+$nq^n=(2n-2-n+2)q^{n}$
+
+$nq^n=nq^n$
+   
+\end{document}          
